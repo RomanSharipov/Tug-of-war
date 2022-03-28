@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Rope _rope;
     [SerializeField] private Player _player;
+    [SerializeField] private int _damage;
 
     private EnemyMovement _enemyMovement;
     private MovementSystem _movementOnWay;
@@ -39,6 +40,6 @@ public class Enemy : MonoBehaviour
     public void ThrowLasso()
     {
         _rope.gameObject.SetActive(true);
-        Player.TakeLasso();
+        Player.TakeDamage(_damage);
     }
 }

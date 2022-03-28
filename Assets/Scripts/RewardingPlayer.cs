@@ -1,20 +1,21 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RewardingPlayer : MonoBehaviour
 {
     [SerializeField] private LayerMask _player;
     [SerializeField] private float _frequencyChecking;
     [SerializeField] private float _radius;
+    [SerializeField] private int _rewardAmount = 1;
     [SerializeField] private int _stepAddSpeed = 1;
     [SerializeField] private float _stepAddAnimationSpeed = 0.1f;
-    
+
 
     private Collider[] _colliders;
 
     private void Start()
     {
         InvokeRepeating(nameof(CheckPlayerNearby),0, _frequencyChecking);
-        
     }
 
     public void CheckPlayerNearby()
@@ -29,6 +30,11 @@ public class RewardingPlayer : MonoBehaviour
 
     private void RewardPlayer(Player player)
     {
+        player.TakeHealth(_rewardAmount);
+        if (player.CurrentHealth % player.UpgradingVenom.RequiredHealthForUpgrade == 0)
+        {
+            player.UpgradingVenom.UpgradeSlimeLevel();
+        }
         player.MovementSystem.MovementOptions.AddSpeed(_stepAddSpeed);
         player.PlayerAnimator.SlowUpAnimation(_stepAddAnimationSpeed);
         Destroy(gameObject);

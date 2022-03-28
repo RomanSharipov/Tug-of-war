@@ -155,6 +155,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1001 &81409312
@@ -266,6 +267,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &123841471 stripped
@@ -315,10 +317,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 137029362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c41ac9245b87c4192012080077d830, type: 3}
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Damping: 0
+  m_TrackedObjectOffset: {x: 0, y: 3.09, z: 12.16}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.81
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
 --- !u!114 &137029365
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -331,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 9.95, z: -11.5}
+  m_TrackedObjectOffset: {x: 0, y: 6, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -341,12 +357,12 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 28.69
-  m_DeadZoneWidth: 0.7
+  m_CameraDistance: 35.96
+  m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 1.424
+  m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
@@ -714,6 +730,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &300155382 stripped
@@ -753,6 +770,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1001 &370990387
@@ -771,8 +789,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -781,6 +807,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -829,6 +859,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -1117,6 +1151,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &424266914 stripped
@@ -1376,8 +1411,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -1386,6 +1429,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -1434,6 +1481,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -1890,8 +1941,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -1900,6 +1959,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -1950,6 +2013,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -1987,8 +2054,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -1997,6 +2072,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -2045,6 +2124,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -2177,8 +2260,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -2187,6 +2278,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -2235,6 +2330,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -2357,6 +2456,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &756954978 stripped
@@ -2516,6 +2616,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &795655620 stripped
@@ -2539,8 +2640,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -2549,6 +2658,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -2597,6 +2710,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -2960,6 +3077,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &921988822 stripped
@@ -2983,8 +3101,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -2993,6 +3119,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -3043,6 +3173,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -3080,8 +3214,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -3090,6 +3232,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -3140,6 +3286,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -3188,6 +3338,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1 &963194225
@@ -3203,6 +3354,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3268,8 +3420,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34, y: 10.04, z: -88.19}
+  m_LocalRotation: {x: 0.116874926, y: -0.07115184, z: 0.008395123, w: 0.99055904}
+  m_LocalPosition: {x: -29.001638, y: 14.459248, z: -82.61349}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3327,6 +3479,20 @@ MonoBehaviour:
   _height: 11
   _distance: 22
   _lookAngle: 15
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3b9a77e9cf78243ab9925f90d78428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 0}
+  player: {fileID: 919132148679012691}
 --- !u!1001 &965796858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3343,8 +3509,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -3353,6 +3527,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -3401,6 +3579,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -3543,6 +3725,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &1086074352 stripped
@@ -3725,8 +3908,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -3735,6 +3926,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -3785,6 +3980,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -3822,8 +4021,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -3832,6 +4039,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -3851,23 +4062,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9872491
+      value: 0.987249
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.15918307
+      value: -0.15918331
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000014711159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000023720128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -18.319
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3880,6 +4091,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -3930,6 +4145,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1001 &1243469653
@@ -3948,8 +4164,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -3958,6 +4182,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -4008,6 +4236,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -4050,8 +4282,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -4060,6 +4300,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -4110,6 +4354,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -4158,6 +4406,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &1345318404 stripped
@@ -4299,6 +4548,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &1426694154 stripped
@@ -4322,8 +4572,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -4332,6 +4590,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -4380,6 +4642,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -4624,6 +4890,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1 &1539783509 stripped
@@ -4648,6 +4915,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &1539783511 stripped
@@ -4676,8 +4944,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -4686,6 +4962,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -4736,6 +5016,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -4767,6 +5051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607766539}
   - component: {fileID: 1607766538}
+  - component: {fileID: 1607766540}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -4816,14 +5101,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607766537}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34, y: 10.04, z: -88.19}
+  m_LocalRotation: {x: 0.116874926, y: -0.07115184, z: 0.008395123, w: 0.99055904}
+  m_LocalPosition: {x: -29.001638, y: 14.459248, z: -82.61349}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 137029363}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607766540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607766537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cce1f7b0bf65734481d436bed602f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraDistanceStepOffset: 6
+  _upgradingStepOffset: {x: 0, y: 0.3, z: 0}
 --- !u!1 &1638657847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1afc027d7f6b7ec4a8a8078e24de92ca, type: 3}
@@ -4851,6 +5150,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1 &1677390815 stripped
@@ -4875,6 +5175,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &1677390817 stripped
@@ -4898,8 +5199,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -4908,6 +5217,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -4956,6 +5269,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -5178,6 +5495,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1 &1748058942 stripped
@@ -5207,6 +5525,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1001 &1750839200
@@ -5411,8 +5730,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -5421,6 +5748,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -5469,6 +5800,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -5673,6 +6008,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!1001 &1905262234
@@ -5691,8 +6027,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -5701,6 +6045,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -5749,6 +6097,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -5966,6 +6318,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &1943422874 stripped
@@ -5989,8 +6342,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -5999,6 +6360,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -6049,6 +6414,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -6086,8 +6455,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -6096,6 +6473,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -6144,6 +6525,10 @@ PrefabInstance:
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _enemy.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
@@ -6266,6 +6651,7 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
+  _rewardAmount: 1
   _stepAddSpeed: 2
   _stepAddAnimationSpeed: 0.05
 --- !u!4 &2031041632 stripped
@@ -6294,8 +6680,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -6304,6 +6698,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -6354,6 +6752,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -6391,8 +6793,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -6401,6 +6811,10 @@ PrefabInstance:
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_RootOrder
@@ -6451,6 +6865,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -6477,63 +6895,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
   m_PrefabInstance: {fileID: 6198213148642947794}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &775088716740515383
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 924883490393412708, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7317253568687479309, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
-      propertyPath: m_Name
-      value: Empty
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d27b7ace453192b47a2de92cd6736a88, type: 3}
 --- !u!1 &919132148679012686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6540655839922078620, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
@@ -6567,12 +6928,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firstRoad: {fileID: 1475908117}
   _options:
-    _moveSpeed: 15
+    _moveSpeed: 20
     _rotationSpeed: 20
     _borderOffset: 2
     _stepReduceSpeed: 1
     _minSpeed: 0
     _maxSpeed: 25
+--- !u!114 &919132148679012689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148679012686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec481b9bb590924a8c9d63d28bcdbac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelVenom: 1
+  _stepAddScale: 1
+  _speedGrowScale: 20
+  _requiredHealthForUpgrade: 4
 --- !u!114 &919132148679012691 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6198213148054676174, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
@@ -6605,8 +6982,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622112938497023737, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8332751747555311571, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_Name
@@ -6622,15 +7007,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.9
+      value: -16.4
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 67.5
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 247.3
+      value: 92.9
       objectReference: {fileID: 0}
     - target: {fileID: 8712267614262191465, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6665,6 +7050,10 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
+      propertyPath: _maxDistanceToPlayer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179048805237828016, guid: 65c1e7a9961314a438529b6636300593, type: 3}
       propertyPath: _radiusSphereOverlast
       value: 0.7
       objectReference: {fileID: 0}
@@ -6693,6 +7082,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2484322674550115986, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6723,7 +7116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9974302
       objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6731,7 +7124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.071645424
       objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_LocalRotation.z
@@ -6743,7 +7136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -8.217
       objectReference: {fileID: 0}
     - target: {fileID: 5876849491345381670, guid: 2159d3b7a3e46a649b21dddb287a9b32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

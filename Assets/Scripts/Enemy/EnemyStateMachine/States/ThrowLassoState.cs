@@ -6,15 +6,16 @@ public class ThrowLassoState : State
 {
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _minDistanceToPlayer;
+    [SerializeField] private float _maxDistanceToPlayer;
     [SerializeField] private GameObject _targetPointInParentTemplate;
     [SerializeField] private float _radiusSphereOverlast;
     [SerializeField] private LayerMask _enemy;
     [SerializeField] [Range(0, 1f)] private float _distanceBetweenStickmans;
 
     private Collider[] _colliders;
-    private float _currentDistanceToPlayer;
+    [SerializeField] private float _currentDistanceToPlayer;
     private GameObject _targetPointInParent;
-    private float _speed;
+    [SerializeField] private float _speed;
 
     private void OnEnable()
     {
@@ -23,14 +24,15 @@ public class ThrowLassoState : State
         _targetPointInParent = Instantiate(_targetPointInParentTemplate, Enemy.Player.Transform);
         _targetPointInParent.transform.localPosition = new Vector3(0, 0, 0);
         _targetPointInParent.name = $"Target Point {gameObject.name}";
+        _speed = Enemy.Player.MovementSystem.MovementOptions.MoveSpeed;
     }
 
     private void Update()
     {
         _currentDistanceToPlayer = Vector3.Distance(Enemy.Transform.position, Enemy.Player.Transform.position);
-
         _speed = Enemy.Player.MovementSystem.MovementOptions.MoveSpeed;
-        transform.LookAt(Enemy.Player.transform);
+
+
         if (IsEnemyNearby())
         {
             ResetForce();
@@ -40,11 +42,12 @@ public class ThrowLassoState : State
             _targetPointInParent.transform.localPosition -= offsetTargetPoint * _distanceBetweenStickmans;
         }
 
-        if (_currentDistanceToPlayer > _minDistanceToPlayer)
+        if (_currentDistanceToPlayer < _minDistanceToPlayer)
         {
-            Enemy.EnemyMovement.MoveTo(_targetPointInParent.transform.position, Enemy.Player.MovementSystem.MovementOptions.MoveSpeed, _rotationSpeed);
+            return;
         }
 
+        Enemy.EnemyMovement.MoveTo(_targetPointInParent.transform.position, Enemy.Player.MovementSystem.MovementOptions.MoveSpeed, _rotationSpeed);
     }
 
     public bool IsEnemyNearby()
