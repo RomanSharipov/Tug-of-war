@@ -13,7 +13,7 @@ public class MoveToPlayerState : State
     {
         _targetPoint = Random.insideUnitSphere + Enemy.Player.ThrowLassoPoint.position;
 
-        //Enemy.EnemyMovement.MoveTo(_targetPoint, _speed, _rotationSpeed);
+        
         Enemy.EnemyMovement.MoveTo(Enemy.Player.ThrowLassoPoint.position, _speed, _rotationSpeed);
     }
 

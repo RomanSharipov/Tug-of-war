@@ -103,5 +103,6 @@ public class CableProceduralCurve : MonoBehaviour
     public void SetEndPoint(Transform transform)
     {
         endPointTransform = transform;
+        
     }
 }

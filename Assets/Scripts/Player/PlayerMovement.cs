@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+        Debug.Log("Move(Vector2 direction)");
         _isWalking = true;
         _direction.Set(direction.x, 0, direction.y);
         _direction.Normalize();

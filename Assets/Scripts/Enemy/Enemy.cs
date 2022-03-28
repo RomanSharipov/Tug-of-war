@@ -6,8 +6,7 @@ using RunnerMovementSystem;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private Rope _rope;
-    [SerializeField] private Player _player;
+    [SerializeField] private CableProceduralCurve _cableProceduralCurve;
     [SerializeField] private int _damage;
 
     private EnemyMovement _enemyMovement;
@@ -16,6 +15,7 @@ public class Enemy : MonoBehaviour
     private EnemyStateMachine _enemyStateMachine;
     private EnemyAnimator _enemyAnimator;
     private Rigidbody _rigidbody;
+    private Player _player;
     
     public Player Player => _player;
     public EnemyMovement EnemyMovement => _enemyMovement;
@@ -24,8 +24,9 @@ public class Enemy : MonoBehaviour
     public Rigidbody Rigidbody => _rigidbody;
     public MovementSystem MovementOnWay => _movementOnWay;
 
-    private void Start()
+    public void Init(Player player)
     {
+        _player = player;
         _transform = GetComponent<Transform>();
         _rigidbody = GetComponent<Rigidbody>();
         _enemyMovement = new EnemyMovement();
@@ -35,11 +36,23 @@ public class Enemy : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
         _enemyAnimator.Init();
         _movementOnWay = GetComponent<MovementSystem>();
+        _player.ModelWasChanged += SwitchEndPointLasso;
     }
 
     public void ThrowLasso()
     {
-        _rope.gameObject.SetActive(true);
+        _cableProceduralCurve.SetEndPoint(Player.EndPointLassoJoint);
+        _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
+    }
+
+    public void SwitchEndPointLasso()
+    {
+        _cableProceduralCurve.SetEndPoint(Player.EndPointLassoJoint);
+    }
+
+    private void OnDisable()
+    {
+        _player.ModelWasChanged -= SwitchEndPointLasso;
     }
 }
