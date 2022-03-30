@@ -21,9 +21,15 @@ public class EnemyAnimator : MonoBehaviour
         _animator.SetBool(Params.PullRope, true);
     }
 
+    public void HangRope()
+    {
+        _animator.SetBool(Params.HangRope, true);
+    }
+
     public class Params
     {
         public const string Run = "Run";
         public const string PullRope = "PullRope";
+        public const string HangRope = "HangRope";
     }
 }

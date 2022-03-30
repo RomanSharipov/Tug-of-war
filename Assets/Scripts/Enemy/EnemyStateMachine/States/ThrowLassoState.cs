@@ -4,53 +4,30 @@ using UnityEngine;
 
 public class ThrowLassoState : State
 {
-    [SerializeField] private float _rotationSpeed;
-    [SerializeField] private float _minDistanceToPlayer;
-    [SerializeField] private float _maxDistanceToPlayer;
-    [SerializeField] private GameObject _targetPointInParentTemplate;
     [SerializeField] private float _radiusSphereOverlast;
     [SerializeField] private LayerMask _enemy;
-    [SerializeField] [Range(0, 1f)] private float _distanceBetweenStickmans;
-
-    private Collider[] _colliders;
-    [SerializeField] private float _currentDistanceToPlayer;
-    private GameObject _targetPointInParent;
+    [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private float _speed;
 
-    private void OnEnable()
-    {
-        Enemy.ThrowLasso();
-        Enemy.EnemyAnimator.PullRope();
-        _targetPointInParent = Instantiate(_targetPointInParentTemplate, Enemy.Player.Transform);
-        _targetPointInParent.transform.localPosition = new Vector3(0, 0, 0);
-        _targetPointInParent.name = $"Target Point {gameObject.name}";
-        _speed = Enemy.Player.MovementSystem.MovementOptions.MoveSpeed;
-    }
+    private Vector3 _direction;
+    private Quaternion _targetRotation;
+    private Collider[] _colliders;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        _currentDistanceToPlayer = Vector3.Distance(Enemy.Transform.position, Enemy.Player.Transform.position);
-        _speed = Enemy.Player.MovementSystem.MovementOptions.MoveSpeed;
-
+        MoveOnPoint();
 
         if (IsEnemyNearby())
         {
-            ResetForce();
-            Vector3 offsetTargetPoint = (_colliders[0].transform.localPosition - transform.localPosition).normalized;
-
-
-            _targetPointInParent.transform.localPosition -= offsetTargetPoint * _distanceBetweenStickmans;
+            Enemy.transform.SetParent(_enemyContainer.transform);
+            Enemy.EnemyAnimator.PullRope();
+            Enemy.ThrowLasso();
+            Enemy.SwitchOffMovement();
+            _enemyContainer.AddScale();
         }
-
-        if (_currentDistanceToPlayer < _minDistanceToPlayer)
-        {
-            return;
-        }
-
-        Enemy.EnemyMovement.MoveTo(_targetPointInParent.transform.position, Enemy.Player.MovementSystem.MovementOptions.MoveSpeed, _rotationSpeed);
     }
 
-    public bool IsEnemyNearby()
+    private bool IsEnemyNearby()
     {
         int oldLayer = gameObject.layer;
         gameObject.layer = 0;
@@ -59,9 +36,13 @@ public class ThrowLassoState : State
         return _colliders.Length > 0;
     }
 
-    public void ResetForce()
+    private void MoveOnPoint()
     {
-        Enemy.Rigidbody.velocity = Vector3.zero;
-        Enemy.Rigidbody.angularVelocity = Vector3.zero;
+        _direction = _enemyContainer.transform.position - transform.position;
+        _targetRotation = Quaternion.LookRotation(_direction);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        Enemy.Rigidbody.velocity = transform.forward * _speed;
     }
+
 }
