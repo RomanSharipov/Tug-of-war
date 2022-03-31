@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _damage;
 
     private EnemyMovement _enemyMovement;
+    private EnemyContainer _enemyContainer;
     private MovementSystem _movementOnWay;
     private Transform _transform;
     private EnemyStateMachine _enemyStateMachine;
@@ -30,9 +31,12 @@ public class Enemy : MonoBehaviour
     public EnemyAnimator EnemyAnimator => _enemyAnimator;
     public Rigidbody Rigidbody => _rigidbody;
     public MovementSystem MovementOnWay => _movementOnWay;
+    public EnemyContainer EnemyContainer => _enemyContainer;
 
-    public void Init(Player player)
+    public void Init(Player player,EnemyContainer enemyContainer, RoadSegment _roadSegment)
     {
+        _enemyContainer = enemyContainer;
+        
         _player = player;
         _transform = GetComponent<Transform>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -43,20 +47,21 @@ public class Enemy : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
         _enemyAnimator.Init();
         _movementOnWay = GetComponent<MovementSystem>();
+        _movementOnWay.Init(_roadSegment);
         _player.ModelWasChanged += SwitchEndPointLasso;
     }
 
     public void ThrowLasso()
     {
         LookOnTarget();
-        _cableProceduralCurve.SetEndPoint(Player.EndPointLassoJoint);
+        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
     }
 
     public void SwitchEndPointLasso()
     {
-        _cableProceduralCurve.SetEndPoint(Player.EndPointLassoJoint);
+        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
     }
 
     private void OnDisable()
@@ -78,4 +83,5 @@ public class Enemy : MonoBehaviour
         _targetRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
+
 }

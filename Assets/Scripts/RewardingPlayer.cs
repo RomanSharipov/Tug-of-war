@@ -6,8 +6,7 @@ public class RewardingPlayer : MonoBehaviour
     [SerializeField] private LayerMask _player;
     [SerializeField] private float _frequencyChecking;
     [SerializeField] private float _radius;
-    [SerializeField] private int _rewardAmount = 5;
-    [SerializeField] private int _stepAddSpeed = 1;
+    [SerializeField] private int _rewardAmount = 10;
     [SerializeField] private float _stepAddAnimationSpeed = 0.1f;
 
 

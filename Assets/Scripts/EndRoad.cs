@@ -6,10 +6,15 @@ using UnityEngine.UI;
 
 public class EndRoad : MonoBehaviour
 {
-    [SerializeField] private MovementSystem movementSystem;
     [SerializeField] private RoadSegment roadSegment;
     [SerializeField] private Button _button;
-    [SerializeField] private EnemyContainer _enemyContainer;
+
+    private MovementSystem _movementSystem;
+    
+    public void Init(MovementSystem movementSystem)
+    {
+        _movementSystem = movementSystem;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +27,7 @@ public class EndRoad : MonoBehaviour
 
     public void SwitchRoad()
     {
-        movementSystem.Init(roadSegment);
+        _movementSystem.Init(roadSegment);
         _button.gameObject.SetActive(false);
     }
 }

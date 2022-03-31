@@ -7,13 +7,13 @@ public class EnemyContainer : MonoBehaviour
 {
     [SerializeField] private LayerMask _enemy;
     
-    [SerializeField] private Rigidbody Rigidbody;
+    [SerializeField] private Rigidbody _rigidbody;
+    
     [SerializeField] private SphereCollider _sphereCollider;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _targetHeight;
-    [SerializeField] private float _speedStartFly;
-    [SerializeField] private float _stepAddScaleCollider = 0.1f;
-    [SerializeField] private Transform _target;
+    [SerializeField] private float _speed = 21f;
+    [SerializeField] private float _targetHeight = 5f;
+    [SerializeField] private float _speedStartFly = 3f;
+    [SerializeField] private float _stepAddScaleCollider = 0.05f;
     [SerializeField] private Player _player;
 
     private List<Enemy> _enemies = new List<Enemy>();
@@ -21,14 +21,20 @@ public class EnemyContainer : MonoBehaviour
     private float _currentDisctance;
     private Quaternion _targetRotation;
 
+    public void Init(Player player)
+    {
+        _player = player;
+        
+    }
+
     private void FixedUpdate()
     {
         _speed = _player.MovementSystem.MovementOptions.MoveSpeed;
-        _currentDisctance = Vector3.Distance(_target.position , transform.position);
-        _direction = _target.position - transform.position;
+        _currentDisctance = Vector3.Distance(_player.transform.position, transform.position);
+        _direction = _player.transform.position - transform.position;
         _targetRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-        Rigidbody.velocity = transform.forward * _speed;
+        _rigidbody.velocity = transform.forward * _speed;
     }
 
     private void OnTriggerEnter(Collider other)
