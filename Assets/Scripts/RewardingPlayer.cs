@@ -6,7 +6,7 @@ public class RewardingPlayer : MonoBehaviour
     [SerializeField] private LayerMask _player;
     [SerializeField] private float _frequencyChecking;
     [SerializeField] private float _radius;
-    [SerializeField] private int _rewardAmount = 1;
+    [SerializeField] private int _rewardAmount = 5;
     [SerializeField] private int _stepAddSpeed = 1;
     [SerializeField] private float _stepAddAnimationSpeed = 0.1f;
 
@@ -35,8 +35,8 @@ public class RewardingPlayer : MonoBehaviour
         {
             player.UpgradingVenom.UpgradeSlimeLevel();
         }
-        player.MovementSystem.MovementOptions.AddSpeed(_stepAddSpeed);
-        player.PlayerAnimator.SlowUpAnimation(_stepAddAnimationSpeed);
+        
+        player.CurrentModelVenom.PlayerAnimator.SlowUpAnimation(_stepAddAnimationSpeed);
         Destroy(gameObject);
     }
 }

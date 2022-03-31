@@ -23,7 +23,7 @@ public class ThrowLassoState : State
             Enemy.EnemyAnimator.PullRope();
             Enemy.ThrowLasso();
             Enemy.SwitchOffMovement();
-            _enemyContainer.AddScale();
+            _enemyContainer.AddEnemy(Enemy);
         }
     }
 

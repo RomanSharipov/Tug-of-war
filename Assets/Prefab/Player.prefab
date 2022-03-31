@@ -9,11 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8340400312159440165}
-  - component: {fileID: 8340400312159440166}
   - component: {fileID: 8340400312159440163}
   - component: {fileID: 8340400312159440164}
   - component: {fileID: 8340400312159440190}
-  - component: {fileID: 8340400312159440191}
   - component: {fileID: 8340400312159440160}
   - component: {fileID: 8340400312159440161}
   - component: {fileID: 8340400312159440162}
@@ -41,25 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8340400312159440166
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8340400312159440167}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 45419c0797e6c0147bdd4cfd6cd8da7f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3c0a0e22bbe2b36439818e87e866937d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &8340400312159440163
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -105,25 +84,11 @@ MonoBehaviour:
   _throwLassoPoint: {fileID: 8340400313676556449}
   _stepReduceSpeed: 1
   _stepReduceAnimationSpeed: 0.1
-  _currentEndPointLassoJoint: {fileID: 0}
   _health: 100
   _modelsPlayer:
   - {fileID: 8340400314203482260}
   - {fileID: 8340400313264305643}
---- !u!114 &8340400312159440191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8340400312159440167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e513aae5c83c76049a12135ab6a6eca7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minSpeed: 0.1
-  _maxSpeed: 1.5
+  _currentModelVenom: {fileID: 0}
 --- !u!114 &8340400312159440160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +120,6 @@ MonoBehaviour:
     _moveSpeed: 20
     _rotationSpeed: 20
     _borderOffset: 2
-    _stepReduceSpeed: 1
     _minSpeed: 0
     _maxSpeed: 25
 --- !u!114 &8340400312159440162
@@ -362,6 +326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lassoJointPoint: {fileID: 8340400314254564202}
+  _minSpeed: 0.1
+  _maxSpeed: 1.5
 --- !u!1001 &8340400313410715009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,3 +425,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lassoJointPoint: {fileID: 8340400313141805313}
+  _minSpeed: 0.1
+  _maxSpeed: 1.5

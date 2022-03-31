@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Player))]
+
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
     [SerializeField] private float _minSpeed = 0.1f;
     [SerializeField] private float _maxSpeed = 1.5f;
 
-    private const string Walk = "Walk";
     private Animator _animator;
     private Player _player;
-    private Vector3 _startScale;
 
-
-    public void Init()
+    public void Init(Player player)
     {
-        _player = GetComponent<Player>();
+        _player = player;
         _animator = GetComponent<Animator>();
+        _player.Died += OnFall;
     }
 
     public void SlowDownAnimation(float value)
@@ -35,5 +33,17 @@ public class PlayerAnimator : MonoBehaviour
         {
             _animator.speed += value;
         }
+    }
+
+    private void OnFall()
+    {
+        _animator.speed = 1;
+        _animator.SetTrigger(Params.Fall);
+    }
+
+
+    public class Params
+    {
+        public const string Fall = "Fall";
     }
 }

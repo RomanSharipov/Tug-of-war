@@ -9,7 +9,7 @@ namespace RunnerMovementSystem
         [SerializeField] private float _moveSpeed;
         [SerializeField] private float _rotationSpeed;
         [SerializeField] private float _borderOffset;
-        [SerializeField] private float _stepReduceSpeed;
+        
         [SerializeField] private float _minSpeed;
         [SerializeField] private float _maxSpeed;
 
@@ -17,16 +17,16 @@ namespace RunnerMovementSystem
         public float RotationSpeed => _rotationSpeed;
         public float BorderOffset => _borderOffset;
 
-        public void ReduceSpeed()
+        public void ReduceSpeed(float value)
         {
             if (_moveSpeed > _minSpeed)
             {
-                _moveSpeed -= _stepReduceSpeed;
+                _moveSpeed -= value;
             }
 
         }
 
-        public void AddSpeed(int stepAddSpeed)
+        public void AddSpeed(float stepAddSpeed)
         {
             if (_moveSpeed < _maxSpeed)
             {

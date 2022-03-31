@@ -6,27 +6,24 @@ using UnityEngine;
 public class EnemyContainer : MonoBehaviour
 {
     [SerializeField] private LayerMask _enemy;
-    [SerializeField] private float _radiusSphereOverlast;
+    
     [SerializeField] private Rigidbody Rigidbody;
     [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private float _speed;
     [SerializeField] private float _targetHeight;
     [SerializeField] private float _speedStartFly;
     [SerializeField] private float _stepAddScaleCollider = 0.1f;
-    
     [SerializeField] private Transform _target;
-    
     [SerializeField] private Player _player;
 
-    private Collider[] _enemyColliders;
+    private List<Enemy> _enemies = new List<Enemy>();
     private Vector3 _direction;
     private float _currentDisctance;
     private Quaternion _targetRotation;
-    private List<Enemy> _enemies = new List<Enemy>();
 
     private void FixedUpdate()
     {
-        _speed = _player.MovementSystem.MovementOptions.MoveSpeed + 1;
+        _speed = _player.MovementSystem.MovementOptions.MoveSpeed;
         _currentDisctance = Vector3.Distance(_target.position , transform.position);
         _direction = _target.position - transform.position;
         _targetRotation = Quaternion.LookRotation(_direction);
@@ -38,7 +35,7 @@ public class EnemyContainer : MonoBehaviour
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
-            _enemies.Add(enemy);
+            AddEnemy(enemy);
             enemy.transform.SetParent(transform);
             enemy.EnemyAnimator.PullRope();
             enemy.ThrowLasso();
@@ -65,8 +62,9 @@ public class EnemyContainer : MonoBehaviour
         }
     }
 
-    public void AddScale()
+    public void AddEnemy(Enemy enemy)
     {
+        _enemies.Add(enemy);
         _sphereCollider.radius += _stepAddScaleCollider;
     }
 
