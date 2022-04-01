@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EndRoad : MonoBehaviour
 {
     [SerializeField] private RoadSegment roadSegment;
-    [SerializeField] private Button _button;
+    [SerializeField] private SwitcherButton _switcherButton;
 
     private MovementSystem _movementSystem;
     
@@ -20,14 +20,11 @@ public class EndRoad : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            _button.gameObject.SetActive(true);
-            
-        }
-    }
+            player.StopMove();
 
-    public void SwitchRoad()
-    {
-        _movementSystem.Init(roadSegment);
-        _button.gameObject.SetActive(false);
+            _switcherButton.SwitchOnButton();
+            //_switcherButton.Button.onClick.AddListener(() => { player.MovementSystem.MovementOptions.StartWalk(); });
+
+        }
     }
 }

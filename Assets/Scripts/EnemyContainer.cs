@@ -11,30 +11,33 @@ public class EnemyContainer : MonoBehaviour
     
     [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private float _speed = 21f;
+    [SerializeField] private float _speedReduceDistance = 2f;
+    [SerializeField] private float _maxDistanceToPlayer = 15f;
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private float _stepAddScaleCollider = 0.05f;
+    
     [SerializeField] private Player _player;
 
     private List<Enemy> _enemies = new List<Enemy>();
     private Vector3 _direction;
-    private float _currentDisctance;
+    [SerializeField] private float _currentDistance;
     private Quaternion _targetRotation;
 
     public void Init(Player player)
     {
         _player = player;
-        
     }
 
     private void FixedUpdate()
     {
-        _speed = _player.MovementSystem.MovementOptions.MoveSpeed;
-        _currentDisctance = Vector3.Distance(_player.transform.position, transform.position);
-        _direction = _player.transform.position - transform.position;
-        _targetRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-        _rigidbody.velocity = transform.forward * _speed;
+        _currentDistance = Vector3.Distance(_player.transform.position, transform.position);
+        MoveToPlayer();
+
+        if (_currentDistance > _maxDistanceToPlayer)
+        {
+            ReduceDistanceToPlayer();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,4 +77,18 @@ public class EnemyContainer : MonoBehaviour
         _sphereCollider.radius += _stepAddScaleCollider;
     }
 
+    public void ReduceDistanceToPlayer()
+    {
+        _rigidbody.velocity = transform.forward * _speed * _speedReduceDistance;
+    }
+
+    private void MoveToPlayer()
+    {
+        _speed = _player.MovementSystem.MovementOptions.MoveSpeed;
+        
+        _direction = _player.transform.position - transform.position;
+        _targetRotation = Quaternion.LookRotation(_direction);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        _rigidbody.velocity = transform.forward * _speed;
+    }
 }

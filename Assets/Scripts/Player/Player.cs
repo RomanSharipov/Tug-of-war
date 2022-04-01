@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private Transform _transform;
     private float _startSpeed;
     private MovementSystem _movementSystem;
+    private EnemyContainer _enemyContainer;
     private Rigidbody _rigidbody;
     private UpgradingVenom _upgradingVenom;
     private Venom _currentModelVenom;
@@ -34,9 +35,12 @@ public class Player : MonoBehaviour
     public UpgradingVenom UpgradingVenom => _upgradingVenom;
     public int CurrentHealth => _health;
     public Venom CurrentModelVenom => _currentModelVenom;
+    public EnemyContainer EnemyContainer => _enemyContainer;
 
     public event UnityAction ModelWasChanged;
     public event UnityAction Died;
+    public event UnityAction StoppedMoving;
+    public event UnityAction StartedMoving;
 
     public void Init(RoadSegment roadSegment)
     {
@@ -100,6 +104,18 @@ public class Player : MonoBehaviour
         _currentModelVenom = _modelsPlayer[0];
         _modelsPlayer[0].gameObject.SetActive(true);
         _modelsPlayer[1].gameObject.SetActive(false);
+    }
+
+    public void StopMove()
+    {
+        MovementSystem.MovementOptions.Stop();
+        StoppedMoving?.Invoke();
+    }
+
+    public void StartMove()
+    {
+        MovementSystem.MovementOptions.StartMove();
+        StartedMoving?.Invoke();
     }
 
 }

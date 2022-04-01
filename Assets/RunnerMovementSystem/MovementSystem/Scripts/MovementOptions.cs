@@ -13,6 +13,8 @@ namespace RunnerMovementSystem
         [SerializeField] private float _minSpeed;
         [SerializeField] private float _maxSpeed;
 
+        private float _lastValueSpeed;
+
         public float MoveSpeed => _moveSpeed;
         public float RotationSpeed => _rotationSpeed;
         public float BorderOffset => _borderOffset;
@@ -32,7 +34,17 @@ namespace RunnerMovementSystem
             {
                 _moveSpeed += stepAddSpeed;
             }
+        }
 
+        public void Stop()
+        {
+            _lastValueSpeed = _moveSpeed;
+            _moveSpeed = 0;
+        }
+
+        public void StartMove()
+        {
+            _moveSpeed = _lastValueSpeed;
         }
 
     }

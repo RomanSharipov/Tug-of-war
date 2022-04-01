@@ -32,7 +32,7 @@ public class RewardingPlayer : MonoBehaviour
         player.TakeHealth(_rewardAmount);
         if (player.CurrentHealth % player.UpgradingVenom.RequiredHealthForUpgrade == 0)
         {
-            player.UpgradingVenom.UpgradeSlimeLevel();
+            player.UpgradingVenom.UpgradeVenomLevel();
         }
         
         player.CurrentModelVenom.PlayerAnimator.SlowUpAnimation(_stepAddAnimationSpeed);

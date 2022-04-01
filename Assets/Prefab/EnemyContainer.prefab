@@ -118,6 +118,7 @@ MonoBehaviour:
   _targetHeight: 5
   _speedStartFly: 1.5
   _stepAddScaleCollider: 0.05
+  _stepCorrectDistanceToPlayer: 4
   _player: {fileID: 0}
 --- !u!54 &5775558568538223526
 Rigidbody:

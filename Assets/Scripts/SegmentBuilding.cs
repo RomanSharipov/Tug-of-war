@@ -23,4 +23,9 @@ public class SegmentBuilding : MonoBehaviour
         _rigidbody.isKinematic = false;
         _meshCollider.enabled = true;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject,3f);
+    }
 }

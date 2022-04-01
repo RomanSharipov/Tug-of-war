@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using RunnerMovementSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] private PlayerCamera _playerCamera;
+    [SerializeField] private Button _buttonContinue;
     [SerializeField] private EndRoad _endRoad;
     [SerializeField] private Transform _playerSpawnPoint;
     [SerializeField] private Player _playerTemplate;
@@ -36,27 +38,19 @@ public class Game : MonoBehaviour
         _endRoad.Init(_player.MovementSystem);
         _enemyContainer = Instantiate(_enemyContainerTemplate, _player.EnemyContainerPoint.position, _player.EnemyContainerPoint.rotation);
         _enemyContainer.Init(_player);
+        
+        _buttonContinue.onClick.AddListener(_enemyContainer.StartFly);
+        _buttonContinue.onClick.AddListener(_player.StartMove);
         _spawnerEnemies.Spawn(_player, _enemyContainer, _roadSegment);
         _spawnerRewards.Spawn();
         _spawnerBuildings.Spawn();
-        _button.onClick.AddListener(() => { _enemyContainer.StartFly(); });
+        
     }
 
-    public void DestroyAllObjects()
-    {
-        Destroy(_player.gameObject);
-        Destroy(_enemyContainer.gameObject);
-        _spawnerEnemies.DestroyAllEnemies();
-        _spawnerRewards.DestroyAllObjects();
-    }
+
 
     public void RestartGame()
     {
-        DestroyAllObjects();
-        Invoke(nameof( StartGame),0.1f);
-        
-        _playerCamera.ResetPosition();
+        SceneManager.LoadScene("SampleScene");
     }
-
-
 }

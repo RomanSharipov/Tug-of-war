@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
     [SerializeField] private SegmentBuilding[] _segments;
     [SerializeField] private GameObject _unitedBuilding;
+    [SerializeField] private float _delayBeforeDestroy = 3;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class Building : MonoBehaviour
             foreach (var segment in _segments)
             {
                 segment.SwithOnRigidbody();
+                Destroy(segment, _delayBeforeDestroy);
             }
             _unitedBuilding.SetActive(false);
         }

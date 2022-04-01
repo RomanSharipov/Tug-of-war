@@ -23,7 +23,8 @@ public class UpgradingVenom : MonoBehaviour
     {
         _player = player;
     }
-    public void UpgradeSlimeLevel()
+
+    public void UpgradeVenomLevel()
     {
         PlayerWasUpgraded?.Invoke();
         if (_currentLevelVenom == _levelVenomForNextLevel)

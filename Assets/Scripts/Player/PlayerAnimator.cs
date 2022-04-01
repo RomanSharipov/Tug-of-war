@@ -17,6 +17,8 @@ public class PlayerAnimator : MonoBehaviour
         _player = player;
         _animator = GetComponent<Animator>();
         _player.Died += OnFall;
+        _player.StoppedMoving += OnStop;
+        _player.StartedMoving += OnStart;
     }
 
     public void SlowDownAnimation(float value)
@@ -41,9 +43,29 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetTrigger(Params.Fall);
     }
 
+    private void OnStop()
+    {
+        _animator.speed = 1;
+        _animator.SetTrigger(Params.Stop);
+    }
+
+    private void OnStart()
+    {
+        _animator.speed = 1;
+        _animator.SetTrigger(Params.Start);
+    }
 
     public class Params
     {
         public const string Fall = "Fall";
+        public const string Stop = "Stop";
+        public const string Start = "Start";
+    }
+
+    private void OnDisable()
+    {
+        _player.Died -= OnFall;
+        _player.StoppedMoving -= OnStop;
+        _player.StartedMoving -= OnStart;
     }
 }
