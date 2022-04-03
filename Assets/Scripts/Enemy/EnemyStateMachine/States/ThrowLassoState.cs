@@ -21,7 +21,7 @@ public class ThrowLassoState : State
         {
             Enemy.transform.SetParent(Enemy.EnemyContainer.transform);
             Enemy.EnemyAnimator.PullRope();
-            Enemy.ThrowLasso();
+            Enemy.ThrowLassoOnPlayer();
             Enemy.SwitchOffMovement();
             Enemy.EnemyContainer.AddEnemy(Enemy);
         }

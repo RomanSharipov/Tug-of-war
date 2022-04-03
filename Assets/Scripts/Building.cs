@@ -6,7 +6,8 @@ public class Building : MonoBehaviour
 {
     [SerializeField] private SegmentBuilding[] _segments;
     [SerializeField] private GameObject _unitedBuilding;
-    [SerializeField] private float _delayBeforeDestroy = 3;
+    [SerializeField] private float _delayBeforeDestroySegment = 4;
+    [SerializeField] private float _delayBeforeCrushBuilding = 0.5f;
 
     private void Start()
     {
@@ -20,12 +21,19 @@ public class Building : MonoBehaviour
     {
         if (other.TryGetComponent(out EnemyContainer enemyContainer))
         {
-            foreach (var segment in _segments)
-            {
-                segment.SwithOnRigidbody();
-                Destroy(segment, _delayBeforeDestroy);
-            }
-            _unitedBuilding.SetActive(false);
+
+            Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
         }
+    }
+
+    private void CrushBuilding()
+    {
+        foreach (var segment in _segments)
+        {
+            segment.SwithOnRigidbody();
+
+            Destroy(segment.gameObject, _delayBeforeDestroySegment);
+        }
+        _unitedBuilding.SetActive(false);
     }
 }

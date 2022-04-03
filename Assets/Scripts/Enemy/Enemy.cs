@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
         _player.ModelWasChanged += SwitchEndPointLasso;
     }
 
-    public void ThrowLasso()
+    public void ThrowLassoOnPlayer()
     {
         LookOnTarget();
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
     {
         _enemyStateMachine.Current.enabled = false;
         _enemyStateMachine.enabled = false;
+
         Destroy(_rigidbody);
         _movementOnWay.enabled = false;
     }
@@ -82,6 +83,13 @@ public class Enemy : MonoBehaviour
         _direction = Player.transform.position - transform.position;
         _targetRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+    }
+
+    public void TakeOffLasso()
+    {
+        _cableProceduralCurve.gameObject.SetActive(false);
+        transform.parent = null;
+        gameObject.AddComponent<Rigidbody>();
     }
 
 }

@@ -16,13 +16,15 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private float _stepAddScaleCollider = 0.05f;
+    [SerializeField] private float _delayBeforeStartFly = 0.5f;
     
     [SerializeField] private Player _player;
+    [SerializeField] private float _currentDistance;
 
     private List<Enemy> _enemies = new List<Enemy>();
     private Vector3 _direction;
-    [SerializeField] private float _currentDistance;
     private Quaternion _targetRotation;
+    
 
     public void Init(Player player)
     {
@@ -38,6 +40,7 @@ public class EnemyContainer : MonoBehaviour
         {
             ReduceDistanceToPlayer();
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,7 +50,7 @@ public class EnemyContainer : MonoBehaviour
             AddEnemy(enemy);
             enemy.transform.SetParent(transform);
             enemy.EnemyAnimator.PullRope();
-            enemy.ThrowLasso();
+            enemy.ThrowLassoOnPlayer();
             enemy.SwitchOffMovement();
         }
     }
@@ -66,7 +69,7 @@ public class EnemyContainer : MonoBehaviour
     {
         while (transform.position.y < _targetHeight)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, _targetHeight, transform.position.z), _speedStartFly * Time.deltaTime);
+            transform.Translate(Vector3.up * _speedStartFly * Time.deltaTime);
             yield return null;
         }
     }
@@ -90,5 +93,10 @@ public class EnemyContainer : MonoBehaviour
         _targetRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         _rigidbody.velocity = transform.forward * _speed;
+    }
+
+    public void ThrowOutStickman()
+    {
+        _enemies
     }
 }

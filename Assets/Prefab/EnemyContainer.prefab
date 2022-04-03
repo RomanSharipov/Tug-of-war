@@ -115,11 +115,14 @@ MonoBehaviour:
   _rigidbody: {fileID: 5775558568538223526}
   _sphereCollider: {fileID: 5775558568538223578}
   _speed: 21
+  _speedReduceDistance: 2
+  _maxDistanceToPlayer: 15
   _targetHeight: 5
-  _speedStartFly: 1.5
+  _speedStartFly: 8
   _stepAddScaleCollider: 0.05
-  _stepCorrectDistanceToPlayer: 4
+  _delayBeforeStartFly: 2
   _player: {fileID: 0}
+  _currentDistance: 0
 --- !u!54 &5775558568538223526
 Rigidbody:
   m_ObjectHideFlags: 0

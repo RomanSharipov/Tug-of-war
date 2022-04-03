@@ -9,12 +9,14 @@ public class RewardingPlayer : MonoBehaviour
     [SerializeField] private int _rewardAmount = 10;
     [SerializeField] private float _stepAddAnimationSpeed = 0.1f;
 
-
+    private Animator _animator;
     private Collider[] _colliders;
 
     private void Start()
     {
         InvokeRepeating(nameof(CheckPlayerNearby),0, _frequencyChecking);
+        _animator = GetComponent<Animator>();
+        _animator.Play(0, -1, Random.value);
     }
 
     public void CheckPlayerNearby()

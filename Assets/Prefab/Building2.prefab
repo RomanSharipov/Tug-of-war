@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8938145227959567733}
   - component: {fileID: 5450047498692432674}
   - component: {fileID: 2536396874634570216}
+  - component: {fileID: 4918806650692812527}
+  - component: {fileID: 290351710760025884}
   m_Layer: 0
   m_Name: sptp_building_03_cell.022
   m_TagString: Untagged
@@ -60,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,6 +96,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4918806650692812527
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154573736913037003}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &290351710760025884
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154573736913037003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -85198392807708996, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &157494391975423015
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +145,8 @@ GameObject:
   - component: {fileID: 1071173916708852205}
   - component: {fileID: 6156625818476379555}
   - component: {fileID: 2536396874984732607}
+  - component: {fileID: 225598763575333781}
+  - component: {fileID: 2270420770950133472}
   m_Layer: 0
   m_Name: sptp_building_03_cell.009
   m_TagString: Untagged
@@ -154,7 +195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -188,6 +229,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &225598763575333781
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157494391975423015}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2270420770950133472
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157494391975423015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3560624007304621262, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &212888079933916628
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +278,8 @@ GameObject:
   - component: {fileID: 8741829294425836955}
   - component: {fileID: 3483676483192979891}
   - component: {fileID: 2536396873174884268}
+  - component: {fileID: 8689782760178330565}
+  - component: {fileID: 2549787871934356032}
   m_Layer: 0
   m_Name: sptp_building_03_cell.033
   m_TagString: Untagged
@@ -248,7 +328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -282,6 +362,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8689782760178330565
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212888079933916628}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2549787871934356032
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212888079933916628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 958077788851416373, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &242603764389904218
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +411,8 @@ GameObject:
   - component: {fileID: 3177837769124959360}
   - component: {fileID: 4940480691917416657}
   - component: {fileID: 2536396873401401437}
+  - component: {fileID: 4701656435310676263}
+  - component: {fileID: 15402677159928795}
   m_Layer: 0
   m_Name: sptp_building_03_cell.053
   m_TagString: Untagged
@@ -342,7 +461,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -376,6 +495,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4701656435310676263
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242603764389904218}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &15402677159928795
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242603764389904218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 58709636165332818, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &362753244366356552
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +544,8 @@ GameObject:
   - component: {fileID: 4522446453637587486}
   - component: {fileID: 1942902052028344755}
   - component: {fileID: 2536396873046679611}
+  - component: {fileID: 8334385629680543068}
+  - component: {fileID: 2241708858860054327}
   m_Layer: 0
   m_Name: sptp_building_03_cell.003
   m_TagString: Untagged
@@ -436,7 +594,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -470,6 +628,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8334385629680543068
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362753244366356552}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2241708858860054327
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362753244366356552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5679257720315438955, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &424614583464091688
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +677,8 @@ GameObject:
   - component: {fileID: 8681217327193008073}
   - component: {fileID: 3894595573517889242}
   - component: {fileID: 2536396874032616829}
+  - component: {fileID: 3372973340684289138}
+  - component: {fileID: 8746283434505468757}
   m_Layer: 0
   m_Name: sptp_building_03_cell.043
   m_TagString: Untagged
@@ -530,7 +727,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -564,6 +761,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3372973340684289138
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424614583464091688}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8746283434505468757
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424614583464091688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3065639746220309643, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &443526420595094873
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +810,8 @@ GameObject:
   - component: {fileID: 785945582004720841}
   - component: {fileID: 1471690771829712068}
   - component: {fileID: 2536396873691987743}
+  - component: {fileID: 5054463846582009004}
+  - component: {fileID: 7221038782152810161}
   m_Layer: 0
   m_Name: sptp_building_03_cell.039
   m_TagString: Untagged
@@ -624,7 +860,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -658,6 +894,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5054463846582009004
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443526420595094873}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7221038782152810161
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443526420595094873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3537510063673232079, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &510691392742274266
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +943,8 @@ GameObject:
   - component: {fileID: 7634688867859233392}
   - component: {fileID: 6498726862843358352}
   - component: {fileID: 2536396873115562174}
+  - component: {fileID: 8481414839592701037}
+  - component: {fileID: 1861478822690478091}
   m_Layer: 0
   m_Name: sptp_building_03_cell.045
   m_TagString: Untagged
@@ -718,7 +993,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -752,6 +1027,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8481414839592701037
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510691392742274266}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1861478822690478091
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510691392742274266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3459420853443333856, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &515767824708557110
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +1076,8 @@ GameObject:
   - component: {fileID: 6613282471816641353}
   - component: {fileID: 5908250200096348745}
   - component: {fileID: 2536396874995707827}
+  - component: {fileID: 1650663480651040286}
+  - component: {fileID: 493200505369037955}
   m_Layer: 0
   m_Name: sptp_building_03_cell.018
   m_TagString: Untagged
@@ -812,7 +1126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -846,6 +1160,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1650663480651040286
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515767824708557110}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &493200505369037955
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515767824708557110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1109639078349539200, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &590196692722313922
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +1209,8 @@ GameObject:
   - component: {fileID: 8918633356046178669}
   - component: {fileID: 918088436026307053}
   - component: {fileID: 2536396874970045719}
+  - component: {fileID: 787094525197570938}
+  - component: {fileID: 2836052065034563512}
   m_Layer: 0
   m_Name: sptp_building_03_cell.006
   m_TagString: Untagged
@@ -906,7 +1259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -940,6 +1293,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &787094525197570938
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590196692722313922}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2836052065034563512
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590196692722313922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6828813483051079429, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &607204113234425047
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +1342,8 @@ GameObject:
   - component: {fileID: 4886217438012576333}
   - component: {fileID: 1940655543933634519}
   - component: {fileID: 2536396874881251440}
+  - component: {fileID: 3032184825930829425}
+  - component: {fileID: 2141073898244483958}
   m_Layer: 0
   m_Name: sptp_building_03_cell.049
   m_TagString: Untagged
@@ -1000,7 +1392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1034,6 +1426,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3032184825930829425
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607204113234425047}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2141073898244483958
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607204113234425047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1509429177129029610, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &769406288442410734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1475,8 @@ GameObject:
   - component: {fileID: 3702966579711168381}
   - component: {fileID: 956980497666318781}
   - component: {fileID: 2536396873673598567}
+  - component: {fileID: 1510673000153178423}
+  - component: {fileID: 8483411752358140647}
   m_Layer: 0
   m_Name: sptp_building_03_cell.059
   m_TagString: Untagged
@@ -1094,7 +1525,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1128,6 +1559,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1510673000153178423
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769406288442410734}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8483411752358140647
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769406288442410734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3303331657051757946, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &923847147664398685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1608,8 @@ GameObject:
   - component: {fileID: 5334193494355963624}
   - component: {fileID: 8783164006208990963}
   - component: {fileID: 2536396873972705576}
+  - component: {fileID: 3448496991022899793}
+  - component: {fileID: 7105685671513963612}
   m_Layer: 0
   m_Name: sptp_building_03_cell.002
   m_TagString: Untagged
@@ -1188,7 +1658,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1222,6 +1692,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3448496991022899793
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923847147664398685}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7105685671513963612
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923847147664398685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2790162672269591853, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &1412168617894817615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1741,8 @@ GameObject:
   - component: {fileID: 5556824072064111786}
   - component: {fileID: 5538932372347576874}
   - component: {fileID: 2536396874156846693}
+  - component: {fileID: 5013584019471733067}
+  - component: {fileID: 369626211832507122}
   m_Layer: 0
   m_Name: sptp_building_03_cell.037
   m_TagString: Untagged
@@ -1282,7 +1791,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1316,6 +1825,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5013584019471733067
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412168617894817615}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &369626211832507122
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412168617894817615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 836223027654873604, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &1871885123914094998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1874,8 @@ GameObject:
   - component: {fileID: 1431395599638930797}
   - component: {fileID: 1612262316377102284}
   - component: {fileID: 2536396874301111070}
+  - component: {fileID: 7791089433631337169}
+  - component: {fileID: 1226670894969234459}
   m_Layer: 0
   m_Name: sptp_building_03_cell.017
   m_TagString: Untagged
@@ -1376,7 +1924,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1410,6 +1958,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &7791089433631337169
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871885123914094998}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1226670894969234459
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871885123914094998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8337764661124409754, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &1884563969284906400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +2007,8 @@ GameObject:
   - component: {fileID: 1650681958335400098}
   - component: {fileID: 921952450030205239}
   - component: {fileID: 2536396873179525311}
+  - component: {fileID: 4722898487422004463}
+  - component: {fileID: 5691478183054873470}
   m_Layer: 0
   m_Name: sptp_building_03_cell.048
   m_TagString: Untagged
@@ -1470,7 +2057,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1504,6 +2091,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4722898487422004463
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884563969284906400}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5691478183054873470
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884563969284906400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1031534753592025250, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &1931704010103525754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +2140,8 @@ GameObject:
   - component: {fileID: 6804731453522606281}
   - component: {fileID: 1760972907174957066}
   - component: {fileID: 2536396874491202505}
+  - component: {fileID: 5881619490805778066}
+  - component: {fileID: 2768456490246932959}
   m_Layer: 0
   m_Name: sptp_building_03_cell.041
   m_TagString: Untagged
@@ -1564,7 +2190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1598,6 +2224,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5881619490805778066
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931704010103525754}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2768456490246932959
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931704010103525754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387476434108783567, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &2113664108856000761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +2273,8 @@ GameObject:
   - component: {fileID: 6339725283995172308}
   - component: {fileID: 836454368061097287}
   - component: {fileID: 2536396874366514388}
+  - component: {fileID: 3918386834722819048}
+  - component: {fileID: 3162938433866669112}
   m_Layer: 0
   m_Name: sptp_building_03_cell.031
   m_TagString: Untagged
@@ -1658,7 +2323,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1692,6 +2357,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3918386834722819048
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113664108856000761}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3162938433866669112
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113664108856000761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2495836671474394922, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &2302426913193613821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +2406,8 @@ GameObject:
   - component: {fileID: 2453647144574756386}
   - component: {fileID: 3353910358039852647}
   - component: {fileID: 2536396874260052377}
+  - component: {fileID: 2402252692348554294}
+  - component: {fileID: 7961495154344067144}
   m_Layer: 0
   m_Name: sptp_building_03_cell.042
   m_TagString: Untagged
@@ -1752,7 +2456,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1786,6 +2490,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2402252692348554294
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302426913193613821}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7961495154344067144
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302426913193613821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3124960266442840661, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &2653978730407877472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +2539,8 @@ GameObject:
   - component: {fileID: 8848294868651501057}
   - component: {fileID: 5438314725871410648}
   - component: {fileID: 2536396874742417127}
+  - component: {fileID: 1509506145740149752}
+  - component: {fileID: 8040176239922802928}
   m_Layer: 0
   m_Name: sptp_building_03_cell.005
   m_TagString: Untagged
@@ -1846,7 +2589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1880,6 +2623,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1509506145740149752
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653978730407877472}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8040176239922802928
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653978730407877472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6646227581914116631, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &2718774631090293433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +2672,8 @@ GameObject:
   - component: {fileID: 2265250060400738295}
   - component: {fileID: 4037801541791193961}
   - component: {fileID: 2536396873109248703}
+  - component: {fileID: 4705244217569086173}
+  - component: {fileID: 1112499115873122418}
   m_Layer: 0
   m_Name: sptp_building_03_cell.058
   m_TagString: Untagged
@@ -1940,7 +2722,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1974,6 +2756,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4705244217569086173
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718774631090293433}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1112499115873122418
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718774631090293433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4926310463013990775, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &2760993452311059850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +2805,8 @@ GameObject:
   - component: {fileID: 292544979668469384}
   - component: {fileID: 8825131595260667590}
   - component: {fileID: 2536396874116459446}
+  - component: {fileID: 9216628256607456898}
+  - component: {fileID: 4889668918308284628}
   m_Layer: 0
   m_Name: sptp_building_03_cell.010
   m_TagString: Untagged
@@ -2034,7 +2855,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2068,6 +2889,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &9216628256607456898
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2760993452311059850}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4889668918308284628
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2760993452311059850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7278642691584712380, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3076336370226419580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2938,8 @@ GameObject:
   - component: {fileID: 2167675728974599149}
   - component: {fileID: 6131057704842511639}
   - component: {fileID: 2536396873872928511}
+  - component: {fileID: 1002064563606865110}
+  - component: {fileID: 3691575392456660049}
   m_Layer: 0
   m_Name: sptp_building_03_cell.015
   m_TagString: Untagged
@@ -2128,7 +2988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2162,6 +3022,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1002064563606865110
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3076336370226419580}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3691575392456660049
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3076336370226419580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3720645627785964547, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3181164389724484721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,6 +3071,8 @@ GameObject:
   - component: {fileID: 6839617213396829375}
   - component: {fileID: 6212007624540022486}
   - component: {fileID: 2536396873288620927}
+  - component: {fileID: 7872219786450656613}
+  - component: {fileID: 1132808903239628407}
   m_Layer: 0
   m_Name: sptp_building_03_cell.008
   m_TagString: Untagged
@@ -2222,7 +3121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2256,6 +3155,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &7872219786450656613
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181164389724484721}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1132808903239628407
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181164389724484721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 758189788519439099, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3208286025591411645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,6 +3204,8 @@ GameObject:
   - component: {fileID: 4257014540592712550}
   - component: {fileID: 1562514832362667168}
   - component: {fileID: 2536396874284132731}
+  - component: {fileID: 6843908978591424265}
+  - component: {fileID: 8032133121166754806}
   m_Layer: 0
   m_Name: sptp_building_03_cell.027
   m_TagString: Untagged
@@ -2316,7 +3254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2350,6 +3288,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6843908978591424265
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208286025591411645}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8032133121166754806
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3208286025591411645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 980084235581813015, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3404951750040797293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,6 +3337,8 @@ GameObject:
   - component: {fileID: 57013241906774888}
   - component: {fileID: 453522687012421457}
   - component: {fileID: 2536396872990714935}
+  - component: {fileID: 1279749031388818494}
+  - component: {fileID: 7435611069751492254}
   m_Layer: 0
   m_Name: sptp_building_03_cell.040
   m_TagString: Untagged
@@ -2410,7 +3387,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2444,6 +3421,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1279749031388818494
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404951750040797293}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7435611069751492254
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404951750040797293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3591483893544140277, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3454962768507228372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,7 +3650,7 @@ MonoBehaviour:
   - {fileID: 2536396874777039807}
   - {fileID: 2536396874820146155}
   _unitedBuilding: {fileID: 8217030550660419515}
-  _delayBeforeDestroy: 3
+  _delayBeforeDestroy: 4
 --- !u!1 &3493976510174314922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,6 +3663,8 @@ GameObject:
   - component: {fileID: 5117329602955015435}
   - component: {fileID: 2005423070290705710}
   - component: {fileID: 2536396874280575663}
+  - component: {fileID: 2700387921961300752}
+  - component: {fileID: 6356474068973858482}
   m_Layer: 0
   m_Name: sptp_building_03_cell.063
   m_TagString: Untagged
@@ -2697,7 +3713,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2731,6 +3747,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2700387921961300752
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493976510174314922}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6356474068973858482
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493976510174314922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6696580216991214373, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3658621666545225103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +3796,8 @@ GameObject:
   - component: {fileID: 5797275315745135060}
   - component: {fileID: 9161729984861225466}
   - component: {fileID: 2536396874777039807}
+  - component: {fileID: 8219026651186093105}
+  - component: {fileID: 1912511974696161930}
   m_Layer: 0
   m_Name: sptp_building_03_cell.065
   m_TagString: Untagged
@@ -2791,7 +3846,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2825,6 +3880,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8219026651186093105
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658621666545225103}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1912511974696161930
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658621666545225103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1843359218246932468, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3666480034638519206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +3929,8 @@ GameObject:
   - component: {fileID: 4223121307259149352}
   - component: {fileID: 9120520714031260288}
   - component: {fileID: 2536396873977770494}
+  - component: {fileID: 1021169955219246706}
+  - component: {fileID: 2699746953930624551}
   m_Layer: 0
   m_Name: sptp_building_03_cell.028
   m_TagString: Untagged
@@ -2885,7 +3979,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2919,6 +4013,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1021169955219246706
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666480034638519206}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2699746953930624551
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666480034638519206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5688620690461048901, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3678208316419571840
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +4062,8 @@ GameObject:
   - component: {fileID: 6190425525098053620}
   - component: {fileID: 4499115406735209854}
   - component: {fileID: 2536396873738723608}
+  - component: {fileID: 3271227023610046181}
+  - component: {fileID: 8028368209701707493}
   m_Layer: 0
   m_Name: sptp_building_03_cell.029
   m_TagString: Untagged
@@ -2979,7 +4112,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3013,6 +4146,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3271227023610046181
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678208316419571840}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8028368209701707493
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678208316419571840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -711836661885055730, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3769396487711279594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,6 +4195,8 @@ GameObject:
   - component: {fileID: 6389912822836518030}
   - component: {fileID: 5994071498219554138}
   - component: {fileID: 2536396873658307522}
+  - component: {fileID: 6085405823595423789}
+  - component: {fileID: 3975744878828523413}
   m_Layer: 0
   m_Name: sptp_building_03_cell.007
   m_TagString: Untagged
@@ -3073,7 +4245,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3107,6 +4279,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6085405823595423789
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769396487711279594}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3975744878828523413
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769396487711279594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3084952263579502443, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3795718103561297565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +4328,8 @@ GameObject:
   - component: {fileID: 3766652587828848064}
   - component: {fileID: 5131740346385199044}
   - component: {fileID: 2536396873733092513}
+  - component: {fileID: 5154676899839635438}
+  - component: {fileID: 3704572477062484234}
   m_Layer: 0
   m_Name: sptp_building_03_cell.021
   m_TagString: Untagged
@@ -3167,7 +4378,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3201,6 +4412,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5154676899839635438
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795718103561297565}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3704572477062484234
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795718103561297565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3286973671855209941, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &3917708581510170140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +4461,8 @@ GameObject:
   - component: {fileID: 2870867787817644114}
   - component: {fileID: 4079065737925677948}
   - component: {fileID: 2536396874158741095}
+  - component: {fileID: 5629882961955161142}
+  - component: {fileID: 5315719459706000745}
   m_Layer: 0
   m_Name: sptp_building_03_cell.014
   m_TagString: Untagged
@@ -3261,7 +4511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3295,6 +4545,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5629882961955161142
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917708581510170140}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5315719459706000745
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917708581510170140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2962969057527812671, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &4133917818044840919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,6 +4594,8 @@ GameObject:
   - component: {fileID: 6399556638132087455}
   - component: {fileID: 1832178597633914029}
   - component: {fileID: 2536396873774211255}
+  - component: {fileID: 4717289687728108415}
+  - component: {fileID: 8611327670799566023}
   m_Layer: 0
   m_Name: sptp_building_03_cell.030
   m_TagString: Untagged
@@ -3355,7 +4644,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3389,6 +4678,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4717289687728108415
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4133917818044840919}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8611327670799566023
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4133917818044840919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1162954440317439760, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &4217260754842704947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,6 +4727,8 @@ GameObject:
   - component: {fileID: 4163468325132911738}
   - component: {fileID: 2027584781876912544}
   - component: {fileID: 2536396874083489527}
+  - component: {fileID: 8445670295491120102}
+  - component: {fileID: 1685403109030158035}
   m_Layer: 0
   m_Name: sptp_building_03_cell.016
   m_TagString: Untagged
@@ -3449,7 +4777,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3483,6 +4811,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8445670295491120102
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217260754842704947}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1685403109030158035
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217260754842704947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6363036036802559290, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &4309965472319611990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,6 +4860,8 @@ GameObject:
   - component: {fileID: 2606764844530203041}
   - component: {fileID: 7198303390712934217}
   - component: {fileID: 2536396875026895150}
+  - component: {fileID: 1484784978861876611}
+  - component: {fileID: 6638353157842939594}
   m_Layer: 0
   m_Name: sptp_building_03_cell.038
   m_TagString: Untagged
@@ -3543,7 +4910,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3577,6 +4944,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1484784978861876611
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4309965472319611990}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6638353157842939594
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4309965472319611990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8649900403294168117, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &4639230071758427938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,6 +4993,8 @@ GameObject:
   - component: {fileID: 5557370419682781431}
   - component: {fileID: 4517305331601972198}
   - component: {fileID: 2536396873345729086}
+  - component: {fileID: 5587522294878269057}
+  - component: {fileID: 7494570830295442685}
   m_Layer: 0
   m_Name: sptp_building_03_cell.025
   m_TagString: Untagged
@@ -3637,7 +5043,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3671,6 +5077,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5587522294878269057
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639230071758427938}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7494570830295442685
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639230071758427938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3845281430743310182, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &4696144431118619859
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,6 +5126,8 @@ GameObject:
   - component: {fileID: 3845058398891313271}
   - component: {fileID: 4084739860985912791}
   - component: {fileID: 2536396874970592898}
+  - component: {fileID: 2625973347897736356}
+  - component: {fileID: 7494958513835361668}
   m_Layer: 0
   m_Name: sptp_building_03_cell.047
   m_TagString: Untagged
@@ -3731,7 +5176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3765,6 +5210,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2625973347897736356
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696144431118619859}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7494958513835361668
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696144431118619859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -948754403697111008, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5052461445097769436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +5259,8 @@ GameObject:
   - component: {fileID: 8859011226904522977}
   - component: {fileID: 1616516504882715644}
   - component: {fileID: 2536396874040146418}
+  - component: {fileID: 5476442678328147987}
+  - component: {fileID: 5023426258070959013}
   m_Layer: 0
   m_Name: sptp_building_03_cell.013
   m_TagString: Untagged
@@ -3825,7 +5309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3859,6 +5343,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5476442678328147987
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052461445097769436}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5023426258070959013
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052461445097769436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4871909869846258284, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5116112388548256916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +5392,8 @@ GameObject:
   - component: {fileID: 388611495234345822}
   - component: {fileID: 5703902962714481934}
   - component: {fileID: 2536396874993605074}
+  - component: {fileID: 6013621676454014626}
+  - component: {fileID: 4656190824887882584}
   m_Layer: 0
   m_Name: sptp_building_03_cell.024
   m_TagString: Untagged
@@ -3919,7 +5442,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3953,6 +5476,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6013621676454014626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5116112388548256916}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4656190824887882584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5116112388548256916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1564596577013421594, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5212996365134005101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +5525,8 @@ GameObject:
   - component: {fileID: 9084431045630247629}
   - component: {fileID: 6962753940113025014}
   - component: {fileID: 2536396873523995741}
+  - component: {fileID: 1887155189018093515}
+  - component: {fileID: 2054201898389477220}
   m_Layer: 0
   m_Name: sptp_building_03_cell.055
   m_TagString: Untagged
@@ -4013,7 +5575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4047,6 +5609,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1887155189018093515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212996365134005101}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2054201898389477220
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212996365134005101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1246027208008418861, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5336748753124095958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,6 +5658,8 @@ GameObject:
   - component: {fileID: 4953128901018868228}
   - component: {fileID: 6489135464079488291}
   - component: {fileID: 2536396873139009698}
+  - component: {fileID: 5296549085567679180}
+  - component: {fileID: 8910626594625001679}
   m_Layer: 0
   m_Name: sptp_building_03_cell.019
   m_TagString: Untagged
@@ -4107,7 +5708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4141,6 +5742,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5296549085567679180
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336748753124095958}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8910626594625001679
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336748753124095958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7850860123737607360, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5411786262016790023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,6 +5791,8 @@ GameObject:
   - component: {fileID: 6100130016537349919}
   - component: {fileID: 5312040818582765168}
   - component: {fileID: 2536396875101520175}
+  - component: {fileID: 942127987824732709}
+  - component: {fileID: 7185751291113368904}
   m_Layer: 0
   m_Name: sptp_building_03_cell.060
   m_TagString: Untagged
@@ -4201,7 +5841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4235,6 +5875,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &942127987824732709
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411786262016790023}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7185751291113368904
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411786262016790023}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7298642282710066016, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5428392323012780525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,6 +5924,8 @@ GameObject:
   - component: {fileID: 4471935311996782357}
   - component: {fileID: 257755373644676191}
   - component: {fileID: 2536396873305793591}
+  - component: {fileID: 3060282355569670142}
+  - component: {fileID: 4101077192514878978}
   m_Layer: 0
   m_Name: sptp_building_03_cell.061
   m_TagString: Untagged
@@ -4295,7 +5974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4329,6 +6008,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3060282355569670142
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428392323012780525}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4101077192514878978
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428392323012780525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6014424992481440356, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5571363855984544792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,6 +6057,8 @@ GameObject:
   - component: {fileID: 4813809838812358570}
   - component: {fileID: 5234274758870077676}
   - component: {fileID: 2536396873780161957}
+  - component: {fileID: 3239109725790847048}
+  - component: {fileID: 4699976475506401223}
   m_Layer: 0
   m_Name: sptp_building_03_cell.056
   m_TagString: Untagged
@@ -4389,7 +6107,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4423,6 +6141,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3239109725790847048
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571363855984544792}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4699976475506401223
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571363855984544792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2554327442631977873, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &5653911186323510951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,6 +6190,8 @@ GameObject:
   - component: {fileID: 9165431657591450950}
   - component: {fileID: 3370768758481956340}
   - component: {fileID: 2536396873197113807}
+  - component: {fileID: 3376732010238339965}
+  - component: {fileID: 2243050382998370567}
   m_Layer: 0
   m_Name: sptp_building_03_cell.035
   m_TagString: Untagged
@@ -4483,7 +6240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4517,6 +6274,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3376732010238339965
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653911186323510951}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &2243050382998370567
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5653911186323510951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2411965657404385547, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &6165017130724761327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,6 +6323,8 @@ GameObject:
   - component: {fileID: 8577409193747445590}
   - component: {fileID: 9212330001167226833}
   - component: {fileID: 2536396873637970086}
+  - component: {fileID: 6096986459668966993}
+  - component: {fileID: 4833616980700421390}
   m_Layer: 0
   m_Name: sptp_building_03_cell.032
   m_TagString: Untagged
@@ -4577,7 +6373,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4611,6 +6407,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6096986459668966993
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165017130724761327}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4833616980700421390
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165017130724761327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2620264842756048847, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &6296148028035764875
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,6 +6456,8 @@ GameObject:
   - component: {fileID: 1900125802710914279}
   - component: {fileID: 8503904048721178186}
   - component: {fileID: 2536396873477123357}
+  - component: {fileID: 4237824380598100162}
+  - component: {fileID: 650162042686990149}
   m_Layer: 0
   m_Name: sptp_building_03_cell.046
   m_TagString: Untagged
@@ -4671,7 +6506,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4705,6 +6540,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4237824380598100162
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296148028035764875}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &650162042686990149
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296148028035764875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9143378324144504202, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &6348737136601207902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,6 +6589,8 @@ GameObject:
   - component: {fileID: 7376844462504940247}
   - component: {fileID: 8654302511601530075}
   - component: {fileID: 2536396873027091963}
+  - component: {fileID: 3539359449974651690}
+  - component: {fileID: 3578556890612195505}
   m_Layer: 0
   m_Name: sptp_building_03_cell.064
   m_TagString: Untagged
@@ -4765,7 +6639,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4799,6 +6673,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &3539359449974651690
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348737136601207902}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3578556890612195505
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348737136601207902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2420186085092424346, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &6385296972200015705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,6 +6722,8 @@ GameObject:
   - component: {fileID: 2399271164400786426}
   - component: {fileID: 7341996329002316089}
   - component: {fileID: 2536396874928007367}
+  - component: {fileID: 4636669519102971726}
+  - component: {fileID: 8454161381778701822}
   m_Layer: 0
   m_Name: sptp_building_03_cell.004
   m_TagString: Untagged
@@ -4859,7 +6772,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4893,6 +6806,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4636669519102971726
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385296972200015705}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8454161381778701822
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385296972200015705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5415462203527895965, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &6811255624843543526
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,6 +6855,8 @@ GameObject:
   - component: {fileID: 8675770946594383228}
   - component: {fileID: 8018706816483559141}
   - component: {fileID: 2536396873338400264}
+  - component: {fileID: 47943658675434435}
+  - component: {fileID: 6724610874720179836}
   m_Layer: 0
   m_Name: sptp_building_03_cell.054
   m_TagString: Untagged
@@ -4953,7 +6905,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4987,6 +6939,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &47943658675434435
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811255624843543526}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6724610874720179836
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811255624843543526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5451583863409329509, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &6982862504094631310
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,6 +6988,8 @@ GameObject:
   - component: {fileID: 4723679751111572979}
   - component: {fileID: 6113708969414336296}
   - component: {fileID: 2536396873700540622}
+  - component: {fileID: 4506844177216721387}
+  - component: {fileID: 4499516507104685950}
   m_Layer: 0
   m_Name: sptp_building_03_cell.011
   m_TagString: Untagged
@@ -5047,7 +7038,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5081,6 +7072,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4506844177216721387
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982862504094631310}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4499516507104685950
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982862504094631310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7196061334400610296, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7000694861761964154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,6 +7121,8 @@ GameObject:
   - component: {fileID: 4416147465361921041}
   - component: {fileID: 108107864252207511}
   - component: {fileID: 2536396873609552631}
+  - component: {fileID: 4454915456057599088}
+  - component: {fileID: 1720208466787505650}
   m_Layer: 0
   m_Name: sptp_building_03_cell.001
   m_TagString: Untagged
@@ -5141,7 +7171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5175,6 +7205,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4454915456057599088
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000694861761964154}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1720208466787505650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000694861761964154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8391552841099788801, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7004171160323949326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +7254,8 @@ GameObject:
   - component: {fileID: 9047506032300946266}
   - component: {fileID: 682762141280712502}
   - component: {fileID: 2536396874622970017}
+  - component: {fileID: 2860494875512240415}
+  - component: {fileID: 5384915489516012750}
   m_Layer: 0
   m_Name: sptp_building_03_cell.052
   m_TagString: Untagged
@@ -5235,7 +7304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5269,6 +7338,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2860494875512240415
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004171160323949326}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5384915489516012750
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004171160323949326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2278396641708266159, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7053803434254866539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,6 +7387,8 @@ GameObject:
   - component: {fileID: 7289749242143882966}
   - component: {fileID: 3511660196917633473}
   - component: {fileID: 2536396874252506868}
+  - component: {fileID: 8051348024973345152}
+  - component: {fileID: 6332377822896904747}
   m_Layer: 0
   m_Name: sptp_building_03_cell.023
   m_TagString: Untagged
@@ -5329,7 +7437,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5363,6 +7471,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8051348024973345152
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053803434254866539}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6332377822896904747
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053803434254866539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5938254794492485882, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7136617436953028551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,6 +7520,8 @@ GameObject:
   - component: {fileID: 6623406072300039291}
   - component: {fileID: 6411738626789228486}
   - component: {fileID: 2536396873238575704}
+  - component: {fileID: 2414811012400815900}
+  - component: {fileID: 5310038893887154125}
   m_Layer: 0
   m_Name: sptp_building_03_cell.036
   m_TagString: Untagged
@@ -5423,7 +7570,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5457,6 +7604,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2414811012400815900
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136617436953028551}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5310038893887154125
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136617436953028551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7955218536835517846, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7220202077814237549
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,6 +7653,8 @@ GameObject:
   - component: {fileID: 987702525984346726}
   - component: {fileID: 3852119201224808940}
   - component: {fileID: 2536396874651562230}
+  - component: {fileID: 1775872294696236423}
+  - component: {fileID: 6801601538084532450}
   m_Layer: 0
   m_Name: sptp_building_03_cell.012
   m_TagString: Untagged
@@ -5517,7 +7703,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5551,6 +7737,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &1775872294696236423
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220202077814237549}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6801601538084532450
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220202077814237549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7554107769363625177, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7626155450868734381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,6 +7786,8 @@ GameObject:
   - component: {fileID: 6911150996632270680}
   - component: {fileID: 6605109915340010988}
   - component: {fileID: 2536396875004880601}
+  - component: {fileID: 8477945328893544073}
+  - component: {fileID: 4044917762800842052}
   m_Layer: 0
   m_Name: sptp_building_03_cell.044
   m_TagString: Untagged
@@ -5611,7 +7836,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5645,6 +7870,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &8477945328893544073
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7626155450868734381}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4044917762800842052
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7626155450868734381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8572738767276604561, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7873663671719591609
 GameObject:
   m_ObjectHideFlags: 0
@@ -5657,6 +7919,8 @@ GameObject:
   - component: {fileID: 8485096747587536811}
   - component: {fileID: 961705273237538683}
   - component: {fileID: 2536396873657986195}
+  - component: {fileID: 6900914949859846234}
+  - component: {fileID: 4247177034457706417}
   m_Layer: 0
   m_Name: sptp_building_03_cell.050
   m_TagString: Untagged
@@ -5705,7 +7969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5739,6 +8003,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6900914949859846234
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873663671719591609}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4247177034457706417
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873663671719591609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6952183218534780600, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &7984482131827275993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,6 +8052,8 @@ GameObject:
   - component: {fileID: 2330364654122836567}
   - component: {fileID: 4853593493661855534}
   - component: {fileID: 2536396874646173927}
+  - component: {fileID: 6736297440587552729}
+  - component: {fileID: 6724967403503251397}
   m_Layer: 0
   m_Name: sptp_building_03_cell.051
   m_TagString: Untagged
@@ -5799,7 +8102,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5833,6 +8136,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6736297440587552729
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984482131827275993}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6724967403503251397
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984482131827275993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -841102255127201180, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &8053920514642108669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5845,6 +8185,8 @@ GameObject:
   - component: {fileID: 7445874890621935215}
   - component: {fileID: 7497996359167339703}
   - component: {fileID: 2536396873733807776}
+  - component: {fileID: 6766291761312848635}
+  - component: {fileID: 6463970930363617084}
   m_Layer: 0
   m_Name: sptp_building_03_cell.034
   m_TagString: Untagged
@@ -5893,7 +8235,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5927,6 +8269,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &6766291761312848635
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053920514642108669}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6463970930363617084
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053920514642108669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3727786872033680800, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &8217030550660419515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,7 +8365,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6020,6 +8399,8 @@ GameObject:
   - component: {fileID: 6400144209102893825}
   - component: {fileID: 2230436206593302674}
   - component: {fileID: 2536396874309488753}
+  - component: {fileID: 5205447400629581364}
+  - component: {fileID: 3744899849977471068}
   m_Layer: 0
   m_Name: sptp_building_03_cell.026
   m_TagString: Untagged
@@ -6068,7 +8449,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6102,6 +8483,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &5205447400629581364
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329726182081217786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3744899849977471068
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329726182081217786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1764805598753022461, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &8746528120298454237
 GameObject:
   m_ObjectHideFlags: 0
@@ -6114,6 +8532,8 @@ GameObject:
   - component: {fileID: 4692032866857688294}
   - component: {fileID: 8314628973700312440}
   - component: {fileID: 2536396874501822333}
+  - component: {fileID: 4794937483876619941}
+  - component: {fileID: 3045442634732292376}
   m_Layer: 0
   m_Name: sptp_building_03_cell.057
   m_TagString: Untagged
@@ -6162,7 +8582,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6196,6 +8616,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &4794937483876619941
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746528120298454237}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &3045442634732292376
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746528120298454237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 989800814289482455, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &8770037256766489857
 GameObject:
   m_ObjectHideFlags: 0
@@ -6208,6 +8665,8 @@ GameObject:
   - component: {fileID: 3915717588022200811}
   - component: {fileID: 4630296546624409814}
   - component: {fileID: 2536396874820146155}
+  - component: {fileID: 2033524647924255622}
+  - component: {fileID: 7430380557964979092}
   m_Layer: 0
   m_Name: sptp_building_03_cell.066
   m_TagString: Untagged
@@ -6256,7 +8715,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6290,6 +8749,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2033524647924255622
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770037256766489857}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7430380557964979092
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770037256766489857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7903175671138074140, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &9032488310591111154
 GameObject:
   m_ObjectHideFlags: 0
@@ -6302,6 +8798,8 @@ GameObject:
   - component: {fileID: 3122649675358294278}
   - component: {fileID: 8601890541953566576}
   - component: {fileID: 2536396874676601290}
+  - component: {fileID: 12034582604454239}
+  - component: {fileID: 7685919582431625818}
   m_Layer: 0
   m_Name: sptp_building_03_cell.062
   m_TagString: Untagged
@@ -6350,7 +8848,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6384,6 +8882,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &12034582604454239
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032488310591111154}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7685919582431625818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032488310591111154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5480526474849790242, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
 --- !u!1 &9106036253533831152
 GameObject:
   m_ObjectHideFlags: 0
@@ -6396,6 +8931,8 @@ GameObject:
   - component: {fileID: 2948534243027241661}
   - component: {fileID: 5204960864084124194}
   - component: {fileID: 2536396874331594794}
+  - component: {fileID: 2593880407859017429}
+  - component: {fileID: 5791965013517064285}
   m_Layer: 0
   m_Name: sptp_building_03_cell.020
   m_TagString: Untagged
@@ -6444,7 +8981,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc5c571bbbc3d948ada09120e19266f, type: 2}
+  - {fileID: 2100000, guid: 51a8aa8166a213e4b8a06046be7dd3bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6478,3 +9015,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSettingTransparent: 0.5
+  _timeBeforeDestroy: 3
+  _delayBeforeSetTransparentMaterial: 1
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _radius: 2
+--- !u!54 &2593880407859017429
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106036253533831152}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5791965013517064285
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106036253533831152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 681878063261607985, guid: 6b8d72f252329c54cb5b052ca72fb9fd, type: 3}
