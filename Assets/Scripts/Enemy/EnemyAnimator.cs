@@ -26,10 +26,16 @@ public class EnemyAnimator : MonoBehaviour
         _animator.SetBool(Params.HangRope, true);
     }
 
+    public void Fall()
+    {
+        _animator.SetBool(Params.Fall, true);
+    }
+
     public class Params
     {
         public const string Run = "Run";
         public const string PullRope = "PullRope";
         public const string HangRope = "HangRope";
+        public const string Fall = "Fall";
     }
 }

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyContainer : MonoBehaviour
 {
-    [SerializeField] private LayerMask _enemy;
-    
     [SerializeField] private Rigidbody _rigidbody;
     
     [SerializeField] private SphereCollider _sphereCollider;
@@ -16,7 +14,7 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private float _stepAddScaleCollider = 0.05f;
-    [SerializeField] private float _delayBeforeStartFly = 0.5f;
+    
     
     [SerializeField] private Player _player;
     [SerializeField] private float _currentDistance;
@@ -52,11 +50,24 @@ public class EnemyContainer : MonoBehaviour
             enemy.EnemyAnimator.PullRope();
             enemy.ThrowLassoOnPlayer();
             enemy.SwitchOffMovement();
+
+
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out Enemy enemy))
+        {
+            enemy.TakeOffLasso();
+        }
+    }
+
+
+
     public void StartFly()
     {
+        _sphereCollider.enabled = false;
         StartCoroutine(SmoothStartFly());
 
         foreach (var enemy in _enemies)
@@ -95,8 +106,8 @@ public class EnemyContainer : MonoBehaviour
         _rigidbody.velocity = transform.forward * _speed;
     }
 
-    public void ThrowOutStickman()
+    public void ThrowOutStickman(Enemy enemy)
     {
-        _enemies
+        _enemies.Remove(enemy);
     }
 }

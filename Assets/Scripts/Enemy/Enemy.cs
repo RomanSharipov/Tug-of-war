@@ -10,8 +10,11 @@ using RunnerMovementSystem;
 [RequireComponent(typeof(MovementSystem))]
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float _radiusSphereOverlast = 1f;
     [SerializeField] private CableProceduralCurve _cableProceduralCurve;
     [SerializeField] private int _damage;
+    [SerializeField] private LayerMask _ground;
+    [SerializeField] private float _speedFlowDown;
 
     private EnemyMovement _enemyMovement;
     private EnemyContainer _enemyContainer;
@@ -23,7 +26,8 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private Vector3 _direction;
     private Quaternion _targetRotation;
-
+    private Collider[] _colliders;
+    private CapsuleCollider _capsuleCollider;
 
     public Player Player => _player;
     public EnemyMovement EnemyMovement => _enemyMovement;
@@ -40,6 +44,7 @@ public class Enemy : MonoBehaviour
         _player = player;
         _transform = GetComponent<Transform>();
         _rigidbody = GetComponent<Rigidbody>();
+        _capsuleCollider = GetComponent<CapsuleCollider>();
         _enemyMovement = new EnemyMovement();
         _enemyMovement.Init(_transform);
         _enemyStateMachine = GetComponent<EnemyStateMachine>();
@@ -51,12 +56,22 @@ public class Enemy : MonoBehaviour
         _player.ModelWasChanged += SwitchEndPointLasso;
     }
 
+
+
     public void ThrowLassoOnPlayer()
     {
         LookOnTarget();
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Time.timeScale = 0.01f;
+        }
     }
 
     public void SwitchEndPointLasso()
@@ -89,7 +104,27 @@ public class Enemy : MonoBehaviour
     {
         _cableProceduralCurve.gameObject.SetActive(false);
         transform.parent = null;
-        gameObject.AddComponent<Rigidbody>();
+        _capsuleCollider.enabled = false;
+        //gameObject.AddComponent<Rigidbody>();
+        StartCoroutine(FlowDown());
+        _enemyContainer.ThrowOutStickman(this);
+    }
+
+
+    private IEnumerator FlowDown()
+    {
+        while (IsGroundNearby() == false)
+        {
+            transform.Translate(-Vector3.up * _speedFlowDown * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    public bool IsGroundNearby()
+    {
+        _colliders = Physics.OverlapSphere(transform.position, _radiusSphereOverlast, _ground);
+        
+        return _colliders.Length > 0;
     }
 
 }

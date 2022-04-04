@@ -1406,8 +1406,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b47a9e6819376b4194d9db91cc34a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _radiusSphereOverlast: 1
   _cableProceduralCurve: {fileID: 8815846913539994496}
   _damage: 5
+  _ground:
+    serializedVersion: 2
+    m_Bits: 128
+  _speedFlowDown: 1
 --- !u!114 &8815846913506578272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1496,7 +1501,6 @@ MonoBehaviour:
   _enemy:
     serializedVersion: 2
     m_Bits: 64
-  _enemyContainer: {fileID: 0}
   _speed: 35
 --- !u!54 &5422166415012149292
 Rigidbody:

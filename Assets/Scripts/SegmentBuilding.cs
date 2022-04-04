@@ -35,6 +35,8 @@ public class SegmentBuilding : MonoBehaviour
 
     public void SwithOnRigidbody()
     {
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
         gameObject.SetActive(true);
         _rigidbody.isKinematic = false;
         _meshCollider.enabled = true;

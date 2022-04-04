@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2536396874634570216}
   - component: {fileID: 4918806650692812527}
   - component: {fileID: 290351710760025884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,12 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4918806650692812527
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,7 +142,7 @@ GameObject:
   - component: {fileID: 2536396874984732607}
   - component: {fileID: 225598763575333781}
   - component: {fileID: 2270420770950133472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,12 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &225598763575333781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -280,7 +270,7 @@ GameObject:
   - component: {fileID: 2536396873174884268}
   - component: {fileID: 8689782760178330565}
   - component: {fileID: 2549787871934356032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,12 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8689782760178330565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -413,7 +398,7 @@ GameObject:
   - component: {fileID: 2536396873401401437}
   - component: {fileID: 4701656435310676263}
   - component: {fileID: 15402677159928795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,12 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4701656435310676263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -546,7 +526,7 @@ GameObject:
   - component: {fileID: 2536396873046679611}
   - component: {fileID: 8334385629680543068}
   - component: {fileID: 2241708858860054327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,12 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8334385629680543068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -679,7 +654,7 @@ GameObject:
   - component: {fileID: 2536396874032616829}
   - component: {fileID: 3372973340684289138}
   - component: {fileID: 8746283434505468757}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,12 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3372973340684289138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -812,7 +782,7 @@ GameObject:
   - component: {fileID: 2536396873691987743}
   - component: {fileID: 5054463846582009004}
   - component: {fileID: 7221038782152810161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,12 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5054463846582009004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -945,7 +910,7 @@ GameObject:
   - component: {fileID: 2536396873115562174}
   - component: {fileID: 8481414839592701037}
   - component: {fileID: 1861478822690478091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,12 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8481414839592701037
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1078,7 +1038,7 @@ GameObject:
   - component: {fileID: 2536396874995707827}
   - component: {fileID: 1650663480651040286}
   - component: {fileID: 493200505369037955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,12 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1650663480651040286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1211,7 +1166,7 @@ GameObject:
   - component: {fileID: 2536396874970045719}
   - component: {fileID: 787094525197570938}
   - component: {fileID: 2836052065034563512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,12 +1249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &787094525197570938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1344,7 +1294,7 @@ GameObject:
   - component: {fileID: 2536396874881251440}
   - component: {fileID: 3032184825930829425}
   - component: {fileID: 2141073898244483958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,12 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3032184825930829425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1477,7 +1422,7 @@ GameObject:
   - component: {fileID: 2536396873673598567}
   - component: {fileID: 1510673000153178423}
   - component: {fileID: 8483411752358140647}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.059
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,12 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1510673000153178423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1610,7 +1550,7 @@ GameObject:
   - component: {fileID: 2536396873972705576}
   - component: {fileID: 3448496991022899793}
   - component: {fileID: 7105685671513963612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,12 +1633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3448496991022899793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1743,7 +1678,7 @@ GameObject:
   - component: {fileID: 2536396874156846693}
   - component: {fileID: 5013584019471733067}
   - component: {fileID: 369626211832507122}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1826,12 +1761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5013584019471733067
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1876,7 +1806,7 @@ GameObject:
   - component: {fileID: 2536396874301111070}
   - component: {fileID: 7791089433631337169}
   - component: {fileID: 1226670894969234459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1959,12 +1889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &7791089433631337169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2009,7 +1934,7 @@ GameObject:
   - component: {fileID: 2536396873179525311}
   - component: {fileID: 4722898487422004463}
   - component: {fileID: 5691478183054873470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2092,12 +2017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4722898487422004463
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2142,7 +2062,7 @@ GameObject:
   - component: {fileID: 2536396874491202505}
   - component: {fileID: 5881619490805778066}
   - component: {fileID: 2768456490246932959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2225,12 +2145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5881619490805778066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2275,7 +2190,7 @@ GameObject:
   - component: {fileID: 2536396874366514388}
   - component: {fileID: 3918386834722819048}
   - component: {fileID: 3162938433866669112}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,12 +2273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3918386834722819048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2408,7 +2318,7 @@ GameObject:
   - component: {fileID: 2536396874260052377}
   - component: {fileID: 2402252692348554294}
   - component: {fileID: 7961495154344067144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2491,12 +2401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2402252692348554294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2541,7 +2446,7 @@ GameObject:
   - component: {fileID: 2536396874742417127}
   - component: {fileID: 1509506145740149752}
   - component: {fileID: 8040176239922802928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2624,12 +2529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1509506145740149752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2674,7 +2574,7 @@ GameObject:
   - component: {fileID: 2536396873109248703}
   - component: {fileID: 4705244217569086173}
   - component: {fileID: 1112499115873122418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.058
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2757,12 +2657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4705244217569086173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2807,7 +2702,7 @@ GameObject:
   - component: {fileID: 2536396874116459446}
   - component: {fileID: 9216628256607456898}
   - component: {fileID: 4889668918308284628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2890,12 +2785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &9216628256607456898
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2940,7 +2830,7 @@ GameObject:
   - component: {fileID: 2536396873872928511}
   - component: {fileID: 1002064563606865110}
   - component: {fileID: 3691575392456660049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3023,12 +2913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1002064563606865110
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3073,7 +2958,7 @@ GameObject:
   - component: {fileID: 2536396873288620927}
   - component: {fileID: 7872219786450656613}
   - component: {fileID: 1132808903239628407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,12 +3041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &7872219786450656613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3206,7 +3086,7 @@ GameObject:
   - component: {fileID: 2536396874284132731}
   - component: {fileID: 6843908978591424265}
   - component: {fileID: 8032133121166754806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3289,12 +3169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6843908978591424265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3339,7 +3214,7 @@ GameObject:
   - component: {fileID: 2536396872990714935}
   - component: {fileID: 1279749031388818494}
   - component: {fileID: 7435611069751492254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,12 +3297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1279749031388818494
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3650,7 +3520,8 @@ MonoBehaviour:
   - {fileID: 2536396874777039807}
   - {fileID: 2536396874820146155}
   _unitedBuilding: {fileID: 8217030550660419515}
-  _delayBeforeDestroy: 4
+  _delayBeforeDestroySegment: 4
+  _delayBeforeCrushBuilding: 0.2
 --- !u!1 &3493976510174314922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,7 +3536,7 @@ GameObject:
   - component: {fileID: 2536396874280575663}
   - component: {fileID: 2700387921961300752}
   - component: {fileID: 6356474068973858482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.063
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3748,12 +3619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2700387921961300752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3798,7 +3664,7 @@ GameObject:
   - component: {fileID: 2536396874777039807}
   - component: {fileID: 8219026651186093105}
   - component: {fileID: 1912511974696161930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.065
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3881,12 +3747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8219026651186093105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3931,7 +3792,7 @@ GameObject:
   - component: {fileID: 2536396873977770494}
   - component: {fileID: 1021169955219246706}
   - component: {fileID: 2699746953930624551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4014,12 +3875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1021169955219246706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4064,7 +3920,7 @@ GameObject:
   - component: {fileID: 2536396873738723608}
   - component: {fileID: 3271227023610046181}
   - component: {fileID: 8028368209701707493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4147,12 +4003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3271227023610046181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4197,7 +4048,7 @@ GameObject:
   - component: {fileID: 2536396873658307522}
   - component: {fileID: 6085405823595423789}
   - component: {fileID: 3975744878828523413}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4280,12 +4131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6085405823595423789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4330,7 +4176,7 @@ GameObject:
   - component: {fileID: 2536396873733092513}
   - component: {fileID: 5154676899839635438}
   - component: {fileID: 3704572477062484234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4413,12 +4259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5154676899839635438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4463,7 +4304,7 @@ GameObject:
   - component: {fileID: 2536396874158741095}
   - component: {fileID: 5629882961955161142}
   - component: {fileID: 5315719459706000745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4546,12 +4387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5629882961955161142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4596,7 +4432,7 @@ GameObject:
   - component: {fileID: 2536396873774211255}
   - component: {fileID: 4717289687728108415}
   - component: {fileID: 8611327670799566023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4679,12 +4515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4717289687728108415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4729,7 +4560,7 @@ GameObject:
   - component: {fileID: 2536396874083489527}
   - component: {fileID: 8445670295491120102}
   - component: {fileID: 1685403109030158035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4812,12 +4643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8445670295491120102
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4862,7 +4688,7 @@ GameObject:
   - component: {fileID: 2536396875026895150}
   - component: {fileID: 1484784978861876611}
   - component: {fileID: 6638353157842939594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4945,12 +4771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1484784978861876611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4995,7 +4816,7 @@ GameObject:
   - component: {fileID: 2536396873345729086}
   - component: {fileID: 5587522294878269057}
   - component: {fileID: 7494570830295442685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5078,12 +4899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5587522294878269057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5128,7 +4944,7 @@ GameObject:
   - component: {fileID: 2536396874970592898}
   - component: {fileID: 2625973347897736356}
   - component: {fileID: 7494958513835361668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5211,12 +5027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2625973347897736356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5261,7 +5072,7 @@ GameObject:
   - component: {fileID: 2536396874040146418}
   - component: {fileID: 5476442678328147987}
   - component: {fileID: 5023426258070959013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5344,12 +5155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5476442678328147987
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5394,7 +5200,7 @@ GameObject:
   - component: {fileID: 2536396874993605074}
   - component: {fileID: 6013621676454014626}
   - component: {fileID: 4656190824887882584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5477,12 +5283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6013621676454014626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5527,7 +5328,7 @@ GameObject:
   - component: {fileID: 2536396873523995741}
   - component: {fileID: 1887155189018093515}
   - component: {fileID: 2054201898389477220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5610,12 +5411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1887155189018093515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5660,7 +5456,7 @@ GameObject:
   - component: {fileID: 2536396873139009698}
   - component: {fileID: 5296549085567679180}
   - component: {fileID: 8910626594625001679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5743,12 +5539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5296549085567679180
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5793,7 +5584,7 @@ GameObject:
   - component: {fileID: 2536396875101520175}
   - component: {fileID: 942127987824732709}
   - component: {fileID: 7185751291113368904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.060
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5876,12 +5667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &942127987824732709
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5926,7 +5712,7 @@ GameObject:
   - component: {fileID: 2536396873305793591}
   - component: {fileID: 3060282355569670142}
   - component: {fileID: 4101077192514878978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6009,12 +5795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3060282355569670142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6059,7 +5840,7 @@ GameObject:
   - component: {fileID: 2536396873780161957}
   - component: {fileID: 3239109725790847048}
   - component: {fileID: 4699976475506401223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.056
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6142,12 +5923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3239109725790847048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6192,7 +5968,7 @@ GameObject:
   - component: {fileID: 2536396873197113807}
   - component: {fileID: 3376732010238339965}
   - component: {fileID: 2243050382998370567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6275,12 +6051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3376732010238339965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6325,7 +6096,7 @@ GameObject:
   - component: {fileID: 2536396873637970086}
   - component: {fileID: 6096986459668966993}
   - component: {fileID: 4833616980700421390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6408,12 +6179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6096986459668966993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6458,7 +6224,7 @@ GameObject:
   - component: {fileID: 2536396873477123357}
   - component: {fileID: 4237824380598100162}
   - component: {fileID: 650162042686990149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6541,12 +6307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4237824380598100162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6591,7 +6352,7 @@ GameObject:
   - component: {fileID: 2536396873027091963}
   - component: {fileID: 3539359449974651690}
   - component: {fileID: 3578556890612195505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.064
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6674,12 +6435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &3539359449974651690
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6724,7 +6480,7 @@ GameObject:
   - component: {fileID: 2536396874928007367}
   - component: {fileID: 4636669519102971726}
   - component: {fileID: 8454161381778701822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6807,12 +6563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4636669519102971726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6857,7 +6608,7 @@ GameObject:
   - component: {fileID: 2536396873338400264}
   - component: {fileID: 47943658675434435}
   - component: {fileID: 6724610874720179836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6940,12 +6691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &47943658675434435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6990,7 +6736,7 @@ GameObject:
   - component: {fileID: 2536396873700540622}
   - component: {fileID: 4506844177216721387}
   - component: {fileID: 4499516507104685950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7073,12 +6819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4506844177216721387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7123,7 +6864,7 @@ GameObject:
   - component: {fileID: 2536396873609552631}
   - component: {fileID: 4454915456057599088}
   - component: {fileID: 1720208466787505650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7206,12 +6947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4454915456057599088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7256,7 +6992,7 @@ GameObject:
   - component: {fileID: 2536396874622970017}
   - component: {fileID: 2860494875512240415}
   - component: {fileID: 5384915489516012750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7339,12 +7075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2860494875512240415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7389,7 +7120,7 @@ GameObject:
   - component: {fileID: 2536396874252506868}
   - component: {fileID: 8051348024973345152}
   - component: {fileID: 6332377822896904747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7472,12 +7203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8051348024973345152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7522,7 +7248,7 @@ GameObject:
   - component: {fileID: 2536396873238575704}
   - component: {fileID: 2414811012400815900}
   - component: {fileID: 5310038893887154125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7605,12 +7331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2414811012400815900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7655,7 +7376,7 @@ GameObject:
   - component: {fileID: 2536396874651562230}
   - component: {fileID: 1775872294696236423}
   - component: {fileID: 6801601538084532450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7738,12 +7459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &1775872294696236423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7788,7 +7504,7 @@ GameObject:
   - component: {fileID: 2536396875004880601}
   - component: {fileID: 8477945328893544073}
   - component: {fileID: 4044917762800842052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7871,12 +7587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &8477945328893544073
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7921,7 +7632,7 @@ GameObject:
   - component: {fileID: 2536396873657986195}
   - component: {fileID: 6900914949859846234}
   - component: {fileID: 4247177034457706417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8004,12 +7715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6900914949859846234
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8054,7 +7760,7 @@ GameObject:
   - component: {fileID: 2536396874646173927}
   - component: {fileID: 6736297440587552729}
   - component: {fileID: 6724967403503251397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8137,12 +7843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6736297440587552729
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8187,7 +7888,7 @@ GameObject:
   - component: {fileID: 2536396873733807776}
   - component: {fileID: 6766291761312848635}
   - component: {fileID: 6463970930363617084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8270,12 +7971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &6766291761312848635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8401,7 +8097,7 @@ GameObject:
   - component: {fileID: 2536396874309488753}
   - component: {fileID: 5205447400629581364}
   - component: {fileID: 3744899849977471068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8484,12 +8180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &5205447400629581364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8534,7 +8225,7 @@ GameObject:
   - component: {fileID: 2536396874501822333}
   - component: {fileID: 4794937483876619941}
   - component: {fileID: 3045442634732292376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8617,12 +8308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &4794937483876619941
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8667,7 +8353,7 @@ GameObject:
   - component: {fileID: 2536396874820146155}
   - component: {fileID: 2033524647924255622}
   - component: {fileID: 7430380557964979092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.066
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8750,12 +8436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2033524647924255622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8800,7 +8481,7 @@ GameObject:
   - component: {fileID: 2536396874676601290}
   - component: {fileID: 12034582604454239}
   - component: {fileID: 7685919582431625818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8883,12 +8564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &12034582604454239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8933,7 +8609,7 @@ GameObject:
   - component: {fileID: 2536396874331594794}
   - component: {fileID: 2593880407859017429}
   - component: {fileID: 5791965013517064285}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sptp_building_03_cell.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9016,12 +8692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedSettingTransparent: 0.5
-  _timeBeforeDestroy: 3
   _delayBeforeSetTransparentMaterial: 1
-  _ground:
-    serializedVersion: 2
-    m_Bits: 128
-  _radius: 2
 --- !u!54 &2593880407859017429
 Rigidbody:
   m_ObjectHideFlags: 0
