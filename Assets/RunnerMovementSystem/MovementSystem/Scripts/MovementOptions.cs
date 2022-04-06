@@ -21,19 +21,22 @@ namespace RunnerMovementSystem
 
         public void ReduceSpeed(float value)
         {
-            if (_moveSpeed > _minSpeed)
-            {
-                _moveSpeed -= value;
-            }
-
+            //if (_moveSpeed > _minSpeed)
+            //{
+            //    _moveSpeed -= value;
+            //}
+            
+            SetSpeed(_moveSpeed -= value);
         }
 
         public void AddSpeed(float stepAddSpeed)
         {
-            if (_moveSpeed < _maxSpeed)
-            {
-                _moveSpeed += stepAddSpeed;
-            }
+            //if (_moveSpeed < _maxSpeed)
+            //{
+            //    _moveSpeed += stepAddSpeed;
+            //}
+
+            SetSpeed(_moveSpeed += stepAddSpeed);
         }
 
         public void Stop()
@@ -42,9 +45,22 @@ namespace RunnerMovementSystem
             _moveSpeed = 0;
         }
 
-        public void StartMove()
+        public void SetSpeed(float value)
         {
-            _moveSpeed = _lastValueSpeed;
+            if (value > _maxSpeed)
+            {
+                _moveSpeed = _maxSpeed;
+            }
+
+            if (value <= _minSpeed)
+            {
+                _moveSpeed = _minSpeed;
+            }
+
+            else
+            {
+                _moveSpeed = value;
+            }
         }
 
     }

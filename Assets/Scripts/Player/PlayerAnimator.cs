@@ -6,11 +6,15 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField] private float _minSpeed = 0.1f;
+    [SerializeField] private float _stepReduceAnimationSpeed = 0.05f;
+    
+    [SerializeField] private float _minSpeed = 0.5f;
     [SerializeField] private float _maxSpeed = 1.5f;
 
     private Animator _animator;
     private Player _player;
+
+    public float CurrentSpeed => _animator.speed;
 
     public void Init(Player player)
     {
@@ -21,19 +25,31 @@ public class PlayerAnimator : MonoBehaviour
         _player.StartedMoving += OnStart;
     }
 
-    public void SlowDownAnimation(float value)
+    public void ReduceSpeedAnimation(float value)
     {
-        if (_animator.speed > _minSpeed) 
-        {
-            _animator.speed -= value;
-        }
+        SetSpeed(_animator.speed -= _stepReduceAnimationSpeed);
     }
 
-    public void SlowUpAnimation(float value)
+    public void AddSpeedAnimation(float value)
     {
-        if (_animator.speed < _maxSpeed)
+        SetSpeed(_animator.speed += value);
+    }
+
+    public void SetSpeed(float value)
+    {
+        if (value > _maxSpeed)
         {
-            _animator.speed += value;
+            _animator.speed = _maxSpeed;
+        }
+
+        if (value <= _minSpeed)
+        {
+            _animator.speed = _minSpeed;
+        }
+
+        else
+        {
+            _animator.speed = value;
         }
     }
 
@@ -45,13 +61,11 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnStop()
     {
-        _animator.speed = 1;
         _animator.SetTrigger(Params.Stop);
     }
 
     private void OnStart()
     {
-        _animator.speed = 1;
         _animator.SetTrigger(Params.Start);
     }
 
@@ -68,4 +82,6 @@ public class PlayerAnimator : MonoBehaviour
         _player.StoppedMoving -= OnStop;
         _player.StartedMoving -= OnStart;
     }
+
+    
 }

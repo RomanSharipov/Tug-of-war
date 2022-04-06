@@ -109,18 +109,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0c72b671750e84c833c2b2d49bc3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy:
-    serializedVersion: 2
-    m_Bits: 64
   _rigidbody: {fileID: 5775558568538223526}
   _sphereCollider: {fileID: 5775558568538223578}
   _speed: 21
   _speedReduceDistance: 2
   _maxDistanceToPlayer: 15
-  _targetHeight: 5
+  _targetHeight: 3
   _speedStartFly: 8
   _stepAddScaleCollider: 0.05
-  _delayBeforeStartFly: 2
   _player: {fileID: 0}
   _currentDistance: 0
 --- !u!54 &5775558568538223526

@@ -23,8 +23,6 @@ public class EndRoad : MonoBehaviour
             player.StopMove();
 
             _switcherButton.SwitchOnButton();
-            //_switcherButton.Button.onClick.AddListener(() => { player.MovementSystem.MovementOptions.StartWalk(); });
-
         }
     }
 }

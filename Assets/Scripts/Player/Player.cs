@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _throwLassoPoint;
     [SerializeField] private Transform _enemyContainerPoint;
     [SerializeField] private float _stepReduceSpeed;
-    [SerializeField] private float _stepReduceAnimationSpeed = 0.1f;
+    
+    [SerializeField] private float _speedAfterEndRoad = 25f;
+    [SerializeField] private float _speedAnimationAfterEndRoad = 1.5f;
     [SerializeField] private int _health = 100;
     [SerializeField] private Venom[] _modelsPlayer;
 
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
             _mouseInput.enabled = false;
         }
         _movementSystem.MovementOptions.ReduceSpeed(GetTotalValue(damage));
-        CurrentModelVenom.PlayerAnimator.SlowDownAnimation(_stepReduceAnimationSpeed);
+        CurrentModelVenom.PlayerAnimator.ReduceSpeedAnimation(_speedAnimationAfterEndRoad);
     }
 
     public void TakeHealth(int health)
@@ -86,6 +88,7 @@ public class Player : MonoBehaviour
         _modelsPlayer[1].gameObject.SetActive(true);
         
         _currentModelVenom = _modelsPlayer[1];
+        _currentModelVenom.PlayerAnimator.SetSpeed(_modelsPlayer[0].PlayerAnimator.CurrentSpeed);
         ModelWasChanged?.Invoke();
     }
 
@@ -114,7 +117,8 @@ public class Player : MonoBehaviour
 
     public void StartMove()
     {
-        MovementSystem.MovementOptions.StartMove();
+        MovementSystem.MovementOptions.SetSpeed(_speedAfterEndRoad);
+        CurrentModelVenom.PlayerAnimator.SetSpeed(_speedAnimationAfterEndRoad);
         StartedMoving?.Invoke();
     }
 

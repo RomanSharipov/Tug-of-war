@@ -1223,8 +1223,8 @@ MonoBehaviour:
     m_Bits: 8
   _frequencyChecking: 0.2
   _radius: 1
-  _rewardAmount: 10
-  _stepAddAnimationSpeed: 0.15
+  _rewardAmount: 5
+  _stepAddAnimationSpeed: 0.05
 --- !u!95 &8036130501186225181
 Animator:
   serializedVersion: 3

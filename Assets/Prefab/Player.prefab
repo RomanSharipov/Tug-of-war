@@ -145,7 +145,8 @@ MonoBehaviour:
   _throwLassoPoint: {fileID: 8685593250365860215}
   _enemyContainerPoint: {fileID: 8685593248302424910}
   _stepReduceSpeed: 0.5
-  _stepReduceAnimationSpeed: 0.05
+  _speedAfterEndRoad: 30
+  _speedAnimationAfterEndRoad: 1.5
   _health: 100
   _modelsPlayer:
   - {fileID: 8685593249803315522}
@@ -182,7 +183,7 @@ MonoBehaviour:
     _rotationSpeed: 20
     _borderOffset: 2
     _minSpeed: 0
-    _maxSpeed: 25
+    _maxSpeed: 30
 --- !u!114 &8685593248770231540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513aae5c83c76049a12135ab6a6eca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpeed: 0.1
+  _stepReduceAnimationSpeed: 0.05
+  _minSpeed: 0.05
   _maxSpeed: 1.5
 --- !u!114 &8685593249803315522
 MonoBehaviour:
@@ -480,5 +482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513aae5c83c76049a12135ab6a6eca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minSpeed: 0.1
+  _stepReduceAnimationSpeed: 0.05
+  _minSpeed: 0.05
   _maxSpeed: 1.5
