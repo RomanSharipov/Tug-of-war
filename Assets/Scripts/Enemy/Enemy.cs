@@ -15,7 +15,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _ground;
     [SerializeField] private float _speedFlowDown;
+    [SerializeField] private ParticleSystem _airTrail;
 
+    
     private EnemyMovement _enemyMovement;
     private EnemyContainer _enemyContainer;
     private MovementSystem _movementOnWay;
@@ -105,9 +107,10 @@ public class Enemy : MonoBehaviour
         _cableProceduralCurve.gameObject.SetActive(false);
         transform.parent = null;
         _capsuleCollider.enabled = false;
-        //gameObject.AddComponent<Rigidbody>();
         StartCoroutine(FlowDown());
         _enemyContainer.ThrowOutStickman(this);
+        EnemyAnimator.Fall();
+        _airTrail.gameObject.SetActive(false);
     }
 
 
@@ -125,6 +128,13 @@ public class Enemy : MonoBehaviour
         _colliders = Physics.OverlapSphere(transform.position, _radiusSphereOverlast, _ground);
         
         return _colliders.Length > 0;
+    }
+
+    public void StartFly()
+    {
+        EnemyAnimator.HangRope();
+        _airTrail.gameObject.SetActive(true);
+
     }
 
 }

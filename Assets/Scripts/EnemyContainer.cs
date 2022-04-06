@@ -63,8 +63,6 @@ public class EnemyContainer : MonoBehaviour
         }
     }
 
-
-
     public void StartFly()
     {
         _sphereCollider.enabled = false;
@@ -72,7 +70,7 @@ public class EnemyContainer : MonoBehaviour
 
         foreach (var enemy in _enemies)
         {
-            enemy.EnemyAnimator.HangRope();
+            enemy.StartFly();
         }
     }
 
