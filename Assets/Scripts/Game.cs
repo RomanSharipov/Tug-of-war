@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Enemy _enemyTemplate;
     [SerializeField] private RoadSegment _roadSegment;
     [SerializeField] private Button _button;
+    [SerializeField] private RoadSegment _secondRoad;
 
     private Player _player;
     private EnemyContainer _enemyContainer;
@@ -37,10 +38,13 @@ public class Game : MonoBehaviour
         _playerCamera.Init(_player);
         _endRoad.Init(_player.MovementSystem);
         _enemyContainer = Instantiate(_enemyContainerTemplate, _player.EnemyContainerPoint.position, _player.EnemyContainerPoint.rotation);
+        
         _enemyContainer.Init(_player);
         
         _buttonContinue.onClick.AddListener(_enemyContainer.StartFly);
         _buttonContinue.onClick.AddListener(_player.StartMove);
+        _buttonContinue.onClick.AddListener(delegate { _player.MovementSystem.Init(_secondRoad); });
+        
         _spawnerEnemies.Spawn(_player, _enemyContainer, _roadSegment);
         _spawnerRewards.Spawn();
         _spawnerBuildings.Spawn();

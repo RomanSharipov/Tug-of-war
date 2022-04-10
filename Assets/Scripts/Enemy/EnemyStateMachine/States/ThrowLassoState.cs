@@ -6,7 +6,6 @@ public class ThrowLassoState : State
 {
     [SerializeField] private float _radiusSphereOverlast;
     [SerializeField] private LayerMask _enemy;
-    
     [SerializeField] private float _speed;
 
     private Vector3 _direction;
@@ -19,11 +18,7 @@ public class ThrowLassoState : State
 
         if (IsEnemyNearby())
         {
-            Enemy.transform.SetParent(Enemy.EnemyContainer.transform);
-            Enemy.EnemyAnimator.PullRope();
             Enemy.ThrowLassoOnPlayer();
-            Enemy.SwitchOffMovement();
-            Enemy.EnemyContainer.AddEnemy(Enemy);
         }
     }
 
@@ -38,11 +33,7 @@ public class ThrowLassoState : State
 
     private void MoveOnPoint()
     {
-        _direction = Enemy.EnemyContainer.transform.position - transform.position;
-        _targetRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-
-        Enemy.Rigidbody.velocity = transform.forward * _speed;
+        transform.LookAt(new Vector3(Enemy.EnemyContainer.transform.position.x, transform.position.y, Enemy.EnemyContainer.transform.position.z));
+        transform.position += transform.forward * _speed * Time.deltaTime;
     }
-
 }

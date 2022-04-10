@@ -62,10 +62,15 @@ public class Enemy : MonoBehaviour
 
     public void ThrowLassoOnPlayer()
     {
-        LookOnTarget();
+        transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
+
+        transform.SetParent(EnemyContainer.transform);
+        EnemyAnimator.PullRope();
+        SwitchOffMovement();
+        EnemyContainer.AddEnemy(this);
     }
 
     private void Update()
@@ -91,15 +96,8 @@ public class Enemy : MonoBehaviour
         _enemyStateMachine.Current.enabled = false;
         _enemyStateMachine.enabled = false;
 
-        Destroy(_rigidbody);
+        //Destroy(_rigidbody);
         _movementOnWay.enabled = false;
-    }
-
-    public void LookOnTarget()
-    {
-        _direction = Player.transform.position - transform.position;
-        _targetRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 
     public void TakeOffLasso()

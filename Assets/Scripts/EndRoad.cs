@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EndRoad : MonoBehaviour
 {
-    [SerializeField] private RoadSegment roadSegment;
+    
     [SerializeField] private SwitcherButton _switcherButton;
 
     private MovementSystem _movementSystem;

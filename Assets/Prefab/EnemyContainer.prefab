@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5775558568538223579}
   - component: {fileID: 5775558568538223578}
   - component: {fileID: 5775558568538223527}
-  - component: {fileID: 5775558568538223526}
   m_Layer: 0
   m_Name: EnemyContainer
   m_TagString: Untagged
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5775558568538223581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -73.9, y: 0.94, z: -50.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,29 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0c72b671750e84c833c2b2d49bc3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 5775558568538223526}
+  _rigidbody: {fileID: 0}
   _sphereCollider: {fileID: 5775558568538223578}
   _speed: 21
-  _speedReduceDistance: 2
-  _maxDistanceToPlayer: 15
-  _targetHeight: 3
-  _speedStartFly: 8
-  _stepAddScaleCollider: 0.05
+  _speedReduceDistance: 0.5
+  _maxDistanceToPlayer: 25
+  _targetHeight: 8
+  _speedStartFly: 5
   _player: {fileID: 0}
   _currentDistance: 0
---- !u!54 &5775558568538223526
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775558568538223581}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 116
-  m_CollisionDetection: 0

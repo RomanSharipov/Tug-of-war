@@ -1225,6 +1225,9 @@ MonoBehaviour:
   _radius: 1
   _rewardAmount: 5
   _stepAddAnimationSpeed: 0.05
+  _targetRadius: 0.05
+  _speedReduceRadius: 10
+  _splashTemplate: {fileID: 8777422499143113481, guid: dcf8af1da7d8bef47bee7013543e671e, type: 3}
 --- !u!95 &8036130501186225181
 Animator:
   serializedVersion: 3

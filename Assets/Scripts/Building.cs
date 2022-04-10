@@ -26,7 +26,7 @@ public class Building : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeOffLasso();
-            //CrushBuilding();
+            
             Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
         }
     }

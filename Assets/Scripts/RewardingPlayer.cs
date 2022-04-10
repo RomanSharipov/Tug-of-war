@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,9 @@ public class RewardingPlayer : MonoBehaviour
     [SerializeField] private float _radius;
     [SerializeField] private int _rewardAmount = 5;
     [SerializeField] private float _stepAddAnimationSpeed = 0.05f;
+    [SerializeField] private float _targetRadius = 0.05f;
+    [SerializeField] private float _speedReduceRadius = 10f;
+    [SerializeField] private ParticleSystem _splashTemplate;
 
     private Animator _animator;
     private Collider[] _colliders;
@@ -31,6 +35,7 @@ public class RewardingPlayer : MonoBehaviour
 
     private void RewardPlayer(Player player)
     {
+        Instantiate(_splashTemplate,transform.position,transform.rotation);
         player.TakeHealth(_rewardAmount);
         if (player.CurrentHealth % player.UpgradingVenom.RequiredHealthForUpgrade == 0)
         {
@@ -38,6 +43,19 @@ public class RewardingPlayer : MonoBehaviour
         }
         
         player.CurrentModelVenom.PlayerAnimator.AddSpeedAnimation(_stepAddAnimationSpeed);
+        StartCoroutine(SmoothReduceScale());
+        
+    }
+
+    private IEnumerator SmoothReduceScale()
+    {
+        Vector3 targetScale = new Vector3();
+        targetScale.Set(_targetRadius, _targetRadius, _targetRadius);
+        while (transform.localScale.x > _targetRadius)
+        {
+            transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, _speedReduceRadius * Time.deltaTime);
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }

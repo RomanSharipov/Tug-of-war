@@ -5,53 +5,40 @@ using UnityEngine;
 
 public class EnemyContainer : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody;
-    
     [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private float _speed = 21f;
     [SerializeField] private float _speedReduceDistance = 2f;
-    [SerializeField] private float _maxDistanceToPlayer = 15f;
+    [SerializeField] private float _maxDistanceToPlayer = 25f;
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
-    [SerializeField] private float _stepAddScaleCollider = 0.05f;
-    
-    
     [SerializeField] private Player _player;
     [SerializeField] private float _currentDistance;
 
     private List<Enemy> _enemies = new List<Enemy>();
     private Vector3 _direction;
     private Quaternion _targetRotation;
-    
 
     public void Init(Player player)
     {
         _player = player;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        _currentDistance = Vector3.Distance(_player.transform.position, transform.position);
+        _currentDistance = Vector3.Distance(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z), transform.position);
         MoveToPlayer();
 
         if (_currentDistance > _maxDistanceToPlayer)
         {
             ReduceDistanceToPlayer();
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
-            AddEnemy(enemy);
-            enemy.transform.SetParent(transform);
-            enemy.EnemyAnimator.PullRope();
             enemy.ThrowLassoOnPlayer();
-            enemy.SwitchOffMovement();
-
-
         }
     }
 
@@ -78,7 +65,7 @@ public class EnemyContainer : MonoBehaviour
     {
         while (transform.position.y < _targetHeight)
         {
-            transform.Translate(Vector3.up * _speedStartFly * Time.deltaTime);
+            transform.position += Vector3.up * _speedStartFly * Time.deltaTime;
             yield return null;
         }
     }
@@ -86,22 +73,18 @@ public class EnemyContainer : MonoBehaviour
     public void AddEnemy(Enemy enemy)
     {
         _enemies.Add(enemy);
-        _sphereCollider.radius += _stepAddScaleCollider;
     }
 
     public void ReduceDistanceToPlayer()
     {
-        _rigidbody.velocity = transform.forward * _speed * _speedReduceDistance;
+        transform.position += transform.forward * _speed * _speedReduceDistance *Time.deltaTime;
     }
 
     private void MoveToPlayer()
     {
-        _speed = _player.MovementSystem.MovementOptions.MoveSpeed;
-        
-        _direction = _player.transform.position - transform.position;
-        _targetRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, _targetRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-        _rigidbody.velocity = transform.forward * _speed;
+        _speed = _player.MovementSystem.CurrentSpeed;
+        transform.LookAt(new Vector3(_player.transform.position.x,transform.position.y, _player.transform.position.z) );
+        transform.position += transform.forward * _speed * Time.deltaTime;
     }
 
     public void ThrowOutStickman(Enemy enemy)
