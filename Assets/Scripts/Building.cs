@@ -26,12 +26,10 @@ public class Building : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeOffLasso();
-            
+
             Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
         }
     }
-
-
 
     private void CrushBuilding()
     {

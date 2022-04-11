@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5775558568538223579}
   - component: {fileID: 5775558568538223578}
   - component: {fileID: 5775558568538223527}
+  - component: {fileID: 8171352193079394681}
   m_Layer: 0
   m_Name: EnemyContainer
   m_TagString: Untagged
@@ -108,12 +109,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0c72b671750e84c833c2b2d49bc3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
   _sphereCollider: {fileID: 5775558568538223578}
   _speed: 21
-  _speedReduceDistance: 0.5
-  _maxDistanceToPlayer: 25
-  _targetHeight: 8
+  _speedReduceDistance: 20
+  _speedRotate: 50
+  _maxDistanceToPlayer: 20
+  _minDistanceToPlayer: 15
+  _targetHeight: 14
   _speedStartFly: 5
-  _player: {fileID: 0}
   _currentDistance: 0
+  _maxRotationRight: {x: 0, y: -0.5, z: 0, w: 0}
+  _maxRotationLeft: {x: 0, y: 0.5, z: 0, w: 0}
+  _current: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8171352193079394681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775558568538223581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbf01f05c590664fb427503b75b51a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

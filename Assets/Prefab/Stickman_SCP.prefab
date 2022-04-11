@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5183881388596144508
 Transform:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2781410738928257789, guid: 12c884e12c35d2248ade42008880d5a6, type: 3}
+  - {fileID: 2100000, guid: 6f5982a8085e1604b91527802985d2f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9014106200528547327
 Transform:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6799276307020127681
 Transform:
   m_ObjectHideFlags: 0
@@ -857,9 +857,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8964088591131456171, guid: 12c884e12c35d2248ade42008880d5a6, type: 3}
-  - {fileID: 880774007180850119, guid: 12c884e12c35d2248ade42008880d5a6, type: 3}
-  - {fileID: 637949407474519127, guid: 12c884e12c35d2248ade42008880d5a6, type: 3}
+  - {fileID: 2100000, guid: 031000d989f810e42a92c84e85595891, type: 2}
+  - {fileID: 2100000, guid: 7fb42ed78681aaa40848d7203fc87871, type: 2}
+  - {fileID: 2100000, guid: e4d1338ad37f914428723ce428da88ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1179,7 +1179,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2274090305892019849, guid: 12c884e12c35d2248ade42008880d5a6, type: 3}
+  - {fileID: 2100000, guid: a3106369806dc584193317137035ace2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1414,6 +1414,9 @@ MonoBehaviour:
     m_Bits: 128
   _speedFlowDown: 1
   _airTrail: {fileID: 7106516273467529345}
+  _minHeight: 0
+  _maxHeight: 9
+  _speedSettingRandomHeight: 10
 --- !u!114 &8815846913506578272
 MonoBehaviour:
   m_ObjectHideFlags: 0

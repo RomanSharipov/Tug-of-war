@@ -4,9 +4,10 @@ using UnityEngine.Events;
 using System;
 using RunnerMovementSystem.Examples;
 
-[RequireComponent(typeof(Rigidbody))]
+
 [RequireComponent(typeof(MovementSystem))]
 [RequireComponent(typeof(UpgradingVenom))]
+[RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Transform _throwLassoPoint;
@@ -23,16 +24,19 @@ public class Player : MonoBehaviour
     private float _startSpeed;
     private MovementSystem _movementSystem;
     private EnemyContainer _enemyContainer;
-    private Rigidbody _rigidbody;
+    private PlayerMovement _playerMovement;
+    
+    
     private UpgradingVenom _upgradingVenom;
     private Venom _currentModelVenom;
     private MouseInput _mouseInput;
 
     public Transform Transform => _transform;
+    public PlayerMovement PlayerMovement => _playerMovement;
+    
     public Transform ThrowLassoPoint => _throwLassoPoint;
     public Transform EnemyContainerPoint => _enemyContainerPoint;
-    public Rigidbody Rigidbody => _rigidbody;
-    
+
     public MovementSystem MovementSystem => _movementSystem;
     public UpgradingVenom UpgradingVenom => _upgradingVenom;
     public int CurrentHealth => _health;
@@ -47,11 +51,13 @@ public class Player : MonoBehaviour
     public void Init(RoadSegment roadSegment)
     {
         _transform = GetComponent<Transform>();
-        _rigidbody = GetComponent<Rigidbody>();
+
         _movementSystem = GetComponent<MovementSystem>();
         _movementSystem.Init(roadSegment);
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerMovement.Init(_movementSystem);
         _upgradingVenom = GetComponent<UpgradingVenom>();
-        _upgradingVenom.Init(this);
+        //_upgradingVenom.Init(this);
         _upgradingVenom.WasGotNextLevel += ChangeModel;
         _startSpeed = MovementSystem.MovementOptions.MoveSpeed;
         _mouseInput = GetComponent<MouseInput>();

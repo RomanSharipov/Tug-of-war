@@ -19,10 +19,10 @@ public class UpgradingVenom : MonoBehaviour
     public event UnityAction PlayerWasUpgraded;
     public event UnityAction WasGotNextLevel;
 
-    public void Init(Player player)
-    {
-        _player = player;
-    }
+    //public void Init(Player player)
+    //{
+    //    _player = player;
+    //}
 
     public void UpgradeVenomLevel()
     {

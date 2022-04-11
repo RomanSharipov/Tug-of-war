@@ -16,8 +16,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask _ground;
     [SerializeField] private float _speedFlowDown;
     [SerializeField] private ParticleSystem _airTrail;
+    [SerializeField] private float _minHeight = 0;
+    [SerializeField] private float _maxHeight = 3;
+    [SerializeField] private float _speedSettingRandomHeight = 5;
+    [SerializeField] private Vector3 _targetPosition = new Vector3();
 
-    
+
     private EnemyMovement _enemyMovement;
     private EnemyContainer _enemyContainer;
     private MovementSystem _movementOnWay;
@@ -132,7 +136,23 @@ public class Enemy : MonoBehaviour
     {
         EnemyAnimator.HangRope();
         _airTrail.gameObject.SetActive(true);
+        SetRandomHeight();
+    }
 
+    private void SetRandomHeight()
+    {
+        StartCoroutine(SmoothSetRandomHeight());
+    }
+
+    private IEnumerator SmoothSetRandomHeight()
+    {
+        _targetPosition.Set(transform.position.x, Random.Range(_minHeight,_maxHeight), transform.position.z);
+
+        while (transform.position.y < _targetPosition.y)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speedSettingRandomHeight * Time.deltaTime);
+            yield return null;
+        }
     }
 
 }

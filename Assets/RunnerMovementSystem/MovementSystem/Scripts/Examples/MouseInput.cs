@@ -49,7 +49,7 @@ namespace RunnerMovementSystem.Examples
             {
                 IsMoved = false;
             }
-            _roadMovement.MoveForward();
+            
         }
     }
 }
