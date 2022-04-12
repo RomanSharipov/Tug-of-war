@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roadMovement: {fileID: 8685593248770231543}
-  _sensitivity: 0.05
+  _sensitivity: 0.02
 --- !u!114 &8685593248770231543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentLevelVenom: 1
-  _stepAddScale: 1
+  _stepAddScale: 0.5
   _speedGrowScale: 20
   _requiredHealthForUpgrade: 4
   _levelVenomForNextLevel: 4
