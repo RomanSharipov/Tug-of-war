@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     private UpgradingVenom _upgradingVenom;
     private Venom _currentModelVenom;
     private MouseInput _mouseInput;
+    private RoadSegment _secondRoad;
 
     public Transform Transform => _transform;
     public PlayerMovement PlayerMovement => _playerMovement;
@@ -42,18 +43,20 @@ public class Player : MonoBehaviour
     public int CurrentHealth => _health;
     public Venom CurrentModelVenom => _currentModelVenom;
     public EnemyContainer EnemyContainer => _enemyContainer;
+    public MouseInput MouseInput => _mouseInput;
 
     public event UnityAction ModelWasChanged;
     public event UnityAction Died;
     public event UnityAction StoppedMoving;
     public event UnityAction StartedMoving;
+    public event UnityAction FinishedFirstRoad;
 
-    public void Init(RoadSegment roadSegment)
+    public void Init(RoadSegment firstRoad, RoadSegment secondRoad)
     {
         _transform = GetComponent<Transform>();
-
+        
         _movementSystem = GetComponent<MovementSystem>();
-        _movementSystem.Init(roadSegment);
+        _movementSystem.Init(firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();
         _playerMovement.Init(_movementSystem);
         _upgradingVenom = GetComponent<UpgradingVenom>();
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
         _startSpeed = MovementSystem.MovementOptions.MoveSpeed;
         _mouseInput = GetComponent<MouseInput>();
         ResetModel();
+        _secondRoad = secondRoad;
 
         foreach (var modelPlayer in _modelsPlayer)
         {
@@ -126,6 +130,21 @@ public class Player : MonoBehaviour
         MovementSystem.MovementOptions.SetSpeed(_speedAfterEndRoad);
         CurrentModelVenom.PlayerAnimator.SetSpeed(_speedAnimationAfterEndRoad);
         StartedMoving?.Invoke();
+    }
+
+    public void SwitchRoad()
+    {
+        StartMove();
+        MovementSystem.Init(_secondRoad);
+        MovementSystem.SetOffset(0);
+        
+    }
+
+    public void OnFinishedFirstRoad()
+    {
+        StopMove();
+        MouseInput.enabled = false;
+        FinishedFirstRoad?.Invoke();
     }
 
 }

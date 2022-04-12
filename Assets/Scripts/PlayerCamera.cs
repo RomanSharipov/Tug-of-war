@@ -7,7 +7,9 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private Vector3 _cameraDistanceStepOffset;
-    [SerializeField] private float _speedUpdatePosition;
+    [SerializeField] private Vector3 _cameraDistanceStepOffsetOnFinishedFirstRoad;
+    [SerializeField] private float _speedUpdatePositionOnUpgrade;
+    [SerializeField] private float _speedUpdatePositionOnFinishedFirstRoad;
     //[SerializeField] private Vector3 _upgradingStepOffset;
 
     private CinemachineVirtualCamera _camera;
@@ -17,13 +19,15 @@ public class PlayerCamera : MonoBehaviour
     private Vector3 _trackedObjectOffsetStartPosition = new Vector3();
     private Vector3 _cameraDistanceStartPosition ;
     private Coroutine _smoothUpdatePositionJob;
+    private Vector3 _targetPosition;
 
     public void Init(Player player)
     {
         _player = player;
         _camera = GetComponent<CinemachineVirtualCamera>();
         _cinemachineTransposer = _camera.GetCinemachineComponent<CinemachineTransposer>();
-        _player.UpgradingVenom.PlayerWasUpgraded += UpdatePosition;
+        _player.UpgradingVenom.PlayerWasUpgraded += OnPlayerWasUpgraded;
+        _player.FinishedFirstRoad += OnFinishedFirstRoad;
         _camera.Follow = player.Transform;
         _camera.LookAt = player.Transform;
 
@@ -31,13 +35,14 @@ public class PlayerCamera : MonoBehaviour
         //_trackedObjectOffsetStartPosition = _cinemachineTransposer.m_TrackedObjectOffset;
     }
 
-    private void UpdatePosition()
+    private void OnPlayerWasUpgraded()
     {
+        _targetPosition = _cinemachineTransposer.m_FollowOffset + _cameraDistanceStepOffset;
         if (_smoothUpdatePositionJob != null)
         {
             StopCoroutine(_smoothUpdatePositionJob);
         }
-        _smoothUpdatePositionJob = StartCoroutine(SmoothUpdatePosition());
+        _smoothUpdatePositionJob = StartCoroutine(SmoothUpdatePosition(_targetPosition, _speedUpdatePositionOnUpgrade));
     }
 
     public void ResetPosition()
@@ -46,16 +51,22 @@ public class PlayerCamera : MonoBehaviour
         //_cinemachineTransposer.m_TrackedObjectOffset = _trackedObjectOffsetStartPosition;
     }
 
-    private IEnumerator SmoothUpdatePosition()
+    private IEnumerator SmoothUpdatePosition(Vector3 targetPosition,float speedUpdatePosition)
     {
-        Vector3 targetPosition = new Vector3();
-        targetPosition = _cinemachineTransposer.m_FollowOffset + _cameraDistanceStepOffset;
-
-
         while (_cinemachineTransposer.m_FollowOffset != targetPosition)
         {
-            _cinemachineTransposer.m_FollowOffset = Vector3.MoveTowards(_cinemachineTransposer.m_FollowOffset, targetPosition, _speedUpdatePosition * Time.deltaTime);
+            _cinemachineTransposer.m_FollowOffset = Vector3.MoveTowards(_cinemachineTransposer.m_FollowOffset, targetPosition, speedUpdatePosition * Time.deltaTime);
             yield return null;
         }
+    }
+
+    private void OnFinishedFirstRoad()
+    {
+        _targetPosition = _cameraDistanceStepOffsetOnFinishedFirstRoad;
+        if (_smoothUpdatePositionJob != null)
+        {
+            StopCoroutine(_smoothUpdatePositionJob);
+        }
+        _smoothUpdatePositionJob = StartCoroutine(SmoothUpdatePosition(_targetPosition, _speedUpdatePositionOnFinishedFirstRoad));
     }
 }

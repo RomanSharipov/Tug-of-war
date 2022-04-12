@@ -15,17 +15,13 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private float _currentDistance;
-    [SerializeField] private Quaternion _maxRotationRight;
-    [SerializeField] private Quaternion _maxRotationLeft;
-    [SerializeField] private Quaternion _current;
-    
-    
+    [SerializeField] private float _durationRotate;
 
     private Player _player;
     private List<Enemy> _enemies = new List<Enemy>();
-    
     private SwipeInput _swipeInput;
     private Coroutine _rotationJob;
+    private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer; 
 
     public void Init(Player player, SwipeInput swipeInput)
     {
@@ -33,24 +29,8 @@ public class EnemyContainer : MonoBehaviour
         _swipeInput = swipeInput;
         _swipeInput.SwipedRight += FlyRight;
         _swipeInput.SwipedLeft += FlyLeft;
-    }
-
-    private void Update()
-    {
-        _current = transform.rotation;
-        _currentDistance = Vector3.Distance(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z), transform.position);
-        
-        if (_currentDistance < _minDistanceToPlayer)
-        {
-            return;
-        }
-
-        MoveToPlayer();
-
-        if (_currentDistance > _maxDistanceToPlayer)
-        {
-            ReduceDistanceToPlayer();
-        }
+        _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
+        _enemyContainerMoverToPlayer.Init(player);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -113,27 +93,34 @@ public class EnemyContainer : MonoBehaviour
 
     private IEnumerator SmoothRotateLeft()
     {
-        while (transform.rotation.y < _maxRotationLeft.y)
+        _enemyContainerMoverToPlayer.enabled = false;
+        float timePassed = 0;
+        while (timePassed < _durationRotate)
         {
             transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
+            transform.position += transform.forward * _speed * Time.deltaTime;
+            timePassed += Time.deltaTime;
             yield return null;
-
         }
+        _enemyContainerMoverToPlayer.enabled = true;
     }
 
     private IEnumerator SmoothRotateRight()
     {
-        while (transform.rotation.y > _maxRotationRight.y)
+        float timePassed = 0;
+        _enemyContainerMoverToPlayer.enabled = false;
+        while (timePassed < _durationRotate)
         {
             transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
+            transform.position += transform.forward * _speed * Time.deltaTime;
+            timePassed += Time.deltaTime;
             yield return null;
-
         }
+        _enemyContainerMoverToPlayer.enabled = true;
     }
 
     private void FlyLeft()
     {
-        
         if (_rotationJob != null)
         {
             StopCoroutine(_rotationJob);
