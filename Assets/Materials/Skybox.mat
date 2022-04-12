@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Skybox
-  m_Shader: {fileID: 108, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e32cae2a5bbfb41888ef2ba8391ab87d, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _MAPPING_LATITUDE_LONGITUDE_LAYOUT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -83,16 +83,16 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DirectionPitch: 180
+    - _DirectionPitch: 0
     - _DirectionYaw: 0
     - _DstBlend: 10
-    - _Exponent: 1.59
+    - _Exponent: 1.98
     - _Exposure: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _ImageType: 0
-    - _Intensity: 2
+    - _Intensity: 1.18
     - _Layout: 0
     - _Mapping: 1
     - _Metallic: 0
@@ -108,9 +108,9 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0.05660379, g: 0, b: 0, a: 1}
-    - _Color1: {r: 0, g: 0, b: 0, a: 0}
-    - _Color2: {r: 0.72338766, g: 0, b: 0.8679245, a: 1}
-    - _Direction: {r: -0, g: -1, b: -0.00000008742278, a: 0}
+    - _Color1: {r: 0.4764151, g: 0.5830132, b: 1, a: 1}
+    - _Color2: {r: 0.7028302, g: 0.9277469, b: 1, a: 0}
+    - _Direction: {r: 0, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 0.34680405, g: 0, b: 0.5660378, a: 0.5}
+    - _Tint: {r: 0.06672716, g: 0, b: 1, a: 0.5}
   m_BuildTextureStacks: []

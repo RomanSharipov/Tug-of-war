@@ -80,13 +80,6 @@ public class EnemyContainer : MonoBehaviour
         transform.position += transform.forward  * _speedReduceDistance *Time.deltaTime;
     }
 
-    private void MoveToPlayer()
-    {
-        _speed = _player.MovementSystem.CurrentSpeed;
-        transform.LookAt(new Vector3(_player.transform.position.x,transform.position.y, _player.transform.position.z) );
-        transform.position += transform.forward * _speed * Time.deltaTime;
-    }
-
     public void ThrowOutStickman(Enemy enemy)
     {
         _enemies.Remove(enemy);
