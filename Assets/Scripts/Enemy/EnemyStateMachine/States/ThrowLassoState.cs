@@ -36,4 +36,5 @@ public class ThrowLassoState : State
         transform.LookAt(new Vector3(Enemy.EnemyContainer.transform.position.x, transform.position.y, Enemy.EnemyContainer.transform.position.z));
         transform.position += transform.forward * _speed * Time.deltaTime;
     }
+
 }

@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     private Transform _transform;
     private EnemyStateMachine _enemyStateMachine;
     private EnemyAnimator _enemyAnimator;
+    private Rigidbody _rigidbody;
     private Player _player;
     private Vector3 _direction;
     private Quaternion _targetRotation;
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
     public EnemyMovement EnemyMovement => _enemyMovement;
     public Transform Transform => _transform;
     public EnemyAnimator EnemyAnimator => _enemyAnimator;
+    public Rigidbody Rigidbody => _rigidbody;
     public MovementSystem MovementOnWay => _movementOnWay;
     public EnemyContainer EnemyContainer => _enemyContainer;
 
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour
         
         _player = player;
         _transform = GetComponent<Transform>();
+        _rigidbody = GetComponent<Rigidbody>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _enemyMovement = new EnemyMovement();
         _enemyMovement.Init(_transform);
@@ -67,10 +70,12 @@ public class Enemy : MonoBehaviour
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
+
         transform.SetParent(EnemyContainer.transform);
         EnemyAnimator.PullRope();
         SwitchOffMovement();
         EnemyContainer.AddEnemy(this);
+        
     }
 
     private void Update()
@@ -95,6 +100,8 @@ public class Enemy : MonoBehaviour
     {
         _enemyStateMachine.Current.enabled = false;
         _enemyStateMachine.enabled = false;
+
+        //Destroy(_rigidbody);
         _movementOnWay.enabled = false;
     }
 
@@ -148,4 +155,5 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
     }
+
 }

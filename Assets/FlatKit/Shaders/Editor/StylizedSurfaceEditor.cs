@@ -2,58 +2,47 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using FlatKit.StylizedSurface;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public enum SurfaceType {
+public enum SurfaceType
+{
     Opaque,
     Transparent
 }
 
-public enum BlendMode {
-    Alpha, // Old school alpha-blending mode, fresnel does not affect amount of transparency
+public enum BlendMode
+{
+    Alpha,   // Old school alpha-blending mode, fresnel does not affect amount of transparency
     Premultiply, // Physically plausible transparency mode, implemented as alpha pre-multiply
     Additive,
     Multiply
 }
 
-public enum RenderFace {
+public enum RenderFace
+{
     Front = 2,
     Back = 1,
     Both = 0
 }
 
-public class StylizedSurfaceEditor : BaseShaderGUI {
+public class StylizedSurfaceEditor : UnityEditor.ShaderGUI {
     private Material _target;
+    private MaterialEditor _editor;
     private MaterialProperty[] _properties;
     private int _celShadingNumSteps = 0;
     private AnimationCurve _gradient = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
 
-    private MaterialProperty QueueOffsetProp { get; set; }
-
-    private static readonly Dictionary<string, bool> FoldoutStates =
-        new Dictionary<string, bool> {{"Rendering options", false}};
-
-    private static readonly Color HashColor = new Color(0.85023f, 0.85034f, 0.85045f, 0.85056f);
-    private static readonly int ColorPropertyName = Shader.PropertyToID("_BaseColor");
+    private static readonly Dictionary<string, bool> _foldoutStates = new Dictionary<string, bool>();
+    private static readonly Color hashColor = new Color(0.85023f, 0.85034f, 0.85045f, 0.85056f);
+    private static readonly GUIContent staticLabel = new GUIContent();
+    private static readonly int ColorPropertyName = Shader.PropertyToID("_Color");
 
     void DrawStandard(MaterialProperty property) {
         string displayName = property.displayName;
         // Remove everything in square brackets.
         displayName = Regex.Replace(displayName, @" ?\[.*?\]", string.Empty);
-        Tooltips.map.TryGetValue(displayName, out string tooltip);
-        var guiContent = new GUIContent(displayName, tooltip);
-        if (property.type == MaterialProperty.PropType.Texture) {
-            if (!property.name.Contains("_BaseMap")) {
-                EditorGUILayout.Space(15);
-            }
-
-            materialEditor.TexturePropertySingleLine(guiContent, property);
-        } else {
-            materialEditor.ShaderProperty(property, guiContent);
-        }
+        _editor.ShaderProperty(property, displayName);
     }
 
     MaterialProperty FindProperty(string name) {
@@ -64,68 +53,80 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
         return _target != null && _target.HasProperty(name);
     }
 
-#if UNITY_2021_2_OR_NEWER
-    [Obsolete("MaterialChanged has been renamed ValidateMaterial", false)]
-#endif
-    public override void MaterialChanged(Material material) { }
+    static GUIContent MakeLabel(string text, string tooltip = null) {
+        staticLabel.text = text;
+        staticLabel.tooltip = tooltip;
+        return staticLabel;
+    }
 
     public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties) {
-        this.materialEditor = materialEditor;
+        _editor = materialEditor;
         _properties = properties;
         _target = materialEditor.target as Material;
         Debug.Assert(_target != null, "_target != null");
-
-        if (_target.shader.name.Equals("FlatKit/Stylized Surface With Outline")) {
-            EditorGUILayout.HelpBox(
-                "'Stylized Surface with Outline' shader has been deprecated. Please use the outline section in the 'Stylized Surface' shader.",
-                MessageType.Warning);
-        }
 
         int originalIntentLevel = EditorGUI.indentLevel;
         int foldoutRemainingItems = 0;
         bool latestFoldoutState = false;
 
         foreach (MaterialProperty property in properties) {
+            bool skipProperty = false;
             string displayName = property.displayName;
 
-            if (displayName.Contains("[") && !displayName.Contains("FOLDOUT")) {
+            if (displayName.Contains("[_CELPRIMARYMODE_SINGLE]")) {
+                skipProperty = !_target.IsKeywordEnabled("_CELPRIMARYMODE_SINGLE");
                 EditorGUI.indentLevel += 1;
             }
 
-            bool skipProperty = false;
-            skipProperty |= displayName.Contains("[_CELPRIMARYMODE_SINGLE]") &&
-                            !_target.IsKeywordEnabled("_CELPRIMARYMODE_SINGLE");
-            skipProperty |= displayName.Contains("[_CELPRIMARYMODE_STEPS]") &&
-                            !_target.IsKeywordEnabled("_CELPRIMARYMODE_STEPS");
-            skipProperty |= displayName.Contains("[_CELPRIMARYMODE_CURVE]") &&
-                            !_target.IsKeywordEnabled("_CELPRIMARYMODE_CURVE");
-            skipProperty |= displayName.Contains("[DR_CEL_EXTRA_ON]") && !property.name.Equals("_CelExtraEnabled") &&
-                            !_target.IsKeywordEnabled("DR_CEL_EXTRA_ON");
-            skipProperty |= displayName.Contains("[DR_SPECULAR_ON]") && !property.name.Equals("_SpecularEnabled") &&
-                            !_target.IsKeywordEnabled("DR_SPECULAR_ON");
-            skipProperty |= displayName.Contains("[DR_RIM_ON]") && !property.name.Equals("_RimEnabled") &&
-                            !_target.IsKeywordEnabled("DR_RIM_ON");
-            skipProperty |= displayName.Contains("[DR_GRADIENT_ON]") && !property.name.Equals("_GradientEnabled") &&
-                            !_target.IsKeywordEnabled("DR_GRADIENT_ON");
-            skipProperty |= displayName.Contains("[_UNITYSHADOWMODE_MULTIPLY]") &&
-                            !_target.IsKeywordEnabled("_UNITYSHADOWMODE_MULTIPLY");
-            skipProperty |= displayName.Contains("[_UNITYSHADOWMODE_COLOR]") &&
-                            !_target.IsKeywordEnabled("_UNITYSHADOWMODE_COLOR");
-            skipProperty |= displayName.Contains("[DR_ENABLE_LIGHTMAP_DIR]") &&
-                            !_target.IsKeywordEnabled("DR_ENABLE_LIGHTMAP_DIR");
-            skipProperty |= displayName.Contains("[DR_OUTLINE_ON]") &&
-                            !_target.IsKeywordEnabled("DR_OUTLINE_ON");
+            if (displayName.Contains("[_CELPRIMARYMODE_STEPS]")) {
+                skipProperty = !_target.IsKeywordEnabled("_CELPRIMARYMODE_STEPS");
+                EditorGUI.indentLevel += 1;
+            }
 
-            if (_target.IsKeywordEnabled("DR_ENABLE_LIGHTMAP_DIR") &&
-                displayName.Contains("Override light direction")) {
+            if (displayName.Contains("[_CELPRIMARYMODE_CURVE]")) {
+                skipProperty = !_target.IsKeywordEnabled("_CELPRIMARYMODE_CURVE");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[DR_CEL_EXTRA_ON]") && !property.name.Equals("_CelExtraEnabled")) {
+                skipProperty = !_target.IsKeywordEnabled("DR_CEL_EXTRA_ON");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[DR_SPECULAR_ON]") && !property.name.Equals("_SpecularEnabled")) {
+                skipProperty = !_target.IsKeywordEnabled("DR_SPECULAR_ON");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[DR_RIM_ON]") && !property.name.Equals("_RimEnabled")) {
+                skipProperty = !_target.IsKeywordEnabled("DR_RIM_ON");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[DR_GRADIENT_ON]") && !property.name.Equals("_GradientEnabled")) {
+                skipProperty = !_target.IsKeywordEnabled("DR_GRADIENT_ON");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[_UNITYSHADOWMODE_MULTIPLY]")) {
+                skipProperty = !_target.IsKeywordEnabled("_UNITYSHADOWMODE_MULTIPLY");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[_UNITYSHADOWMODE_COLOR]")) {
+                skipProperty = !_target.IsKeywordEnabled("_UNITYSHADOWMODE_COLOR");
+                EditorGUI.indentLevel += 1;
+            }
+
+            if (displayName.Contains("[DR_ENABLE_LIGHTMAP_DIR]")) {
                 var dirPitch = _target.GetFloat("_LightmapDirectionPitch");
                 var dirYaw = _target.GetFloat("_LightmapDirectionYaw");
 
                 var dirPitchRad = dirPitch * Mathf.Deg2Rad;
                 var dirYawRad = dirYaw * Mathf.Deg2Rad;
-
-                var direction = new Vector4(Mathf.Sin(dirPitchRad) * Mathf.Sin(dirYawRad), Mathf.Cos(dirPitchRad),
-                    Mathf.Sin(dirPitchRad) * Mathf.Cos(dirYawRad), 0.0f);
+                
+                var direction = new Vector4(Mathf.Sin(dirPitchRad) * Mathf.Sin(dirYawRad), Mathf.Cos(dirPitchRad), 
+                                            Mathf.Sin(dirPitchRad) * Mathf.Cos(dirYawRad), 0.0f);
                 _target.SetVector("_LightmapDirection", direction);
             }
 
@@ -133,14 +134,14 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
                 string foldoutName = displayName.Split('(', ')')[1];
                 string foldoutItemCount = displayName.Split('{', '}')[1];
                 foldoutRemainingItems = Convert.ToInt32(foldoutItemCount);
-                if (!FoldoutStates.ContainsKey(property.name)) {
-                    FoldoutStates.Add(property.name, false);
+                if (!_foldoutStates.ContainsKey(property.name)) {
+                    _foldoutStates.Add(property.name, false);
                 }
 
                 EditorGUILayout.Space();
-                FoldoutStates[property.name] =
-                    EditorGUILayout.Foldout(FoldoutStates[property.name], foldoutName);
-                latestFoldoutState = FoldoutStates[property.name];
+                _foldoutStates[property.name] =
+                    EditorGUILayout.Foldout(_foldoutStates[property.name], foldoutName);
+                latestFoldoutState = _foldoutStates[property.name];
             }
 
             if (foldoutRemainingItems > 0) {
@@ -180,18 +181,9 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
             }
 
             if (!skipProperty &&
-                property.type == MaterialProperty.PropType.Color &&
-                property.colorValue == HashColor) {
+                    property.type == MaterialProperty.PropType.Color && 
+                    property.colorValue == hashColor) {
                 property.colorValue = _target.GetColor(ColorPropertyName);
-            }
-
-            if (!skipProperty && property.name.Contains("_EmissionMap")) {
-                bool emission = materialEditor.EmissionEnabledProperty();
-                if (emission) {
-                    _target.EnableKeyword("_EMISSION");
-                } else {
-                    _target.DisableKeyword("_EMISSION");
-                }
             }
 
             bool hideInInspector = (property.flags & MaterialProperty.PropFlags.HideInInspector) != 0;
@@ -199,36 +191,15 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
                 DrawStandard(property);
             }
 
-            if (!skipProperty && property.name.Contains("_EmissionColor")) {
-                EditorGUILayout.Space(15);
-                DrawTileOffset(materialEditor, FindProperty("_BaseMap"));
-            }
-
             EditorGUI.indentLevel = originalIntentLevel;
         }
 
-        EditorGUILayout.Space();
-        FoldoutStates["Rendering options"] =
-            EditorGUILayout.Foldout(FoldoutStates["Rendering options"], "Rendering options");
-        if (FoldoutStates["Rendering options"]) {
-            EditorGUI.indentLevel += 1;
-
-            HandleUrpSettings(_target, materialEditor);
-
-            QueueOffsetProp = FindProperty("_QueueOffset", _properties, false);
-            DrawQueueOffsetField();
-
-            materialEditor.EnableInstancingField();
+        if (UnityEngine.Rendering.GraphicsSettings.renderPipelineAsset != null) {
+            HandleUrpSettings(_target, _editor);
         }
 
-        // Toggle the outline pass.
-        _target.SetShaderPassEnabled("SRPDefaultUnlit", _target.IsKeywordEnabled("DR_OUTLINE_ON"));
-
-        /*
-        if (HasProperty("_MainTex")) {
-            TransferToBaseMap();
-        }
-        //*/
+        EditorGUILayout.Separator();
+        _editor.EnableInstancingField();
     }
 
     // Adapted from BaseShaderGUI.cs.
@@ -238,9 +209,12 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
             alphaClip = material.GetFloat("_AlphaClip") >= 0.5;
         }
 
-        if (alphaClip) {
+        if (alphaClip)
+        {
             material.EnableKeyword("_ALPHATEST_ON");
-        } else {
+        }
+        else
+        {
             material.DisableKeyword("_ALPHATEST_ON");
         }
 
@@ -248,36 +222,41 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
             EditorGUI.BeginChangeCheck();
             var surfaceProp = FindProperty("_Surface");
             EditorGUI.showMixedValue = surfaceProp.hasMixedValue;
-            var surfaceType = (SurfaceType) surfaceProp.floatValue;
-            EditorGUILayout.Separator();
-            surfaceType = (SurfaceType) EditorGUILayout.EnumPopup("Surface Type", surfaceType);
-            if (EditorGUI.EndChangeCheck()) {
+            var surfaceType = (SurfaceType)surfaceProp.floatValue;
+            surfaceType = (SurfaceType)EditorGUILayout.EnumPopup("Surface Type", surfaceType);
+            if (EditorGUI.EndChangeCheck())
+            {
                 materialEditor.RegisterPropertyChangeUndo("Surface Type");
-                surfaceProp.floatValue = (float) surfaceType;
+                surfaceProp.floatValue = (float)surfaceType;
             }
 
-            if (surfaceType == SurfaceType.Opaque) {
-                if (alphaClip) {
+            if (surfaceType == SurfaceType.Opaque)
+            {
+                if (alphaClip)
+                {
                     material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.AlphaTest;
                     material.SetOverrideTag("RenderType", "TransparentCutout");
-                } else {
+                }
+                else
+                {
                     material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.Geometry;
                     material.SetOverrideTag("RenderType", "Opaque");
                 }
 
-                material.renderQueue +=
-                    material.HasProperty("_QueueOffset") ? (int) material.GetFloat("_QueueOffset") : 0;
-                material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.One);
-                material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.Zero);
+                material.renderQueue += material.HasProperty("_QueueOffset") ? (int) material.GetFloat("_QueueOffset") : 0;
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
                 material.SetInt("_ZWrite", 1);
                 material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
                 material.SetShaderPassEnabled("ShadowCaster", true);
-            } else // Transparent
+            }
+            else  // Transparent
             {
                 BlendMode blendMode = (BlendMode) material.GetFloat("_Blend");
 
                 // Specific Transparent Mode Settings
-                switch (blendMode) {
+                switch (blendMode)
+                {
                     case BlendMode.Alpha:
                         material.SetInt("_SrcBlend", (int) UnityEngine.Rendering.BlendMode.SrcAlpha);
                         material.SetInt("_DstBlend", (int) UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
@@ -304,9 +283,8 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
                 // General Transparent Material Settings
                 material.SetOverrideTag("RenderType", "Transparent");
                 material.SetInt("_ZWrite", 0);
-                material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.Transparent;
-                material.renderQueue +=
-                    material.HasProperty("_QueueOffset") ? (int) material.GetFloat("_QueueOffset") : 0;
+                material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+                material.renderQueue += material.HasProperty("_QueueOffset") ? (int) material.GetFloat("_QueueOffset") : 0;
                 material.SetShaderPassEnabled("ShadowCaster", false);
             }
 
@@ -315,11 +293,12 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
                 EditorGUI.BeginChangeCheck();
                 var blendModeProp = FindProperty("_Blend");
                 EditorGUI.showMixedValue = blendModeProp.hasMixedValue;
-                var blendMode = (BlendMode) blendModeProp.floatValue;
-                blendMode = (BlendMode) EditorGUILayout.EnumPopup("Blend Mode", blendMode);
-                if (EditorGUI.EndChangeCheck()) {
+                var blendMode = (BlendMode)blendModeProp.floatValue;
+                blendMode = (BlendMode)EditorGUILayout.EnumPopup("Blend Mode", blendMode);
+                if (EditorGUI.EndChangeCheck())
+                {
                     materialEditor.RegisterPropertyChangeUndo("Blend Mode");
-                    blendModeProp.floatValue = (float) blendMode;
+                    blendModeProp.floatValue = (float)blendMode;
                 }
             }
         }
@@ -330,17 +309,17 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
             EditorGUI.BeginChangeCheck();
             var cullingProp = FindProperty("_Cull");
             EditorGUI.showMixedValue = cullingProp.hasMixedValue;
-            var culling = (RenderFace) cullingProp.floatValue;
-            culling = (RenderFace) EditorGUILayout.EnumPopup("Render Faces", culling);
-            if (EditorGUI.EndChangeCheck()) {
+            var culling = (RenderFace)cullingProp.floatValue;
+            culling = (RenderFace)EditorGUILayout.EnumPopup("Render Faces", culling);
+            if (EditorGUI.EndChangeCheck())
+            {
                 materialEditor.RegisterPropertyChangeUndo("Render Faces");
-                cullingProp.floatValue = (float) culling;
-                material.doubleSidedGI = (RenderFace) cullingProp.floatValue != RenderFace.Front;
+                cullingProp.floatValue = (float)culling;
+                material.doubleSidedGI = (RenderFace)cullingProp.floatValue != RenderFace.Front;
             }
         }
 
         if (HasProperty("_AlphaClip")) {
-            EditorGUILayout.Separator();
             EditorGUI.BeginChangeCheck();
             var alphaClipProp = FindProperty("_AlphaClip");
             EditorGUI.showMixedValue = alphaClipProp.hasMixedValue;
@@ -349,7 +328,8 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
                 alphaClipProp.floatValue = alphaClipEnabled ? 1 : 0;
             EditorGUI.showMixedValue = false;
 
-            if (alphaClipProp.floatValue == 1 && HasProperty("_Cutoff")) {
+            if (alphaClipProp.floatValue == 1)
+            {
                 var alphaCutoffProp = FindProperty("_Cutoff");
                 materialEditor.ShaderProperty(alphaCutoffProp, "Threshold", 1);
             }
@@ -365,11 +345,7 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
         if (fullPath.Length > 0) {
             SaveTextureAsPng(rampTexture, fullPath, filterMode);
             var loadedTexture = LoadTexture(fullPath);
-            if (loadedTexture != null) {
-                _target.SetTexture(propertyName, loadedTexture);
-            } else {
-                Debug.LogWarning("Could not save the texture. Make sure the destination is in the Assets folder.");
-            }
+            _target.SetTexture(propertyName, loadedTexture);
         }
     }
 
@@ -431,18 +407,14 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
         }
 
         //22b5f7ed-989d-49d1-90d9-c62d76c3081a
-
+        
         Debug.Assert(importer,
             string.Format("[FlatKit] Could not change import settings of {0} [{1}]",
-                fullPath, pathRelativeToAssets));
+                    fullPath, pathRelativeToAssets));
     }
 
     private static Texture2D LoadTexture(string fullPath) {
         string pathRelativeToAssets = ConvertFullPathToAssetPath(fullPath);
-        if (pathRelativeToAssets.Length == 0) {
-            return null;
-        }
-
         var loadedTexture = AssetDatabase.LoadAssetAtPath(pathRelativeToAssets, typeof(Texture2D)) as Texture2D;
         if (loadedTexture == null) {
             Debug.LogError(string.Format("[FlatKit] Could not load texture from {0} [{1}].", fullPath,
@@ -457,50 +429,6 @@ public class StylizedSurfaceEditor : BaseShaderGUI {
     }
 
     private static string ConvertFullPathToAssetPath(string fullPath) {
-        int count = (Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar).Length;
-        if (count < 0) {
-            return String.Empty;
-        }
-
-        return fullPath.Remove(0, count);
-    }
-
-#if !UNITY_2020_3_OR_NEWER
-    private new void DrawQueueOffsetField() {
-        GUIContent queueSlider = new GUIContent("     Priority",
-            "Determines the chronological rendering order for a Material. High values are rendered first.");
-        const int queueOffsetRange = 50;
-        MaterialProperty queueOffsetProp = FindProperty("_QueueOffset", _properties, false);
-        if (queueOffsetProp == null) return;
-        EditorGUI.BeginChangeCheck();
-        EditorGUI.showMixedValue = queueOffsetProp.hasMixedValue;
-        var queue = EditorGUILayout.IntSlider(queueSlider, (int) queueOffsetProp.floatValue, -queueOffsetRange,
-            queueOffsetRange);
-        if (EditorGUI.EndChangeCheck())
-            queueOffsetProp.floatValue = queue;
-        EditorGUI.showMixedValue = false;
-
-        _target.renderQueue = (int)RenderQueue.Transparent + queue;
-    }
-#endif
-
-    private void TransferToBaseMap() {
-        var baseMapProp = FindProperty("_MainTex");
-        var baseColorProp = FindProperty("_Color");
-        _target.SetTexture("_BaseMap", baseMapProp.textureValue);
-        var baseMapTiling = baseMapProp.textureScaleAndOffset;
-        _target.SetTextureScale("_BaseMap", new Vector2(baseMapTiling.x, baseMapTiling.y));
-        _target.SetTextureOffset("_BaseMap", new Vector2(baseMapTiling.z, baseMapTiling.w));
-        _target.SetColor("_BaseColor", baseColorProp.colorValue);
-    }
-
-    private void TransferToMainTex() {
-        var baseMapProp = FindProperty("_BaseMap");
-        var baseColorProp = FindProperty("_BaseColor");
-        _target.SetTexture("_MainTex", baseMapProp.textureValue);
-        var baseMapTiling = baseMapProp.textureScaleAndOffset;
-        _target.SetTextureScale("_MainTex", new Vector2(baseMapTiling.x, baseMapTiling.y));
-        _target.SetTextureOffset("_MainTex", new Vector2(baseMapTiling.z, baseMapTiling.w));
-        _target.SetColor("_Color", baseColorProp.colorValue);
+        return fullPath.Remove(0, fullPath.IndexOf("Assets", StringComparison.Ordinal));
     }
 }
