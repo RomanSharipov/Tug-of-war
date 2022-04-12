@@ -3,13 +3,14 @@ using RunnerMovementSystem;
 using UnityEngine.Events;
 using System;
 using RunnerMovementSystem.Examples;
-
+using System.Collections;
 
 [RequireComponent(typeof(MovementSystem))]
 [RequireComponent(typeof(UpgradingVenom))]
 [RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
+    private const float CenterRoad = 0;
     [SerializeField] private Transform _throwLassoPoint;
     [SerializeField] private Transform _enemyContainerPoint;
     [SerializeField] private float _stepReduceSpeed;
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     private Transform _transform;
     private float _startSpeed;
     private MovementSystem _movementSystem;
-    private EnemyContainer _enemyContainer;
+    
     private PlayerMovement _playerMovement;
     
     
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
     public UpgradingVenom UpgradingVenom => _upgradingVenom;
     public int CurrentHealth => _health;
     public Venom CurrentModelVenom => _currentModelVenom;
-    public EnemyContainer EnemyContainer => _enemyContainer;
+    
     public MouseInput MouseInput => _mouseInput;
 
     public event UnityAction ModelWasChanged;
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
     public void Init(RoadSegment firstRoad, RoadSegment secondRoad)
     {
         _transform = GetComponent<Transform>();
-        
+         
         _movementSystem = GetComponent<MovementSystem>();
         _movementSystem.Init(firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();
@@ -132,19 +133,33 @@ public class Player : MonoBehaviour
         StartedMoving?.Invoke();
     }
 
-    public void SwitchRoad()
+    public void wSwitchRoad()
     {
         StartMove();
         MovementSystem.Init(_secondRoad);
-        MovementSystem.SetOffset(0);
+        MovementSystem.SetOffset(CenterRoad);
         
     }
 
     public void OnFinishedFirstRoad()
     {
+        //StopMove();
+        //MouseInput.enabled = false;
+        //FinishedFirstRoad?.Invoke();
+        //wSwitchRoad();
+        StartCoroutine(SwitchRoad());
+    }
+
+    private IEnumerator SwitchRoad()
+    {
         StopMove();
         MouseInput.enabled = false;
         FinishedFirstRoad?.Invoke();
+        yield return new WaitForSeconds(1f);
+        StartMove();
+        StartedMoving?.Invoke();
+        MovementSystem.Init(_secondRoad);
+        MovementSystem.SetOffset(CenterRoad);
     }
 
 }

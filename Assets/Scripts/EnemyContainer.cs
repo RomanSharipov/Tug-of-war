@@ -31,6 +31,7 @@ public class EnemyContainer : MonoBehaviour
         _swipeInput.SwipedLeft += FlyLeft;
         _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
         _enemyContainerMoverToPlayer.Init(player);
+        _player.StartedMoving += StartFly;
     }
 
     private void OnTriggerEnter(Collider other)

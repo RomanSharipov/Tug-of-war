@@ -8,14 +8,12 @@ using UnityEngine.UI;
 public class EndFirstRoad : MonoBehaviour
 {
     public event UnityAction PlayerFinishedFirstRoad;
-    [SerializeField] private SwitcherButton _switcherButton;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
         {
             PlayerFinishedFirstRoad?.Invoke();
-            _switcherButton.SwitchOnButton();
         }
     }
 }

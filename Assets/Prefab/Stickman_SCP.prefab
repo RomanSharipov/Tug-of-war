@@ -1412,11 +1412,12 @@ MonoBehaviour:
   _ground:
     serializedVersion: 2
     m_Bits: 128
-  _speedFlowDown: 1
+  _speedFlowDown: 9
   _airTrail: {fileID: 7106516273467529345}
   _minHeight: 0
   _maxHeight: 9
   _speedSettingRandomHeight: 10
+  _targetPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8815846913506578272
 MonoBehaviour:
   m_ObjectHideFlags: 0

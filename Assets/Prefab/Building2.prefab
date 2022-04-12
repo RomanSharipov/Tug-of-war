@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4918806650692812527
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &225598763575333781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -352,8 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8689782760178330565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4701656435310676263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -608,8 +608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8334385629680543068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -736,8 +736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3372973340684289138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -864,8 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5054463846582009004
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -992,8 +992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8481414839592701037
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1120,8 +1120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1650663480651040286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1248,8 +1248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &787094525197570938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1376,8 +1376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3032184825930829425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1504,8 +1504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1510673000153178423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1632,8 +1632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3448496991022899793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1760,8 +1760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5013584019471733067
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1888,8 +1888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &7791089433631337169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2016,8 +2016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4722898487422004463
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2144,8 +2144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5881619490805778066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2272,8 +2272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3918386834722819048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2400,8 +2400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2402252692348554294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2528,8 +2528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1509506145740149752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2656,8 +2656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4705244217569086173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2784,8 +2784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &9216628256607456898
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2912,8 +2912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1002064563606865110
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3040,8 +3040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &7872219786450656613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3168,8 +3168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6843908978591424265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3296,8 +3296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1279749031388818494
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3635,8 +3635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2700387921961300752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3763,8 +3763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8219026651186093105
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3891,8 +3891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1021169955219246706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4019,8 +4019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3271227023610046181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4147,8 +4147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6085405823595423789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4275,8 +4275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5154676899839635438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4403,8 +4403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5629882961955161142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4531,8 +4531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4717289687728108415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4659,8 +4659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8445670295491120102
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4787,8 +4787,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1484784978861876611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4915,8 +4915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5587522294878269057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5043,8 +5043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2625973347897736356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5171,8 +5171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5476442678328147987
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5299,8 +5299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6013621676454014626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5427,8 +5427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1887155189018093515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5555,8 +5555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5296549085567679180
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5683,8 +5683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &942127987824732709
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5811,8 +5811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3060282355569670142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5939,8 +5939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3239109725790847048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6067,8 +6067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3376732010238339965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6195,8 +6195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6096986459668966993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6323,8 +6323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4237824380598100162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6451,8 +6451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &3539359449974651690
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6579,8 +6579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4636669519102971726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6707,8 +6707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &47943658675434435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6835,8 +6835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4506844177216721387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6963,8 +6963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4454915456057599088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7091,8 +7091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2860494875512240415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7219,8 +7219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8051348024973345152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7347,8 +7347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2414811012400815900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7475,8 +7475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &1775872294696236423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7603,8 +7603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &8477945328893544073
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7731,8 +7731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6900914949859846234
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7859,8 +7859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6736297440587552729
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7987,8 +7987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &6766291761312848635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8196,8 +8196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &5205447400629581364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8324,8 +8324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &4794937483876619941
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8452,8 +8452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2033524647924255622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8580,8 +8580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &12034582604454239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8708,8 +8708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e997de1e0b16f64a87a191d8957f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedSettingTransparent: 0.5
-  _delayBeforeSetTransparentMaterial: 1
+  _speedSettingTransparent: 0.01
+  _delayBeforeSetTransparentMaterial: 0.01
 --- !u!54 &2593880407859017429
 Rigidbody:
   m_ObjectHideFlags: 0

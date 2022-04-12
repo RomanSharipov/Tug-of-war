@@ -42,19 +42,18 @@ public class Game : MonoBehaviour
         _enemyContainer = Instantiate(_enemyContainerTemplate, _player.EnemyContainerPoint.position, _player.EnemyContainerPoint.rotation);
         
         _enemyContainer.Init(_player, _swipeInput);
-        
-        _buttonContinue.onClick.AddListener(_enemyContainer.StartFly);
-        _buttonContinue.onClick.AddListener(_player.SwitchRoad);
 
-        _buttonContinue.onClick.AddListener(delegate { _swipeInput.gameObject.SetActive(true); });
+        //_buttonContinue.onClick.AddListener(_enemyContainer.StartFly);
+        //_buttonContinue.onClick.AddListener(_player.SwitchRoad);
 
-        
+        //_buttonContinue.onClick.AddListener(delegate { _swipeInput.gameObject.SetActive(true); });
+
+
         _spawnerEnemies.Spawn(_player, _enemyContainer, _firstRoad);
         _spawnerRewards.Spawn();
         _spawnerBuildings.Spawn();
         _endFirstRoad.PlayerFinishedFirstRoad += _player.OnFinishedFirstRoad;
-
-
+        _endFirstRoad.PlayerFinishedFirstRoad += delegate { _swipeInput.gameObject.SetActive(true); };
     }
 
 

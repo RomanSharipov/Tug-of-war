@@ -11,10 +11,7 @@ public class SegmentBuilding : MonoBehaviour
     [SerializeField] private float _speedSettingTransparent;
     
     [SerializeField] private float _delayBeforeSetTransparentMaterial = 1f ;
-    
 
-
-    
     private Rigidbody _rigidbody;
     private MeshCollider _meshCollider;
     private MeshRenderer _meshRenderer;
