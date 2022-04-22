@@ -40,11 +40,13 @@ public class PlayerAnimator : MonoBehaviour
         if (value > _maxSpeed)
         {
             _animator.speed = _maxSpeed;
+            return;
         }
 
         if (value <= _minSpeed)
         {
             _animator.speed = _minSpeed;
+            return;
         }
 
         else

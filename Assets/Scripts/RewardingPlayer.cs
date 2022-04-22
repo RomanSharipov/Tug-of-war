@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class RewardingPlayer : MonoBehaviour
 {
-    [SerializeField] private LayerMask _player;
-    [SerializeField] private float _frequencyChecking;
+    //[SerializeField] private LayerMask _player;
+    //[SerializeField] private float _frequencyChecking;
     [SerializeField] private float _radius;
     [SerializeField] private int _rewardAmount = 5;
     [SerializeField] private float _stepAddAnimationSpeed = 0.05f;
@@ -18,20 +18,20 @@ public class RewardingPlayer : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(CheckPlayerNearby),0, _frequencyChecking);
+        //InvokeRepeating(nameof(CheckPlayerNearby),0, _frequencyChecking);
         _animator = GetComponent<Animator>();
         _animator.Play(0, -1, Random.value);
     }
 
-    public void CheckPlayerNearby()
-    {
-        _colliders = Physics.OverlapSphere(transform.position, _radius, _player);
-        if (_colliders.Length == 0)
-            return;
+    //public void CheckPlayerNearby()
+    //{
+    //    _colliders = Physics.OverlapSphere(transform.position, _radius, _player);
+    //    if (_colliders.Length == 0)
+    //        return;
 
-        if (_colliders[0].TryGetComponent(out Player player))
-            RewardPlayer(player);
-    }
+    //    if (_colliders[0].TryGetComponent(out Player player))
+    //        RewardPlayer(player);
+    //}
 
     private void RewardPlayer(Player player)
     {
@@ -57,5 +57,13 @@ public class RewardingPlayer : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Player player))
+        {
+            RewardPlayer(player);
+        }
     }
 }

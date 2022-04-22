@@ -50,11 +50,13 @@ namespace RunnerMovementSystem
             if (value > _maxSpeed)
             {
                 _moveSpeed = _maxSpeed;
+                return;
             }
 
             if (value <= _minSpeed)
             {
                 _moveSpeed = _minSpeed;
+                return;
             }
 
             else

@@ -16,21 +16,21 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private float _currentDistance;
     [SerializeField] private float _durationRotate;
+    [SerializeField] private Player _player;
+    [SerializeField] private SwipeInput _swipeInput;
 
-    private Player _player;
     private List<Enemy> _enemies = new List<Enemy>();
-    private SwipeInput _swipeInput;
     private Coroutine _rotationJob;
     private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer; 
 
-    public void Init(Player player, SwipeInput swipeInput)
+    private void OnEnable()
     {
-        _player = player;
-        _swipeInput = swipeInput;
+        //_player = player;
+        //_swipeInput = swipeInput;
         _swipeInput.SwipedRight += FlyRight;
         _swipeInput.SwipedLeft += FlyLeft;
         _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
-        _enemyContainerMoverToPlayer.Init(player);
+        _enemyContainerMoverToPlayer.Init(_player);
         _player.StartedMoving += StartFly;
     }
 

@@ -19,8 +19,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speedAnimationAfterEndRoad = 1.5f;
     [SerializeField] private int _health = 100;
     [SerializeField] private Venom[] _modelsPlayer;
+    [SerializeField] private RoadSegment _firstRoad;
+    [SerializeField] private RoadSegment _secondRoad;
+    [SerializeField] private PlayerCamera _playerCamera;
 
-    
+
+
     private Transform _transform;
     private float _startSpeed;
     private MovementSystem _movementSystem;
@@ -31,7 +35,7 @@ public class Player : MonoBehaviour
     private UpgradingVenom _upgradingVenom;
     private Venom _currentModelVenom;
     private MouseInput _mouseInput;
-    private RoadSegment _secondRoad;
+    
 
     public Transform Transform => _transform;
     public PlayerMovement PlayerMovement => _playerMovement;
@@ -52,21 +56,21 @@ public class Player : MonoBehaviour
     public event UnityAction StartedMoving;
     public event UnityAction FinishedFirstRoad;
 
-    public void Init(RoadSegment firstRoad, RoadSegment secondRoad)
+    public void Start()
     {
         _transform = GetComponent<Transform>();
-         
+        _upgradingVenom = GetComponent<UpgradingVenom>();
+        _playerCamera.Init(this);
         _movementSystem = GetComponent<MovementSystem>();
-        _movementSystem.Init(firstRoad);
+        _movementSystem.Init(_firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();
         _playerMovement.Init(_movementSystem);
-        _upgradingVenom = GetComponent<UpgradingVenom>();
         //_upgradingVenom.Init(this);
         _upgradingVenom.WasGotNextLevel += ChangeModel;
         _startSpeed = MovementSystem.MovementOptions.MoveSpeed;
         _mouseInput = GetComponent<MouseInput>();
         ResetModel();
-        _secondRoad = secondRoad;
+        
 
         foreach (var modelPlayer in _modelsPlayer)
         {

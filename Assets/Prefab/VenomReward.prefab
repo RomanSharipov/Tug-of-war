@@ -1183,6 +1183,7 @@ GameObject:
   - component: {fileID: 8250880860417391329}
   - component: {fileID: 8434042603858697476}
   - component: {fileID: 8036130501186225181}
+  - component: {fileID: 7906756098472848548}
   m_Layer: 0
   m_Name: VenomReward
   m_TagString: Untagged
@@ -1218,10 +1219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1cfb65853f8a3449c3c6cabe151245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player:
-    serializedVersion: 2
-    m_Bits: 8
-  _frequencyChecking: 0.2
   _radius: 1
   _rewardAmount: 5
   _stepAddAnimationSpeed: 0.05
@@ -1247,6 +1244,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &7906756098472848548
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776060753230635099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.3, z: 0.22}
 --- !u!1 &8859296203649207563
 GameObject:
   m_ObjectHideFlags: 0

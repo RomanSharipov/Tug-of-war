@@ -6,9 +6,9 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
 {
     [SerializeField] private float _currentDistance;
     [SerializeField] private float _maxDistanceToPlayer;
-    [SerializeField] private Player _player;
     [SerializeField] private float _speedReduceDistance;
 
+    private Player _player;
     private float _speed;
 
     public void Init(Player player)

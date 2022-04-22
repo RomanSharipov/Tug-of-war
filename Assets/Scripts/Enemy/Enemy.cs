@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _radiusSphereOverlast = 1f;
     [SerializeField] private CableProceduralCurve _cableProceduralCurve;
+    [SerializeField] private Player _player;
+    [SerializeField] private EnemyContainer _enemyContainer;
+    [SerializeField] private RoadSegment _roadSegment;
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _ground;
     [SerializeField] private float _speedFlowDown;
@@ -23,12 +26,12 @@ public class Enemy : MonoBehaviour
 
 
     private EnemyMovement _enemyMovement;
-    private EnemyContainer _enemyContainer;
+    
     private MovementSystem _movementOnWay;
     private Transform _transform;
     private EnemyStateMachine _enemyStateMachine;
     private EnemyAnimator _enemyAnimator;
-    private Player _player;
+    
     private Vector3 _direction;
     private Quaternion _targetRotation;
     private Collider[] _colliders;
@@ -41,11 +44,8 @@ public class Enemy : MonoBehaviour
     public MovementSystem MovementOnWay => _movementOnWay;
     public EnemyContainer EnemyContainer => _enemyContainer;
 
-    public void Init(Player player,EnemyContainer enemyContainer, RoadSegment _roadSegment)
+    public void Start()
     {
-        _enemyContainer = enemyContainer;
-        
-        _player = player;
         _transform = GetComponent<Transform>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _enemyMovement = new EnemyMovement();

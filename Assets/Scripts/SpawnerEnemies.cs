@@ -27,7 +27,7 @@ public class SpawnerEnemies : MonoBehaviour
         foreach (var point in _points)
         {
             Enemy newEnemy = Instantiate(_enemyTemplate, point.position, point.rotation,transform);
-            newEnemy.Init(_player, enemyContainer, roadSegment);
+            //newEnemy.Init(_player, enemyContainer, roadSegment);
             _allEnemies.Add(newEnemy);
         }
     }

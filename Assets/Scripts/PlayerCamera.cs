@@ -32,7 +32,7 @@ public class PlayerCamera : MonoBehaviour
         _camera.LookAt = player.Transform;
 
         _cameraDistanceStartPosition = _cinemachineTransposer.m_FollowOffset;
-        //_trackedObjectOffsetStartPosition = _cinemachineTransposer.m_TrackedObjectOffset;
+        
     }
 
     private void OnPlayerWasUpgraded()
@@ -48,7 +48,7 @@ public class PlayerCamera : MonoBehaviour
     public void ResetPosition()
     {
         _cinemachineTransposer.m_FollowOffset = _cameraDistanceStartPosition;
-        //_cinemachineTransposer.m_TrackedObjectOffset = _trackedObjectOffsetStartPosition;
+        
     }
 
     private IEnumerator SmoothUpdatePosition(Vector3 targetPosition,float speedUpdatePosition)
