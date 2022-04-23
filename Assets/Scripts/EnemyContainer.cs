@@ -38,6 +38,9 @@ public class EnemyContainer : MonoBehaviour
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
+            if (IsEnemyInContainer(enemy))
+                return;
+
             enemy.ThrowLassoOnPlayer();
         }
     }
@@ -135,5 +138,10 @@ public class EnemyContainer : MonoBehaviour
     {
         _swipeInput.SwipedRight -= FlyRight;
         _swipeInput.SwipedLeft -= FlyLeft;
+    }
+
+    public bool IsEnemyInContainer(Enemy enemy)
+    {
+        return _enemies.Contains(enemy);
     }
 }
