@@ -10,7 +10,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private Vector3 _cameraDistanceStepOffsetOnFinishedFirstRoad;
     [SerializeField] private float _speedUpdatePositionOnUpgrade;
     [SerializeField] private float _speedUpdatePositionOnFinishedFirstRoad;
-    //[SerializeField] private Vector3 _upgradingStepOffset;
+    
 
     private CinemachineVirtualCamera _camera;
     private CinemachineTransposer _cinemachineTransposer;
@@ -28,8 +28,7 @@ public class PlayerCamera : MonoBehaviour
         _cinemachineTransposer = _camera.GetCinemachineComponent<CinemachineTransposer>();
         _player.UpgradingVenom.PlayerWasUpgraded += OnPlayerWasUpgraded;
         _player.FinishedFirstRoad += OnFinishedFirstRoad;
-        _camera.Follow = player.Transform;
-        _camera.LookAt = player.Transform;
+
 
         _cameraDistanceStartPosition = _cinemachineTransposer.m_FollowOffset;
         
