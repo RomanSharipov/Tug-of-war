@@ -74,14 +74,6 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Time.timeScale = 0.01f;
-        }
-    }
-
     public void SwitchEndPointLasso()
     {
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);

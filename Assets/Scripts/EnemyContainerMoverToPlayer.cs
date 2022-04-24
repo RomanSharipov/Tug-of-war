@@ -6,7 +6,9 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
 {
     [SerializeField] private float _currentDistance;
     [SerializeField] private float _maxDistanceToPlayer;
+    [SerializeField] private float _minDistanceToPlayer;
     [SerializeField] private float _speedReduceDistance;
+    [SerializeField] private float _speedAddDistance;
 
     private Player _player;
     private float _speed;
@@ -31,6 +33,12 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         {
             ReduceDistanceToPlayer();
         }
+
+        if (_currentDistance < _minDistanceToPlayer)
+        {
+            ReduceDistanceToPlayer();
+        }
+
     }
 
 
@@ -44,5 +52,10 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     public void ReduceDistanceToPlayer()
     {
         transform.position += transform.forward * _speedReduceDistance * Time.deltaTime;
+    }
+
+    public void AddDistanceToPlayer()
+    {
+        transform.position += transform.forward * _speedAddDistance * Time.deltaTime;
     }
 }

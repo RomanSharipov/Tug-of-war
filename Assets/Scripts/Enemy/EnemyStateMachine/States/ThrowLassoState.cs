@@ -4,31 +4,11 @@ using UnityEngine;
 
 public class ThrowLassoState : State
 {
-    [SerializeField] private float _radiusSphereOverlast;
-    [SerializeField] private LayerMask _enemy;
     [SerializeField] private float _speed;
 
-    private Vector3 _direction;
-    private Quaternion _targetRotation;
-    private Collider[] _colliders;
-
-    private void FixedUpdate()
+    private void Update()
     {
         MoveOnPoint();
-
-        //if (IsEnemyNearby())
-        //{
-        //    Enemy.ThrowLassoOnPlayer();
-        //}
-    }
-
-    private bool IsEnemyNearby()
-    {
-        int oldLayer = gameObject.layer;
-        gameObject.layer = 0;
-        _colliders = Physics.OverlapSphere(transform.position, _radiusSphereOverlast, _enemy);
-        gameObject.layer = oldLayer;
-        return _colliders.Length > 0;
     }
 
     private void MoveOnPoint()
@@ -41,7 +21,9 @@ public class ThrowLassoState : State
     {
         if (other.TryGetComponent(out Enemy anotherEnemy))
         {
-            if (Enemy.EnemyContainer.IsEnemyInContainer(Enemy))
+            bool alreadyThrowLassoOnPlayer = Enemy.EnemyContainer.IsEnemyInContainer(Enemy);
+
+            if (alreadyThrowLassoOnPlayer)
                 return;
 
             if (Enemy.EnemyContainer.IsEnemyInContainer(anotherEnemy))

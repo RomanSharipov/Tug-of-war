@@ -8,7 +8,7 @@ public class Venom : MonoBehaviour
     private PlayerAnimator _playerAnimator;
 
     public Transform LassoJointPoint => _lassoJointPoint;
-    public Animator Animator => _animator;
+    
     public PlayerAnimator PlayerAnimator => _playerAnimator;
 
     public void Init(Player player)

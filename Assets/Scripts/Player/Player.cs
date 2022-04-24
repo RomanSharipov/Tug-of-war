@@ -10,44 +10,36 @@ using System.Collections;
 [RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
+    public const float OneHundredPercent = 100;
+
     private const float CenterRoad = 0;
+    
+
     [SerializeField] private Transform _throwLassoPoint;
     [SerializeField] private Transform _enemyContainerPoint;
-    [SerializeField] private float _stepReduceSpeed;
-    
+    [SerializeField] private float _delayBeforeStartMoveSecondRoad = 1f;
     [SerializeField] private float _speedAfterEndRoad = 25f;
     [SerializeField] private float _speedAnimationAfterEndRoad = 1.5f;
-    [SerializeField] private int _health = 100;
+    [SerializeField] private float _health = 100;
     [SerializeField] private Venom[] _modelsPlayer;
     [SerializeField] private RoadSegment _firstRoad;
     [SerializeField] private RoadSegment _secondRoad;
     [SerializeField] private PlayerCamera _playerCamera;
 
-
-
     private Transform _transform;
     private float _startSpeed;
     private MovementSystem _movementSystem;
-    
     private PlayerMovement _playerMovement;
-    
-    
     private UpgradingVenom _upgradingVenom;
     private Venom _currentModelVenom;
     private MouseInput _mouseInput;
-    
 
     public Transform Transform => _transform;
-    public PlayerMovement PlayerMovement => _playerMovement;
-    
     public Transform ThrowLassoPoint => _throwLassoPoint;
-    public Transform EnemyContainerPoint => _enemyContainerPoint;
-
     public MovementSystem MovementSystem => _movementSystem;
     public UpgradingVenom UpgradingVenom => _upgradingVenom;
-    public int CurrentHealth => _health;
+    public float CurrentHealth => _health;
     public Venom CurrentModelVenom => _currentModelVenom;
-    
     public MouseInput MouseInput => _mouseInput;
 
     public event UnityAction ModelWasChanged;
@@ -55,6 +47,7 @@ public class Player : MonoBehaviour
     public event UnityAction StoppedMoving;
     public event UnityAction StartedMoving;
     public event UnityAction FinishedFirstRoad;
+    public event UnityAction Attacked;
 
     public void Start()
     {
@@ -65,12 +58,11 @@ public class Player : MonoBehaviour
         _movementSystem.Init(_firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();
         _playerMovement.Init(_movementSystem);
-        //_upgradingVenom.Init(this);
+        
         _upgradingVenom.WasGotNextLevel += ChangeModel;
         _startSpeed = MovementSystem.MovementOptions.MoveSpeed;
         _mouseInput = GetComponent<MouseInput>();
         ResetModel();
-        
 
         foreach (var modelPlayer in _modelsPlayer)
         {
@@ -78,7 +70,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         _health -= damage;
 
@@ -88,7 +80,7 @@ public class Player : MonoBehaviour
             _mouseInput.enabled = false;
         }
         _movementSystem.MovementOptions.ReduceSpeed(GetTotalValue(damage));
-        CurrentModelVenom.PlayerAnimator.ReduceSpeedAnimation(_speedAnimationAfterEndRoad);
+        CurrentModelVenom.PlayerAnimator.ReduceSpeedAnimation(damage / OneHundredPercent);
     }
 
     public void TakeHealth(int health)
@@ -112,9 +104,9 @@ public class Player : MonoBehaviour
         _upgradingVenom.WasGotNextLevel -= ChangeModel;
     }
 
-    private float GetTotalValue(int percent)
+    private float GetTotalValue(float percent)
     {
-        return _startSpeed / 100 * percent;
+        return _startSpeed / OneHundredPercent * percent;
     }
 
     private void ResetModel()
@@ -137,33 +129,31 @@ public class Player : MonoBehaviour
         StartedMoving?.Invoke();
     }
 
-    public void wSwitchRoad()
+    public void Attack()
     {
-        StartMove();
-        MovementSystem.Init(_secondRoad);
-        MovementSystem.SetOffset(CenterRoad);
-        
+        Attacked.Invoke();
     }
 
     public void OnFinishedFirstRoad()
     {
-        //StopMove();
-        //MouseInput.enabled = false;
-        //FinishedFirstRoad?.Invoke();
-        //wSwitchRoad();
         StartCoroutine(SwitchRoad());
     }
+
 
     private IEnumerator SwitchRoad()
     {
         StopMove();
         MouseInput.enabled = false;
         FinishedFirstRoad?.Invoke();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_delayBeforeStartMoveSecondRoad);
         StartMove();
         StartedMoving?.Invoke();
         MovementSystem.Init(_secondRoad);
         MovementSystem.SetOffset(CenterRoad);
     }
+
+    
+
+
 
 }

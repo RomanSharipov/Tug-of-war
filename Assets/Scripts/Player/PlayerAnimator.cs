@@ -10,9 +10,11 @@ public class PlayerAnimator : MonoBehaviour
     
     [SerializeField] private float _minSpeed = 0.5f;
     [SerializeField] private float _maxSpeed = 1.5f;
+    [SerializeField] private float _speedAttackAnimation = 0.8f;
 
     private Animator _animator;
     private Player _player;
+    private float _oldSpeedAnimation;
 
     public float CurrentSpeed => _animator.speed;
 
@@ -23,11 +25,13 @@ public class PlayerAnimator : MonoBehaviour
         _player.Died += OnFall;
         _player.StoppedMoving += OnStop;
         _player.StartedMoving += OnStart;
+        _player.Attacked += OnAttack;
+        _oldSpeedAnimation = 1f;
     }
 
     public void ReduceSpeedAnimation(float value)
     {
-        SetSpeed(_animator.speed -= _stepReduceAnimationSpeed);
+        SetSpeed(_animator.speed -= value);
     }
 
     public void AddSpeedAnimation(float value)
@@ -71,11 +75,12 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetTrigger(Params.Start);
     }
 
-    public class Params
+    private void OnAttack()
     {
-        public const string Fall = "Fall";
-        public const string Stop = "Stop";
-        public const string Start = "Start";
+        _oldSpeedAnimation = _animator.speed;
+        _animator.speed = _speedAttackAnimation;
+        _animator.SetTrigger(Params.Attack);
+
     }
 
     private void OnDisable()
@@ -83,7 +88,11 @@ public class PlayerAnimator : MonoBehaviour
         _player.Died -= OnFall;
         _player.StoppedMoving -= OnStop;
         _player.StartedMoving -= OnStart;
+        _player.Attacked -= OnAttack;
     }
 
-    
+    public void SetOldSpeedAnimation()
+    {
+        _animator.speed = _oldSpeedAnimation;
+    }
 }

@@ -15,6 +15,7 @@ public class UpgradingVenom : MonoBehaviour
     private Player _player ;
 
     public int RequiredHealthForUpgrade => _requiredHealthForUpgrade;
+    public int CurrentLevelVenom => _currentLevelVenom;
 
     public event UnityAction PlayerWasUpgraded;
     public event UnityAction WasGotNextLevel;
