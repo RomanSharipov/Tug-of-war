@@ -21,7 +21,7 @@ public class EnemyContainer : MonoBehaviour
 
     private List<Enemy> _enemies = new List<Enemy>();
     private Coroutine _rotationJob;
-    private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer; 
+    private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
 
     private void OnEnable()
     {
@@ -80,7 +80,7 @@ public class EnemyContainer : MonoBehaviour
 
     public void ReduceDistanceToPlayer()
     {
-        transform.position += transform.forward  * _speedReduceDistance *Time.deltaTime;
+        transform.position += transform.forward * _speedReduceDistance * Time.deltaTime;
     }
 
     public void ThrowOutStickman(Enemy enemy)
@@ -116,7 +116,7 @@ public class EnemyContainer : MonoBehaviour
         _enemyContainerMoverToPlayer.enabled = true;
     }
 
-    private void FlyLeft()
+    public void FlyLeft()
     {
         if (_rotationJob != null)
         {
@@ -125,7 +125,7 @@ public class EnemyContainer : MonoBehaviour
         _rotationJob = StartCoroutine(SmoothRotateLeft());
     }
 
-    private void FlyRight()
+    public void FlyRight()
     {
         if (_rotationJob != null)
         {

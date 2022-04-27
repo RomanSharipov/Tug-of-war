@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
     public void ThrowLassoOnPlayer()
     {
         transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
-        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
+        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
         transform.SetParent(EnemyContainer.transform);
@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
 
     public void SwitchEndPointLasso()
     {
-        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.LassoJointPoint);
+        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
     }
 
     private void OnDisable()

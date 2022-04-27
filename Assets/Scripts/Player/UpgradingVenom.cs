@@ -35,6 +35,7 @@ public class UpgradingVenom : MonoBehaviour
         _currentLevelVenom++;
         _targetScale = new Vector3(transform.localScale.x + _stepAddScale, transform.localScale.y + _stepAddScale, transform.localScale.z + _stepAddScale);
         StartCoroutine(UpgradeScale(_targetScale));
+
     }
 
     private IEnumerator UpgradeScale(Vector3 targetScale)

@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     
 
     [SerializeField] private Transform _throwLassoPoint;
+    [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private Transform _enemyContainerPoint;
     [SerializeField] private float _delayBeforeStartMoveSecondRoad = 1f;
     [SerializeField] private float _speedAfterEndRoad = 25f;
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
     public float CurrentHealth => _health;
     public Venom CurrentModelVenom => _currentModelVenom;
     public MouseInput MouseInput => _mouseInput;
+    public EnemyContainer EnemyContainer => _enemyContainer;
 
     public event UnityAction ModelWasChanged;
     public event UnityAction Died;
