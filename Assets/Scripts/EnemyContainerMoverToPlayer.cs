@@ -22,10 +22,10 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     {
         _currentDistance = Vector3.Distance(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z), transform.position);
 
-        //if (_currentDistance < _minDistanceToPlayer)
-        //{
-        //    return;
-        //}
+        if (_currentDistance < _minDistanceToPlayer)
+        {
+            return;
+        }
 
         MoveToPlayer();
 
@@ -33,12 +33,6 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         {
             ReduceDistanceToPlayer();
         }
-
-        if (_currentDistance < _minDistanceToPlayer)
-        {
-            ReduceDistanceToPlayer();
-        }
-
     }
 
 
