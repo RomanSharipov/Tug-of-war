@@ -23,12 +23,19 @@ public class Building : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Enemy enemy))
+        if (other.TryGetComponent(out EnemyContainer enemyContainer))
         {
-            enemy.TakeOffLasso();
-
+            enemyContainer.StopMoveForSeconds(0.5f);
             Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
         }
+
+
+        //if (other.TryGetComponent(out Enemy enemy))
+        //{
+        //    enemy.TakeOffLasso();
+
+        //    Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
+        //}
     }
 
     private void CrushBuilding()

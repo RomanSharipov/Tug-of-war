@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RunnerMovementSystem
 {
@@ -19,23 +20,16 @@ namespace RunnerMovementSystem
         public float RotationSpeed => _rotationSpeed;
         public float BorderOffset => _borderOffset;
 
+        public event UnityAction<float> SpeedChanged;
+
         public void ReduceSpeed(float value)
         {
-            //if (_moveSpeed > _minSpeed)
-            //{
-            //    _moveSpeed -= value;
-            //}
-            
             SetSpeed(_moveSpeed -= value);
+            
         }
 
         public void AddSpeed(float stepAddSpeed)
         {
-            //if (_moveSpeed < _maxSpeed)
-            //{
-            //    _moveSpeed += stepAddSpeed;
-            //}
-
             SetSpeed(_moveSpeed += stepAddSpeed);
         }
 
@@ -50,18 +44,21 @@ namespace RunnerMovementSystem
             if (value > _maxSpeed)
             {
                 _moveSpeed = _maxSpeed;
+                SpeedChanged(_moveSpeed);
                 return;
             }
 
             if (value <= _minSpeed)
             {
                 _moveSpeed = _minSpeed;
+                SpeedChanged(_moveSpeed);
                 return;
             }
 
             else
             {
                 _moveSpeed = value;
+                SpeedChanged(_moveSpeed);
             }
         }
 

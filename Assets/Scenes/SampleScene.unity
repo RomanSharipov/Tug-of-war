@@ -4327,8 +4327,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5045937967871423623, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
+      propertyPath: _speedRotate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045937967871423623, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
+      propertyPath: _durationRotate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045937967871423623, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
       propertyPath: _maxDistanceToPlayer
-      value: 40
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045937967871423623, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
+      propertyPath: _minDistanceToPlayer
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5775558568538223527, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
       propertyPath: _player
@@ -4338,6 +4350,14 @@ PrefabInstance:
       propertyPath: _swipeInput
       value: 
       objectReference: {fileID: 845332570}
+    - target: {fileID: 5775558568538223527, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
+      propertyPath: _speedRotate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775558568538223527, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
+      propertyPath: _durationRotate
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5775558568538223577, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4390,7 +4410,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8171352193079394681, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
 --- !u!1 &227871753
 GameObject:
@@ -5651,7 +5672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &388951201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5667,8 +5688,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyRight
         m_Mode: 1
         m_Arguments:
@@ -6147,6 +6168,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d31f5513ba52a644977494357c26c04, type: 3}
+--- !u!114 &439855931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5045937967871423623, guid: bf063bdf8ebe07a41a97b322dad7a35a, type: 3}
+  m_PrefabInstance: {fileID: 224807267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a62100d36dc57d4a9dec407ca0f8089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &440723985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8031,7 +8063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &495641686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8047,8 +8079,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyRight
         m_Mode: 1
         m_Arguments:
@@ -9244,7 +9276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &545413407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9260,8 +9292,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyRight
         m_Mode: 1
         m_Arguments:
@@ -10203,7 +10235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &633913756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10219,8 +10251,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyLeft
         m_Mode: 1
         m_Arguments:
@@ -14125,7 +14157,6 @@ MonoBehaviour:
   _enemyTemplate: {fileID: 8815846913506578207, guid: 5d9cf4bc91c0310488d83988d05a8adb, type: 3}
   _firstRoad: {fileID: 2115707775}
   _secondRoad: {fileID: 2050781590}
-  _swipeInput: {fileID: 845332570}
   _player: {fileID: 969790943}
 --- !u!114 &963194232
 MonoBehaviour:
@@ -14208,7 +14239,7 @@ MonoBehaviour:
   heightFogIntensity: 1
   useHeightFogOnSky: 1
   distanceHeightBlend: 1
-  material: {fileID: 2034328312}
+  material: {fileID: 1841797528}
 --- !u!1 &967086297
 GameObject:
   m_ObjectHideFlags: 0
@@ -21117,7 +21148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1542073435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21133,8 +21164,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyLeft
         m_Mode: 1
         m_Arguments:
@@ -22401,7 +22432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1632946144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22417,8 +22448,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyLeft
         m_Mode: 1
         m_Arguments:
@@ -25762,6 +25793,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9cf4bc91c0310488d83988d05a8adb, type: 3}
+--- !u!21 &1841797528
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/FogPlus
+  m_Shader: {fileID: 4800000, guid: 39ef0b8c9be96494d9f8b2f2c54a28c5, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!4 &1850040162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8250880860417391329, guid: 6d31f5513ba52a644977494357c26c04, type: 3}
@@ -27593,32 +27650,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8250880860417391329, guid: 6d31f5513ba52a644977494357c26c04, type: 3}
   m_PrefabInstance: {fileID: 114278374}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &2034328312
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/FogPlus
-  m_Shader: {fileID: 4800000, guid: 39ef0b8c9be96494d9f8b2f2c54a28c5, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1001 &2048448414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28606,7 +28637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2078028795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28622,8 +28653,8 @@ MonoBehaviour:
   Turned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614361709}
-        m_TargetAssemblyTypeName: EnemyContainer, Assembly-CSharp
+      - m_Target: {fileID: 439855931}
+        m_TargetAssemblyTypeName: EnemyContainerMoverToPlayer, Assembly-CSharp
         m_MethodName: FlyLeft
         m_Mode: 1
         m_Arguments:

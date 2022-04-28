@@ -17,7 +17,7 @@ public class Game : MonoBehaviour
     [SerializeField] private RoadSegment _firstRoad;
     
     [SerializeField] private RoadSegment _secondRoad;
-    [SerializeField] private SwipeInput _swipeInput;
+    
 
     [SerializeField] private Player _player;
     private EnemyContainer _enemyContainer;
@@ -31,7 +31,7 @@ public class Game : MonoBehaviour
     public void StartGame()
     {
         _endFirstRoad.PlayerFinishedFirstRoad += _player.OnFinishedFirstRoad;
-        _endFirstRoad.PlayerFinishedFirstRoad += delegate { _swipeInput.gameObject.SetActive(true); };
+
     }
 
     public void RestartGame()

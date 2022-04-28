@@ -7,28 +7,27 @@ using UnityEngine;
 public class EnemyContainer : MonoBehaviour
 {
     [SerializeField] private SphereCollider _sphereCollider;
-    [SerializeField] private float _speed = 21f;
+    
     [SerializeField] private float _speedReduceDistance = 2f;
-    [SerializeField] private float _speedRotate = 5f;
-    [SerializeField] private float _maxDistanceToPlayer = 25f;
-    [SerializeField] private float _minDistanceToPlayer = 15f;
+
+
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
-    [SerializeField] private float _currentDistance;
-    [SerializeField] private float _durationRotate;
+    
+    
     [SerializeField] private Player _player;
-    [SerializeField] private SwipeInput _swipeInput;
+    
 
     private List<Enemy> _enemies = new List<Enemy>();
-    private Coroutine _rotationJob;
+    
     private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
 
-    private void OnEnable()
+
+
+
+
+    private void Start()
     {
-        //_player = player;
-        //_swipeInput = swipeInput;
-        _swipeInput.SwipedRight += FlyRight;
-        _swipeInput.SwipedLeft += FlyLeft;
         _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
         _enemyContainerMoverToPlayer.Init(_player);
         _player.StartedMoving += StartFly;
@@ -88,60 +87,22 @@ public class EnemyContainer : MonoBehaviour
         _enemies.Remove(enemy);
     }
 
-    private IEnumerator SmoothRotateLeft()
-    {
-        _enemyContainerMoverToPlayer.enabled = false;
-        float timePassed = 0;
-        while (timePassed < _durationRotate)
-        {
-            transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
-            timePassed += Time.deltaTime;
-            yield return null;
-        }
-        _enemyContainerMoverToPlayer.enabled = true;
-    }
 
-    private IEnumerator SmoothRotateRight()
-    {
-        float timePassed = 0;
-        _enemyContainerMoverToPlayer.enabled = false;
-        while (timePassed < _durationRotate)
-        {
-            transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
-            timePassed += Time.deltaTime;
-            yield return null;
-        }
-        _enemyContainerMoverToPlayer.enabled = true;
-    }
-
-    public void FlyLeft()
-    {
-        if (_rotationJob != null)
-        {
-            StopCoroutine(_rotationJob);
-        }
-        _rotationJob = StartCoroutine(SmoothRotateLeft());
-    }
-
-    public void FlyRight()
-    {
-        if (_rotationJob != null)
-        {
-            StopCoroutine(_rotationJob);
-        }
-        _rotationJob = StartCoroutine(SmoothRotateRight());
-    }
-
-    private void OnDisable()
-    {
-        _swipeInput.SwipedRight -= FlyRight;
-        _swipeInput.SwipedLeft -= FlyLeft;
-    }
 
     public bool IsEnemyInContainer(Enemy enemy)
     {
         return _enemies.Contains(enemy);
+    }
+
+    public void StopMoveForSeconds(float seconds)
+    {
+        StartCoroutine(StopMoveForSecondsJob(seconds));
+    }
+
+    private IEnumerator StopMoveForSecondsJob(float seconds)
+    {
+        _enemyContainerMoverToPlayer.enabled = false;
+        yield return new WaitForSeconds(seconds);
+        _enemyContainerMoverToPlayer.enabled = true;
     }
 }
