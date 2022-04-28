@@ -25,9 +25,9 @@ public class Building : MonoBehaviour
     {
         if (other.TryGetComponent(out EnemyContainer enemyContainer))
         {
-            enemyContainer.StopMoveForSeconds(1f);
+            //enemyContainer.StopMoveForSeconds(1.5f);
             
-            Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
+            //Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
         }
 
 
@@ -39,7 +39,7 @@ public class Building : MonoBehaviour
         //}
     }
 
-    private void CrushBuilding()
+    public void CrushBuilding()
     {
         _boxCollider.enabled = false;
         _unitedBuilding.SetActive(false);
