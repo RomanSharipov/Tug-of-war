@@ -25,7 +25,8 @@ public class Building : MonoBehaviour
     {
         if (other.TryGetComponent(out EnemyContainer enemyContainer))
         {
-            enemyContainer.StopMoveForSeconds(0.5f);
+            enemyContainer.StopMoveForSeconds(1f);
+            
             Invoke(nameof(CrushBuilding), _delayBeforeCrushBuilding);
         }
 

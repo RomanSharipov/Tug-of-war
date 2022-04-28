@@ -28,7 +28,7 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
 
         if (_currentDistance < _minDistanceToPlayer)
         {
-            return;
+            AddDistanceToPlayer();
         }
 
         MoveToPlayer();
@@ -53,39 +53,39 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
 
     public void AddDistanceToPlayer()
     {
-        transform.position += transform.forward * _speedAddDistance * Time.deltaTime;
+        _speed -= _speedAddDistance;
     }
 
     private IEnumerator SmoothRotateLeft()
     {
-        //float oldSpeed = _speed;
-        //_speed = 0;
+        float oldSpeed = _speed;
+        _speed = 0;
         float timePassed = 0;
         while (timePassed < _durationRotate)
         {
-            Debug.Log("SmoothRotateLeft");
+
             transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
             transform.position += transform.forward * _speed * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
-        //_speed = oldSpeed;
+        _speed = oldSpeed;
     }
 
     private IEnumerator SmoothRotateRight()
     {
         float timePassed = 0;
-        //float oldSpeed = _speed;
-        //_speed = 0;
+        float oldSpeed = _speed;
+        _speed = 0;
         while (timePassed < _durationRotate)
         {
-            Debug.Log("SmoothRotateRight");
+
             transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
             transform.position += transform.forward * _speed * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
-        //_speed = oldSpeed;
+        _speed = oldSpeed;
     }
 
     public void FlyLeft()

@@ -54,7 +54,7 @@ public class EnemyContainer : MonoBehaviour
 
     public void StartFly()
     {
-        _sphereCollider.enabled = false;
+        _sphereCollider.isTrigger = false;
         StartCoroutine(SmoothStartFly());
 
         foreach (var enemy in _enemies)
@@ -96,6 +96,7 @@ public class EnemyContainer : MonoBehaviour
 
     public void StopMoveForSeconds(float seconds)
     {
+        
         StartCoroutine(StopMoveForSecondsJob(seconds));
     }
 
