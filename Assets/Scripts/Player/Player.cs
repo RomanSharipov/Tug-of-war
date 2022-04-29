@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     
     public event UnityAction Attacked;
 
-    public void Start()
+    public void Init()
     {
         _transform = GetComponent<Transform>();
         _upgradingVenom = GetComponent<UpgradingVenom>();

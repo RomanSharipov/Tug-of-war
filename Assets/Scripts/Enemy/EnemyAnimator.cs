@@ -18,6 +18,7 @@ public class EnemyAnimator : MonoBehaviour
 
     public void PullRope()
     {
+        Debug.Log("PullRope()");
         _animator.SetBool(Params.PullRope, true);
     }
 

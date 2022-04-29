@@ -14,7 +14,7 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     [SerializeField] private float _durationRotate = 0.3f;
     [SerializeField] private float _speedRotate = 5f;
     [SerializeField] private float _speed;
-    [SerializeField] private float _speedMoveForwardForTurn;
+    [SerializeField] private float _speedMoveForwardWhileTurning = 15f;
 
     private Player _player;
     private Coroutine _rotationJob;
@@ -73,9 +73,8 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         float timePassed = 0;
         while (timePassed < _durationRotate)
         {
-
             transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speedMoveForwardForTurn * Time.deltaTime;
+            transform.position += transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
@@ -89,9 +88,8 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         _speed = 0;
         while (timePassed < _durationRotate)
         {
-
             transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speedMoveForwardForTurn * Time.deltaTime;
+            transform.position += transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }

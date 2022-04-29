@@ -9,6 +9,7 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private Player _player;
+    [SerializeField] private GameObject _template;
 
     private List<Enemy> _enemies = new List<Enemy>();
     private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
@@ -69,6 +70,7 @@ public class EnemyContainer : MonoBehaviour
 
     public void AddEnemy(Enemy enemy)
     {
+        Debug.Log("AddEnemy");
         _enemies.Add(enemy);
         enemy.transform.SetParent(transform);
     }

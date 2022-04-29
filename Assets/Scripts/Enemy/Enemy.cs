@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _maxHeight = 3;
     [SerializeField] private float _speedSettingRandomHeight = 5;
     [SerializeField] private Vector3 _targetPosition = new Vector3();
+    
 
 
     private EnemyMovement _enemyMovement;
@@ -40,7 +41,7 @@ public class Enemy : MonoBehaviour
     public MovementSystem MovementOnWay => _movementOnWay;
     public EnemyContainer EnemyContainer => _enemyContainer;
 
-    public void Start()
+    public void Init()
     {
         _transform = GetComponent<Transform>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
@@ -57,13 +58,14 @@ public class Enemy : MonoBehaviour
 
     public void ThrowLassoOnPlayer()
     {
+        EnemyContainer.AddEnemy(this);
         transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
         EnemyAnimator.PullRope();
         SwitchOffMovement();
-        EnemyContainer.AddEnemy(this);
+        
     }
 
     public void SwitchEndPointLasso()
@@ -78,6 +80,7 @@ public class Enemy : MonoBehaviour
 
     public void SwitchOffMovement()
     {
+        Debug.Log("SwitchOffMovement");
         _enemyStateMachine.Current.enabled = false;
         _enemyStateMachine.enabled = false;
         _movementOnWay.enabled = false;
