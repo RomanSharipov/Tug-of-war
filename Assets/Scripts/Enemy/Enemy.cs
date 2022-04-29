@@ -80,7 +80,6 @@ public class Enemy : MonoBehaviour
 
     public void SwitchOffMovement()
     {
-        Debug.Log("SwitchOffMovement");
         _enemyStateMachine.Current.enabled = false;
         _enemyStateMachine.enabled = false;
         _movementOnWay.enabled = false;
@@ -92,7 +91,6 @@ public class Enemy : MonoBehaviour
         transform.parent = null;
         _capsuleCollider.enabled = false;
         StartCoroutine(FlowDown());
-        _enemyContainer.ThrowOutStickman(this);
         EnemyAnimator.Fall();
         _airTrail.gameObject.SetActive(false);
     }

@@ -1,34 +1,38 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyContainerMoverToPlayer : MonoBehaviour
+public class EnemyContainerMoverToPlayer 
 {
     [SerializeField] private float _currentDistance;
-    [SerializeField] private float _maxDistanceToPlayer;
-    [SerializeField] private float _minDistanceToPlayer;
+    [SerializeField] private float _maxDistanceToPlayer = 15;
+    [SerializeField] private float _minDistanceToPlayer = 5;
     [SerializeField] private float _maxDistanceToPlayerForFinish = 39f;
     [SerializeField] private float _minDistanceToPlayerForFinish = 30f;
-    [SerializeField] private float _speedReduceDistance;
-    [SerializeField] private float _speedAddDistance;
-    [SerializeField] private float _stepAddDistanceForUpgradgeVenom;
-    [SerializeField] private float _durationRotate = 0.3f;
-    [SerializeField] private float _speedRotate = 5f;
+    [SerializeField] private float _speedReduceDistance = 15f;
+    [SerializeField] private float _speedAddDistance = 0.3f;
+    [SerializeField] private float _stepAddDistanceForUpgradgeVenom = 1.5f;
+    [SerializeField] private float _durationRotate = 0.8f;
+    [SerializeField] private float _speedRotate = 90f;
     [SerializeField] private float _speed;
     [SerializeField] private float _speedMoveForwardWhileTurning = 15f;
 
     private Player _player;
     private Coroutine _rotationJob;
+    private Transform _transform;
+    private MonoBehaviour _enemyContainerOnScene;
 
-    public void Init(Player player)
+    public void Init(Player player, MonoBehaviour monoBehaviour)
     {
+        _enemyContainerOnScene = monoBehaviour;
         _player = player;
         _player.MovementSystem.MovementOptions.SpeedChanged += (float speed) => { _speed = speed; };
         _player.UpgradingVenom.PlayerWasUpgraded += AddDistanceForUpgradgeVenom;
+        _transform = _enemyContainerOnScene.transform;
     }
 
-    private void Update()
+    public void Move()
     {
-        _currentDistance = Vector3.Distance(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z), transform.position);
+        _currentDistance = Vector3.Distance(new Vector3(_player.transform.position.x, _transform.position.y, _player.transform.position.z), _transform.position);
 
         if (_currentDistance < _minDistanceToPlayer)
         {
@@ -52,13 +56,13 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
 
     private void MoveToPlayer()
     {
-        transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
-        transform.position += transform.forward * _speed * Time.deltaTime;
+        _transform.LookAt(new Vector3(_player.transform.position.x, _transform.position.y, _player.transform.position.z));
+        _transform.position += _transform.forward * _speed * Time.deltaTime;
     }
 
     public void ReduceDistanceToPlayer()
     {
-        transform.position += transform.forward * _speedReduceDistance * Time.deltaTime;
+        _transform.position += _transform.forward * _speedReduceDistance * Time.deltaTime;
     }
 
     public void AddDistanceToPlayer()
@@ -66,55 +70,37 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         _speed -= _speedAddDistance;
     }
 
-    private IEnumerator SmoothRotateLeft()
+    public IEnumerator SmoothRotateLeft()
     {
         float oldSpeed = _speed;
         _speed = 0;
         float timePassed = 0;
         while (timePassed < _durationRotate)
         {
-            transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
+            _transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
+            _transform.position += _transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
         _speed = oldSpeed;
     }
 
-    private IEnumerator SmoothRotateRight()
+    public IEnumerator SmoothRotateRight()
     {
         float timePassed = 0;
         float oldSpeed = _speed;
         _speed = 0;
         while (timePassed < _durationRotate)
         {
-            transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
+            _transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
+            _transform.position += _transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
         _speed = oldSpeed;
     }
 
-    public void FlyLeft()
-    {
-        if (_rotationJob != null)
-        {
-            StopCoroutine(_rotationJob);
-        }
-        _rotationJob = StartCoroutine(SmoothRotateLeft());
-    }
-
-    public void FlyRight()
-    {
-        if (_rotationJob != null)
-        {
-            StopCoroutine(_rotationJob);
-        }
-        _rotationJob = StartCoroutine(SmoothRotateRight());
-    }
-
-    private void OnDisable()
+    public void OnDisable()
     {
         _player.MovementSystem.MovementOptions.SpeedChanged -= (float speed) => { _speed = speed; };
     }
@@ -123,5 +109,23 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     {
         _maxDistanceToPlayer = _maxDistanceToPlayerForFinish;
         _minDistanceToPlayer = _minDistanceToPlayerForFinish;
+    }
+
+    public void FlyLeft()
+    {
+        if (_rotationJob != null)
+        {
+            _enemyContainerOnScene.StopCoroutine(_rotationJob);
+        }
+        _rotationJob = _enemyContainerOnScene.StartCoroutine(SmoothRotateLeft());
+    }
+
+    public void FlyRight()
+    {
+        if (_rotationJob != null)
+        {
+            _enemyContainerOnScene.StopCoroutine(_rotationJob);
+        }
+        _rotationJob = _enemyContainerOnScene.StartCoroutine(SmoothRotateRight());
     }
 }

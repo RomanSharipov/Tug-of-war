@@ -9,16 +9,23 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private Player _player;
-    [SerializeField] private GameObject _template;
+    [SerializeField] private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
 
     private List<Enemy> _enemies = new List<Enemy>();
-    private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
+    private Coroutine _rotationJob;
+    private Transform _transform;
 
     private void Start()
     {
-        _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
-        _enemyContainerMoverToPlayer.Init(_player);
+        _transform = GetComponent<Transform>();
+        _enemyContainerMoverToPlayer = new EnemyContainerMoverToPlayer();
+        _enemyContainerMoverToPlayer.Init(_player,this);
         _player.SwitchedRoad += OnStartedMoving;
+    }
+
+    private void Update()
+    {
+        _enemyContainerMoverToPlayer.Move();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +44,7 @@ public class EnemyContainer : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeOffLasso();
+            _enemies.Remove(enemy);
         }
     }
 
@@ -70,14 +78,8 @@ public class EnemyContainer : MonoBehaviour
 
     public void AddEnemy(Enemy enemy)
     {
-        Debug.Log("AddEnemy");
         _enemies.Add(enemy);
         enemy.transform.SetParent(transform);
-    }
-
-    public void ThrowOutStickman(Enemy enemy)
-    {
-        _enemies.Remove(enemy);
     }
 
     public bool IsEnemyInContainer(Enemy enemy)
@@ -88,5 +90,17 @@ public class EnemyContainer : MonoBehaviour
     private void OnDisable()
     {
         _player.SwitchedRoad += OnStartedMoving;
+        _enemyContainerMoverToPlayer.OnDisable();
+    }
+
+
+    public void FlyLeft()
+    {
+        _enemyContainerMoverToPlayer.FlyLeft();
+    }
+
+    public void FlyRight()
+    {
+        _enemyContainerMoverToPlayer.FlyRight();
     }
 }

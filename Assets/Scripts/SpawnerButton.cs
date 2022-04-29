@@ -7,7 +7,6 @@ public class SpawnerButton : MonoBehaviour
     [SerializeField] private Button _buttonCrashBuildingTemplate;
     [SerializeField] private float _lifeTimeButton;
     [SerializeField] private Building _building;
-    [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Canvas _canvas;
 
