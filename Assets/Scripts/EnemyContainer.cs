@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyContainer : MonoBehaviour
 {
     [SerializeField] private SphereCollider _sphereCollider;
-    
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
     [SerializeField] private Player _player;
@@ -18,7 +17,7 @@ public class EnemyContainer : MonoBehaviour
     {
         _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
         _enemyContainerMoverToPlayer.Init(_player);
-        _player.StartedMoving += OnStartedMoving;
+        _player.SwitchedRoad += OnStartedMoving;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,6 +70,7 @@ public class EnemyContainer : MonoBehaviour
     public void AddEnemy(Enemy enemy)
     {
         _enemies.Add(enemy);
+        enemy.transform.SetParent(transform);
     }
 
     public void ThrowOutStickman(Enemy enemy)
@@ -85,6 +85,6 @@ public class EnemyContainer : MonoBehaviour
 
     private void OnDisable()
     {
-        _player.StartedMoving += OnStartedMoving;
+        _player.SwitchedRoad += OnStartedMoving;
     }
 }

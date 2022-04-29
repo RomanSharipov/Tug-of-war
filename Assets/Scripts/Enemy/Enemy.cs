@@ -61,7 +61,6 @@ public class Enemy : MonoBehaviour
         _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
         _cableProceduralCurve.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
-        transform.SetParent(EnemyContainer.transform);
         EnemyAnimator.PullRope();
         SwitchOffMovement();
         EnemyContainer.AddEnemy(this);

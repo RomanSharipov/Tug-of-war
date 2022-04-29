@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _throwLassoPoint;
     [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private Transform _enemyContainerPoint;
-    [SerializeField] private float _delayBeforeStartMoveSecondRoad = 1f;
+    
     [SerializeField] private float _speedAfterEndRoad = 25f;
     [SerializeField] private float _speedAnimationAfterEndRoad = 1.5f;
     [SerializeField] private float _health = 100;
@@ -47,8 +47,8 @@ public class Player : MonoBehaviour
     public event UnityAction ModelWasChanged;
     public event UnityAction Died;
     public event UnityAction StoppedMoving;
-    public event UnityAction StartedMoving;
-    public event UnityAction FinishedFirstRoad;
+    public event UnityAction SwitchedRoad;
+    
     public event UnityAction Attacked;
 
     public void Start()
@@ -118,19 +118,6 @@ public class Player : MonoBehaviour
         _modelsPlayer[1].gameObject.SetActive(false);
     }
 
-    public void StopMove()
-    {
-        MovementSystem.MovementOptions.Stop();
-        StoppedMoving?.Invoke();
-    }
-
-    public void StartMove()
-    {
-        MovementSystem.MovementOptions.SetSpeed(_speedAfterEndRoad);
-        CurrentModelVenom.PlayerAnimator.SetSpeed(_speedAnimationAfterEndRoad);
-        StartedMoving?.Invoke();
-    }
-
     public void Attack()
     {
         Attacked.Invoke();
@@ -138,24 +125,10 @@ public class Player : MonoBehaviour
 
     public void OnFinishedFirstRoad()
     {
-        StartCoroutine(SwitchRoad());
-    }
-
-
-    private IEnumerator SwitchRoad()
-    {
-        StopMove();
+        SwitchedRoad?.Invoke();
         MouseInput.enabled = false;
-        FinishedFirstRoad?.Invoke();
-        yield return new WaitForSeconds(_delayBeforeStartMoveSecondRoad);
-        StartMove();
-        StartedMoving?.Invoke();
         MovementSystem.Init(_secondRoad);
         MovementSystem.SetOffset(CenterRoad);
+        
     }
-
-    
-
-
-
 }

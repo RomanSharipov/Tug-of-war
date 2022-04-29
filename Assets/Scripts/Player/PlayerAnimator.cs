@@ -20,7 +20,7 @@ public class PlayerAnimator : MonoBehaviour
         _animator = GetComponent<Animator>();
         _player.Died += OnFall;
         _player.StoppedMoving += OnStop;
-        _player.StartedMoving += OnStart;
+        _player.SwitchedRoad += OnStart;
         _player.Attacked += OnAttack;
         
     }
@@ -81,7 +81,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         _player.Died -= OnFall;
         _player.StoppedMoving -= OnStop;
-        _player.StartedMoving -= OnStart;
+        _player.SwitchedRoad -= OnStart;
         _player.Attacked -= OnAttack;
     }
 

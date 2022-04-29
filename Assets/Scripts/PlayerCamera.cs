@@ -24,7 +24,7 @@ public class PlayerCamera : MonoBehaviour
         _camera = GetComponent<CinemachineVirtualCamera>();
         _cinemachineTransposer = _camera.GetCinemachineComponent<CinemachineTransposer>();
         _player.UpgradingVenom.PlayerWasUpgraded += OnPlayerWasUpgraded;
-        _player.FinishedFirstRoad += OnFinishedFirstRoad;
+        _player.SwitchedRoad += OnFinishedFirstRoad;
         _cameraDistanceStartPosition = _cinemachineTransposer.m_FollowOffset;
     }
 
@@ -62,5 +62,11 @@ public class PlayerCamera : MonoBehaviour
             StopCoroutine(_smoothUpdatePositionJob);
         }
         _smoothUpdatePositionJob = StartCoroutine(SmoothUpdatePosition(_targetPosition, _speedUpdatePositionOnFinishedFirstRoad));
+    }
+
+    private void OnDisable()
+    {
+        _player.UpgradingVenom.PlayerWasUpgraded -= OnPlayerWasUpgraded;
+        _player.SwitchedRoad -= OnFinishedFirstRoad;
     }
 }
