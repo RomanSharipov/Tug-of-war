@@ -9,6 +9,7 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     [SerializeField] private float _minDistanceToPlayer;
     [SerializeField] private float _speedReduceDistance;
     [SerializeField] private float _speedAddDistance;
+    [SerializeField] private float _stepAddDistanceForUpgradgeVenom;
     [SerializeField] private float _durationRotate = 0.3f;
     [SerializeField] private float _speedRotate = 5f;
     [SerializeField] private float _speed;
@@ -20,6 +21,7 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     {
         _player = player;
         _player.MovementSystem.MovementOptions.SpeedChanged += (float speed) => { _speed = speed; };
+        _player.UpgradingVenom.PlayerWasUpgraded += AddDistanceForUpgradgeVenom;
     }
 
     private void Update()
@@ -37,6 +39,12 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         {
             ReduceDistanceToPlayer();
         }
+    }
+
+    private void AddDistanceForUpgradgeVenom()
+    {
+        _maxDistanceToPlayer += _stepAddDistanceForUpgradgeVenom;
+        _minDistanceToPlayer += _stepAddDistanceForUpgradgeVenom;
     }
 
 
@@ -110,9 +118,4 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     {
         _player.MovementSystem.MovementOptions.SpeedChanged -= (float speed) => { _speed = speed; };
     }
-
-
-
-
-
 }

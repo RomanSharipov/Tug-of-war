@@ -22,10 +22,6 @@ public class EnemyContainer : MonoBehaviour
     
     private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
 
-
-
-
-
     private void Start()
     {
         _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
@@ -56,6 +52,7 @@ public class EnemyContainer : MonoBehaviour
     {
         _sphereCollider.isTrigger = false;
         StartCoroutine(SmoothStartFly());
+       
 
         foreach (var enemy in _enemies)
         {
@@ -96,7 +93,6 @@ public class EnemyContainer : MonoBehaviour
 
     public void StopMoveForSeconds(float seconds)
     {
-        
         StartCoroutine(StopMoveForSecondsJob(seconds));
     }
 

@@ -77,8 +77,6 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnAttack()
     {
-        _oldSpeedAnimation = _animator.speed;
-        _animator.speed = _speedAttackAnimation;
         _animator.SetTrigger(Params.Attack);
 
     }
@@ -91,8 +89,4 @@ public class PlayerAnimator : MonoBehaviour
         _player.Attacked -= OnAttack;
     }
 
-    public void SetOldSpeedAnimation()
-    {
-        _animator.speed = _oldSpeedAnimation;
-    }
 }

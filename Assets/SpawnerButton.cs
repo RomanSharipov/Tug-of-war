@@ -25,7 +25,7 @@ public class SpawnerButton : MonoBehaviour
         var newButton = Instantiate(_buttonCrashBuildingTemplate,_canvas.transform);
         newButton.transform.position = _spawnPoint.position;
         newButton.onClick.AddListener(delegate { _building.CrushBuilding(); });
-        newButton.onClick.AddListener(delegate { _enemyContainer.StopMoveForSeconds(0.5f); });
+        newButton.onClick.AddListener(delegate { _enemyContainer.StopMoveForSeconds(0); });
         
         yield return new WaitForSeconds(seconds);
         Destroy(newButton.gameObject);
