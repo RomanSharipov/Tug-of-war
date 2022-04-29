@@ -7,12 +7,15 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     [SerializeField] private float _currentDistance;
     [SerializeField] private float _maxDistanceToPlayer;
     [SerializeField] private float _minDistanceToPlayer;
+    [SerializeField] private float _maxDistanceToPlayerForFinish = 39f;
+    [SerializeField] private float _minDistanceToPlayerForFinish = 30f;
     [SerializeField] private float _speedReduceDistance;
     [SerializeField] private float _speedAddDistance;
     [SerializeField] private float _stepAddDistanceForUpgradgeVenom;
     [SerializeField] private float _durationRotate = 0.3f;
     [SerializeField] private float _speedRotate = 5f;
     [SerializeField] private float _speed;
+    [SerializeField] private float _speedMoveForwardForTurn;
 
     private Player _player;
     private Coroutine _rotationJob;
@@ -73,7 +76,7 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         {
 
             transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
+            transform.position += transform.forward * _speedMoveForwardForTurn * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
@@ -89,7 +92,7 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
         {
 
             transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
-            transform.position += transform.forward * _speed * Time.deltaTime;
+            transform.position += transform.forward * _speedMoveForwardForTurn * Time.deltaTime;
             timePassed += Time.deltaTime;
             yield return null;
         }
@@ -117,5 +120,11 @@ public class EnemyContainerMoverToPlayer : MonoBehaviour
     private void OnDisable()
     {
         _player.MovementSystem.MovementOptions.SpeedChanged -= (float speed) => { _speed = speed; };
+    }
+
+    public void SetDistanceToPlayerOnFinish()
+    {
+        _maxDistanceToPlayer = _maxDistanceToPlayerForFinish;
+        _minDistanceToPlayer = _minDistanceToPlayerForFinish;
     }
 }

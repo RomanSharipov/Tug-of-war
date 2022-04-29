@@ -52,7 +52,7 @@ public class CableProceduralCurve : MonoBehaviour
 		Draw();
 	}
 
-    private void Update()
+    private void LateUpdate()
     {
         vectorFromStartToEnd = endPointTransform.position - transform.position;
         // Setting the Start object to look at the end will be used for making the wind be perpendicular to the cable later.

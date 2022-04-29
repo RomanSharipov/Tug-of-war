@@ -26,7 +26,7 @@ public class EnemyContainer : MonoBehaviour
     {
         _enemyContainerMoverToPlayer = GetComponent<EnemyContainerMoverToPlayer>();
         _enemyContainerMoverToPlayer.Init(_player);
-        _player.StartedMoving += StartFly;
+        _player.StartedMoving += OnStartedMoving;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +46,13 @@ public class EnemyContainer : MonoBehaviour
         {
             enemy.TakeOffLasso();
         }
+    }
+
+    private void OnStartedMoving()
+    {
+        _enemyContainerMoverToPlayer.SetDistanceToPlayerOnFinish();
+        StartFly();
+
     }
 
     public void StartFly()
@@ -101,5 +108,10 @@ public class EnemyContainer : MonoBehaviour
         _enemyContainerMoverToPlayer.enabled = false;
         yield return new WaitForSeconds(seconds);
         _enemyContainerMoverToPlayer.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        _player.StartedMoving += OnStartedMoving;
     }
 }

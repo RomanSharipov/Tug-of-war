@@ -61,8 +61,8 @@ public class PlayerCamera : MonoBehaviour
 
     private void OnFinishedFirstRoad()
     {
-        //_camera.m_Follow = _player.EnemyContainer.transform;
-        //_camera.m_LookAt = _player.EnemyContainer.transform;
+        _camera.m_Follow = _player.EnemyContainer.transform;
+        _camera.m_LookAt = _player.EnemyContainer.transform;
         _targetPosition = _cameraDistanceStepOffsetOnFinishedFirstRoad;
         if (_smoothUpdatePositionJob != null)
         {
