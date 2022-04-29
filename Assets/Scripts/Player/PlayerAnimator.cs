@@ -6,15 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField] private float _stepReduceAnimationSpeed = 0.05f;
-    
     [SerializeField] private float _minSpeed = 0.5f;
     [SerializeField] private float _maxSpeed = 1.5f;
-    [SerializeField] private float _speedAttackAnimation = 0.8f;
 
     private Animator _animator;
     private Player _player;
-    private float _oldSpeedAnimation;
 
     public float CurrentSpeed => _animator.speed;
 
@@ -26,7 +22,7 @@ public class PlayerAnimator : MonoBehaviour
         _player.StoppedMoving += OnStop;
         _player.StartedMoving += OnStart;
         _player.Attacked += OnAttack;
-        _oldSpeedAnimation = 1f;
+        
     }
 
     public void ReduceSpeedAnimation(float value)

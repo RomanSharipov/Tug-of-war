@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using RunnerMovementSystem;
-
 
 [RequireComponent(typeof(EnemyStateMachine))]
 [RequireComponent(typeof(EnemyAnimator))]
@@ -26,7 +23,6 @@ public class Enemy : MonoBehaviour
 
 
     private EnemyMovement _enemyMovement;
-    
     private MovementSystem _movementOnWay;
     private Transform _transform;
     private EnemyStateMachine _enemyStateMachine;
@@ -59,8 +55,6 @@ public class Enemy : MonoBehaviour
         _player.ModelWasChanged += SwitchEndPointLasso;
     }
 
-
-
     public void ThrowLassoOnPlayer()
     {
         transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
@@ -71,7 +65,6 @@ public class Enemy : MonoBehaviour
         EnemyAnimator.PullRope();
         SwitchOffMovement();
         EnemyContainer.AddEnemy(this);
-        
     }
 
     public void SwitchEndPointLasso()
