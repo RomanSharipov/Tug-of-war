@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         _movementSystem = GetComponent<MovementSystem>();
         _movementSystem.Init(_firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();
-        _playerMovement.Init(_movementSystem);
+        _playerMovement.Init(_movementSystem,this);
         
         _upgradingVenom.WasGotNextLevel += ChangeModel;
         _startSpeed = MovementSystem.MovementOptions.MoveSpeed;

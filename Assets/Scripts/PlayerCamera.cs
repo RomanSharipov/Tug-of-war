@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private Vector3 _cameraDistanceStepOffset;
-    [SerializeField] private Vector3 _cameraDistanceStepOffsetOnFinishedFirstRoad;
+    [SerializeField] private Vector3 _cameraDistanceOnFinishedFirstRoad;
     [SerializeField] private float _speedUpdatePositionOnUpgrade;
     [SerializeField] private float _speedUpdatePositionOnFinishedFirstRoad;
 
@@ -56,7 +56,7 @@ public class PlayerCamera : MonoBehaviour
     {
         _camera.m_Follow = _player.EnemyContainer.transform;
         _camera.m_LookAt = _player.EnemyContainer.transform;
-        _targetPosition = _cameraDistanceStepOffsetOnFinishedFirstRoad;
+        _targetPosition = _cameraDistanceOnFinishedFirstRoad;
         if (_smoothUpdatePositionJob != null)
         {
             StopCoroutine(_smoothUpdatePositionJob);

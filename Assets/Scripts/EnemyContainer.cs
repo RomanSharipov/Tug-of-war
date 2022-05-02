@@ -39,15 +39,6 @@ public class EnemyContainer : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out Enemy enemy))
-        {
-            enemy.TakeOffLasso();
-            _enemies.Remove(enemy);
-        }
-    }
-
     private void OnStartedMoving()
     {
         _enemyContainerMoverToPlayer.SetDistanceToPlayerOnFinish();
@@ -102,5 +93,10 @@ public class EnemyContainer : MonoBehaviour
     public void FlyRight()
     {
         _enemyContainerMoverToPlayer.FlyRight();
+    }
+
+    public void RemoveEnemy(Enemy enemy)
+    {
+        _enemies.Remove(enemy);
     }
 }

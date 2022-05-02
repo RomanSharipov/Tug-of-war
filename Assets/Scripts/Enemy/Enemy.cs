@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(FlowDown());
         EnemyAnimator.Fall();
         _airTrail.gameObject.SetActive(false);
+        _enemyContainer.RemoveEnemy(this);
     }
 
 

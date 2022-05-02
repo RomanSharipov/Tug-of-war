@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class EnemyContainerMoverToPlayer 
 {
-    [SerializeField] private float _currentDistance;
-    [SerializeField] private float _maxDistanceToPlayer = 15;
-    [SerializeField] private float _minDistanceToPlayer = 5;
-    [SerializeField] private float _maxDistanceToPlayerForFinish = 39f;
-    [SerializeField] private float _minDistanceToPlayerForFinish = 30f;
-    [SerializeField] private float _speedReduceDistance = 15f;
-    [SerializeField] private float _speedAddDistance = 0.3f;
-    [SerializeField] private float _stepAddDistanceForUpgradgeVenom = 1.5f;
-    [SerializeField] private float _durationRotate = 0.8f;
-    [SerializeField] private float _speedRotate = 90f;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _speedMoveForwardWhileTurning = 15f;
+    private float _currentDistance;
+    private float _maxDistanceToPlayer = 15;
+    private float _minDistanceToPlayer = 5;
+    private float _maxDistanceToPlayerForFinish = 39f;
+    private float _minDistanceToPlayerForFinish = 30f;
+    private float _speedReduceDistance = 15f;
+    private float _speedAddDistance = 0.3f;
+    private float _stepAddDistanceForUpgradgeVenom = 1.5f;
+    private float _durationRotate = 2f;
+    private float _speedRotate = 30f;
+    private float _speed;
+    private float _speedMoveForwardWhileTurning = 15f;
 
     private Player _player;
     private Coroutine _rotationJob;
@@ -72,10 +72,11 @@ public class EnemyContainerMoverToPlayer
 
     public IEnumerator SmoothRotateLeft()
     {
+        
         float oldSpeed = _speed;
         _speed = 0;
         float timePassed = 0;
-        while (timePassed < _durationRotate)
+        while (/*timePassed < _durationRotate*/_enemyContainerOnScene.enabled)
         {
             _transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
             _transform.position += _transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
@@ -87,10 +88,11 @@ public class EnemyContainerMoverToPlayer
 
     public IEnumerator SmoothRotateRight()
     {
+        
         float timePassed = 0;
         float oldSpeed = _speed;
         _speed = 0;
-        while (timePassed < _durationRotate)
+        while (/*timePassed < _durationRotate*/_enemyContainerOnScene.enabled)
         {
             _transform.RotateAround(_player.transform.position, Vector3.up, -_speedRotate * Time.deltaTime);
             _transform.position += _transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
@@ -98,6 +100,7 @@ public class EnemyContainerMoverToPlayer
             yield return null;
         }
         _speed = oldSpeed;
+
     }
 
     public void OnDisable()
