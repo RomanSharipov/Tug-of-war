@@ -41,8 +41,9 @@ public class Enemy : MonoBehaviour
     public MovementSystem MovementOnWay => _movementOnWay;
     public EnemyContainer EnemyContainer => _enemyContainer;
 
-    public void Init()
+    public void Init(Player player)
     {
+        _player = player;
         _transform = GetComponent<Transform>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _enemyMovement = new EnemyMovement();

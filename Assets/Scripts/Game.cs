@@ -11,11 +11,11 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        _player.Init();
         foreach (var _enemy in _enemies)
         {
-            _enemy.Init();
+            _enemy.Init(_player);
         }
-        _player.Init();
 
         StartGame();
     }
