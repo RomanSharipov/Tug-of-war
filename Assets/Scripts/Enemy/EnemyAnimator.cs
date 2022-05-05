@@ -31,11 +31,10 @@ public class EnemyAnimator : MonoBehaviour
         _animator.SetBool(Params.Fall, true);
     }
 
-    public class Params
+    public void Win()
     {
-        public const string Run = "Run";
-        public const string PullRope = "PullRope";
-        public const string HangRope = "HangRope";
-        public const string Fall = "Fall";
+        _animator.SetBool(Params.Victory, true);
     }
+
+
 }

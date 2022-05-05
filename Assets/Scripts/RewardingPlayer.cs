@@ -28,7 +28,7 @@ public class RewardingPlayer : MonoBehaviour
             player.UpgradingVenom.UpgradeVenomLevel();
         }
 
-        player.CurrentModelVenom.PlayerAnimator.AddSpeedAnimation(_rewardAmount / Player.OneHundredPercent);
+        player.CurrentModelVenom.PlayerAnimator.AddSpeedAnimation(_rewardAmount / Params.OneHundredPercent);
         StartCoroutine(SmoothReduceScale());
         
     }

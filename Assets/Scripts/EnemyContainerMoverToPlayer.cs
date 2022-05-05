@@ -1,20 +1,23 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
+
+[Serializable]
 public class EnemyContainerMoverToPlayer 
 {
-    private float _currentDistance;
-    private float _maxDistanceToPlayer = 15;
-    private float _minDistanceToPlayer = 5;
-    private float _maxDistanceToPlayerForFinish = 39f;
-    private float _minDistanceToPlayerForFinish = 30f;
-    private float _speedReduceDistance = 15f;
-    private float _speedAddDistance = 0.3f;
-    private float _stepAddDistanceForUpgradgeVenom = 1.5f;
-    private float _durationRotate = 2f;
-    private float _speedRotate = 30f;
-    private float _speed;
-    private float _speedMoveForwardWhileTurning = 15f;
+    [SerializeField] private float _currentDistance;
+    [SerializeField] private float _maxDistanceToPlayer = 15;
+    [SerializeField] private float _minDistanceToPlayer = 5;
+    [SerializeField] private float _maxDistanceToPlayerForFinish = 39f;
+    [SerializeField] private float _minDistanceToPlayerForFinish = 30f;
+    [SerializeField] private float _speedReduceDistance = 15f;
+    [SerializeField] private float _speedAddDistance = 0.3f;
+    [SerializeField] private float _stepAddDistanceForUpgradgeVenom = 1.5f;
+    [SerializeField] private float _durationRotate = 2f;
+    [SerializeField] private float _speedRotate = 30f;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _speedMoveForwardWhileTurning = 15f;
 
     private Player _player;
     private Coroutine _rotationJob;

@@ -8,6 +8,7 @@ namespace RunnerMovementSystem
     {
         [SerializeField] private RoadSegment _firstRoad;
         [SerializeField] private MovementOptions _options;
+        [SerializeField] private Player _player;
 
         private MovementBehaviour _movementBehaviour;
         private RoadMovement _roadMovement;
@@ -24,8 +25,9 @@ namespace RunnerMovementSystem
 
         private void Awake()
         {
+            _options.Init(_player);
             _movementBehaviour = new MovementBehaviour(transform, _options);
-
+            
             _roadMovement = new RoadMovement(_movementBehaviour);
             _transitionMovement = new TransitionMovement(_movementBehaviour);
         }
@@ -40,6 +42,7 @@ namespace RunnerMovementSystem
         {
             _roadMovement.EndReached -= OnRoadEnd;
             _transitionMovement.EndReached -= OnTransitionEnd;
+            _options.OnDisable();
         }
 
         private void Start()

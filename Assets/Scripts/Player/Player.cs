@@ -10,9 +10,9 @@ using System.Collections;
 [RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
-    public const float OneHundredPercent = 100;
+    
 
-    private const float CenterRoad = 0;
+    
     
 
     [SerializeField] private Transform _throwLassoPoint;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerCamera _playerCamera;
 
     private Transform _transform;
-    private float _startSpeed;
+    
     private MovementSystem _movementSystem;
     private PlayerMovement _playerMovement;
     private UpgradingVenom _upgradingVenom;
@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
 
     public event UnityAction ModelWasChanged;
     public event UnityAction Died;
+    public event UnityAction<float> WasTookDamage;
+    public event UnityAction<float> WasTookHealth;
     public event UnityAction StoppedMoving;
     public event UnityAction SwitchedRoad;
     
@@ -62,7 +64,7 @@ public class Player : MonoBehaviour
         _playerMovement.Init(_movementSystem,this);
         
         _upgradingVenom.WasGotNextLevel += ChangeModel;
-        _startSpeed = MovementSystem.MovementOptions.MoveSpeed;
+        
         _mouseInput = GetComponent<MouseInput>();
         ResetModel();
 
@@ -74,21 +76,22 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        WasTookDamage?.Invoke(damage);
         _health -= damage;
-
-        if (_health == 0)
+        if (_health == 50)
         {
             Died?.Invoke();
             _mouseInput.enabled = false;
         }
-        _movementSystem.MovementOptions.ReduceSpeed(GetTotalValue(damage));
-        CurrentModelVenom.PlayerAnimator.ReduceSpeedAnimation(damage / OneHundredPercent);
+        //_movementSystem.MovementOptions.ReduceSpeed(GetTotalValue(damage));
+        //CurrentModelVenom.PlayerAnimator.ReduceSpeedAnimation(damage / OneHundredPercent);
     }
 
-    public void TakeHealth(int health)
+    public void TakeHealth(float health)
     {
+        WasTookHealth?.Invoke(health);
         _health += health;
-        MovementSystem.MovementOptions.AddSpeed(GetTotalValue(health));
+        //MovementSystem.MovementOptions.AddSpeed(GetTotalValue(health));
     }
 
     private void ChangeModel()
@@ -106,10 +109,7 @@ public class Player : MonoBehaviour
         _upgradingVenom.WasGotNextLevel -= ChangeModel;
     }
 
-    private float GetTotalValue(float percent)
-    {
-        return _startSpeed / OneHundredPercent * percent;
-    }
+
 
     private void ResetModel()
     {
@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
         SwitchedRoad?.Invoke();
         MouseInput.enabled = false;
         MovementSystem.Init(_secondRoad);
-        MovementSystem.SetOffset(CenterRoad);
+        MovementSystem.SetOffset(Params.CenterRoad);
         
     }
 }

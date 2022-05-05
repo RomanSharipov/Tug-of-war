@@ -8,7 +8,8 @@ using RunnerMovementSystem;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _radiusSphereOverlast = 1f;
-    [SerializeField] private CableProceduralCurve _cableProceduralCurve;
+    //[SerializeField] private CableProceduralCurve _cableProceduralCurve;
+    [SerializeField] private Line _line;
     [SerializeField] private Player _player;
     [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private RoadSegment _roadSegment;
@@ -43,15 +44,16 @@ public class Enemy : MonoBehaviour
 
     public void Init(Player player)
     {
+        _enemyAnimator = GetComponent<EnemyAnimator>();
+        _enemyAnimator.Init();
         _player = player;
+        _player.Died += _enemyAnimator.Win;
         _transform = GetComponent<Transform>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _enemyMovement = new EnemyMovement();
         _enemyMovement.Init(_transform);
         _enemyStateMachine = GetComponent<EnemyStateMachine>();
         _enemyStateMachine.Init();
-        _enemyAnimator = GetComponent<EnemyAnimator>();
-        _enemyAnimator.Init();
         _movementOnWay = GetComponent<MovementSystem>();
         _movementOnWay.Init(_roadSegment);
         _player.ModelWasChanged += SwitchEndPointLasso;
@@ -61,8 +63,9 @@ public class Enemy : MonoBehaviour
     {
         EnemyContainer.AddEnemy(this);
         transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
-        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
-        _cableProceduralCurve.gameObject.SetActive(true);
+
+        _line.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
+        _line.gameObject.SetActive(true);
         Player.TakeDamage(_damage);
         EnemyAnimator.PullRope();
         SwitchOffMovement();
@@ -71,7 +74,8 @@ public class Enemy : MonoBehaviour
 
     public void SwitchEndPointLasso()
     {
-        _cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
+        //_cableProceduralCurve.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
+        _line.SetEndPoint(Player.CurrentModelVenom.GetEndPointLasso().transform);
     }
 
     private void OnDisable()
@@ -88,7 +92,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeOffLasso()
     {
-        _cableProceduralCurve.gameObject.SetActive(false);
+        Destroy(_line.gameObject);
         transform.parent = null;
         _capsuleCollider.enabled = false;
         StartCoroutine(FlowDown());
@@ -135,5 +139,10 @@ public class Enemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speedSettingRandomHeight * Time.deltaTime);
             yield return null;
         }
+    }
+
+    private void OnDied()
+    {
+
     }
 }

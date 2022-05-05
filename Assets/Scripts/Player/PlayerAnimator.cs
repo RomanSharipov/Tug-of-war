@@ -19,6 +19,7 @@ public class PlayerAnimator : MonoBehaviour
         _player = player;
         _animator = GetComponent<Animator>();
         _player.Died += OnFall;
+        _player.WasTookDamage += ReduceSpeedAnimation;
         _player.StoppedMoving += OnStop;
         _player.SwitchedRoad += OnStart;
         _player.Attacked += OnAttack;
@@ -27,7 +28,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public void ReduceSpeedAnimation(float value)
     {
-        SetSpeed(_animator.speed -= value);
+        SetSpeed(_animator.speed -= value / Params.OneHundredPercent);
     }
 
     public void AddSpeedAnimation(float value)
@@ -83,6 +84,7 @@ public class PlayerAnimator : MonoBehaviour
         _player.StoppedMoving -= OnStop;
         _player.SwitchedRoad -= OnStart;
         _player.Attacked -= OnAttack;
+        _player.WasTookDamage += ReduceSpeedAnimation;
     }
 
 }
