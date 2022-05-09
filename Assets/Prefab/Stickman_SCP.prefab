@@ -1698,6 +1698,7 @@ MonoBehaviour:
     _borderOffset: 0
     _minSpeed: 0
     _maxSpeed: 0
+  _player: {fileID: 0}
 --- !u!54 &6891613849606131028
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1712,7 +1713,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &8815846913539994559
 GameObject:

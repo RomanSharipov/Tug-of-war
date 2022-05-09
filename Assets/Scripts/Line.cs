@@ -14,7 +14,7 @@ public class Line : MonoBehaviour
         _lineRenderer.positionCount = 2;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         _lineRenderer.SetPosition(0, transform.position);
         _lineRenderer.SetPosition(1, _endPoint.position);

@@ -10,11 +10,12 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private Vector3 _cameraDistanceOnFinishedFirstRoad;
     [SerializeField] private float _speedUpdatePositionOnUpgrade;
     [SerializeField] private float _speedUpdatePositionOnFinishedFirstRoad;
+    [SerializeField] private List<CinemachineVirtualCamera> cameras = new List<CinemachineVirtualCamera>();
 
     private CinemachineVirtualCamera _camera;
     private CinemachineTransposer _cinemachineTransposer;
     private Player _player;
-    private Vector3 _cameraDistanceStartPosition ;
+    private Vector3 _cameraDistanceStartPosition;
     private Coroutine _smoothUpdatePositionJob;
     private Vector3 _targetPosition;
 
@@ -25,6 +26,7 @@ public class PlayerCamera : MonoBehaviour
         _cinemachineTransposer = _camera.GetCinemachineComponent<CinemachineTransposer>();
         _player.UpgradingVenom.PlayerWasUpgraded += OnPlayerWasUpgraded;
         _player.SwitchedRoad += OnFinishedFirstRoad;
+        _player.ArrivedOnFinish += OnPlayerOnFisnish;
         _cameraDistanceStartPosition = _cinemachineTransposer.m_FollowOffset;
     }
 
@@ -57,16 +59,21 @@ public class PlayerCamera : MonoBehaviour
         _camera.m_Follow = _player.EnemyContainer.transform;
         _camera.m_LookAt = _player.EnemyContainer.transform;
         _targetPosition = _cameraDistanceOnFinishedFirstRoad;
-        if (_smoothUpdatePositionJob != null)
-        {
-            StopCoroutine(_smoothUpdatePositionJob);
-        }
-        _smoothUpdatePositionJob = StartCoroutine(SmoothUpdatePosition(_targetPosition, _speedUpdatePositionOnFinishedFirstRoad));
+    }
+
+
+    private void OnPlayerOnFisnish()
+    {
+        _camera.m_Follow = _player.transform;
+        _camera.m_LookAt = _player.transform;
     }
 
     private void OnDisable()
     {
         _player.UpgradingVenom.PlayerWasUpgraded -= OnPlayerWasUpgraded;
         _player.SwitchedRoad -= OnFinishedFirstRoad;
+        _player.ArrivedOnFinish -= OnPlayerOnFisnish;
     }
+
+
 }

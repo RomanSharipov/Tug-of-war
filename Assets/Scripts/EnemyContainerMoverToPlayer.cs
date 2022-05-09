@@ -14,7 +14,7 @@ public class EnemyContainerMoverToPlayer
     [SerializeField] private float _speedReduceDistance = 15f;
     [SerializeField] private float _speedAddDistance = 0.3f;
     [SerializeField] private float _stepAddDistanceForUpgradgeVenom = 1.5f;
-    [SerializeField] private float _durationRotate = 2f;
+    
     [SerializeField] private float _speedRotate = 30f;
     [SerializeField] private float _speed;
     [SerializeField] private float _speedMoveForwardWhileTurning = 15f;
@@ -75,7 +75,6 @@ public class EnemyContainerMoverToPlayer
 
     public IEnumerator SmoothRotateLeft()
     {
-        
         float oldSpeed = _speed;
         _speed = 0;
         float timePassed = 0;
@@ -84,6 +83,7 @@ public class EnemyContainerMoverToPlayer
             _transform.RotateAround(_player.transform.position, Vector3.up, _speedRotate * Time.deltaTime);
             _transform.position += _transform.forward * _speedMoveForwardWhileTurning * Time.deltaTime;
             timePassed += Time.deltaTime;
+            
             yield return null;
         }
         _speed = oldSpeed;

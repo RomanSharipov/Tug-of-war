@@ -23,6 +23,7 @@ public class PlayerAnimator : MonoBehaviour
         _player.StoppedMoving += OnStop;
         _player.SwitchedRoad += OnStart;
         _player.Attacked += OnAttack;
+        _player.Won += OnWin;
         
     }
 
@@ -77,6 +78,10 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetTrigger(Params.Attack);
 
     }
+    private void OnWin()
+    {
+        _animator.SetTrigger(Params.Victory);
+    }
 
     private void OnDisable()
     {
@@ -84,7 +89,8 @@ public class PlayerAnimator : MonoBehaviour
         _player.StoppedMoving -= OnStop;
         _player.SwitchedRoad -= OnStart;
         _player.Attacked -= OnAttack;
-        _player.WasTookDamage += ReduceSpeedAnimation;
+        _player.WasTookDamage -= ReduceSpeedAnimation;
+        _player.Won -= OnWin;
     }
 
 }

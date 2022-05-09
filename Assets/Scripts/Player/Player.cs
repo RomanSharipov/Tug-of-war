@@ -3,22 +3,15 @@ using RunnerMovementSystem;
 using UnityEngine.Events;
 using System;
 using RunnerMovementSystem.Examples;
-using System.Collections;
 
 [RequireComponent(typeof(MovementSystem))]
 [RequireComponent(typeof(UpgradingVenom))]
 [RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
-    
-
-    
-    
-
     [SerializeField] private Transform _throwLassoPoint;
     [SerializeField] private EnemyContainer _enemyContainer;
     [SerializeField] private Transform _enemyContainerPoint;
-    
     [SerializeField] private float _speedAfterEndRoad = 25f;
     [SerializeField] private float _speedAnimationAfterEndRoad = 1.5f;
     [SerializeField] private float _health = 100;
@@ -28,12 +21,12 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerCamera _playerCamera;
 
     private Transform _transform;
-    
     private MovementSystem _movementSystem;
     private PlayerMovement _playerMovement;
     private UpgradingVenom _upgradingVenom;
     private Venom _currentModelVenom;
     private MouseInput _mouseInput;
+    private int _score;
 
     public Transform Transform => _transform;
     public Transform ThrowLassoPoint => _throwLassoPoint;
@@ -43,6 +36,7 @@ public class Player : MonoBehaviour
     public Venom CurrentModelVenom => _currentModelVenom;
     public MouseInput MouseInput => _mouseInput;
     public EnemyContainer EnemyContainer => _enemyContainer;
+    public int Score => _score;
 
     public event UnityAction ModelWasChanged;
     public event UnityAction Died;
@@ -50,8 +44,10 @@ public class Player : MonoBehaviour
     public event UnityAction<float> WasTookHealth;
     public event UnityAction StoppedMoving;
     public event UnityAction SwitchedRoad;
-    
     public event UnityAction Attacked;
+    public event UnityAction Won;
+    public event UnityAction WasDefeated;
+    public event UnityAction ArrivedOnFinish;
 
     public void Init()
     {
@@ -62,9 +58,7 @@ public class Player : MonoBehaviour
         _movementSystem.Init(_firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();
         _playerMovement.Init(_movementSystem,this);
-        
         _upgradingVenom.WasGotNextLevel += ChangeModel;
-        
         _mouseInput = GetComponent<MouseInput>();
         ResetModel();
 
@@ -72,6 +66,11 @@ public class Player : MonoBehaviour
         {
             modelPlayer.Init(this);
         }
+    }
+
+    public void AddScore()
+    {
+        _score++;
     }
 
     public void TakeDamage(float damage)
@@ -83,22 +82,18 @@ public class Player : MonoBehaviour
             Died?.Invoke();
             _mouseInput.enabled = false;
         }
-        //_movementSystem.MovementOptions.ReduceSpeed(GetTotalValue(damage));
-        //CurrentModelVenom.PlayerAnimator.ReduceSpeedAnimation(damage / OneHundredPercent);
     }
 
     public void TakeHealth(float health)
     {
         WasTookHealth?.Invoke(health);
         _health += health;
-        //MovementSystem.MovementOptions.AddSpeed(GetTotalValue(health));
     }
 
     private void ChangeModel()
     {
         _modelsPlayer[0].gameObject.SetActive(false);
         _modelsPlayer[1].gameObject.SetActive(true);
-        
         _currentModelVenom = _modelsPlayer[1];
         _currentModelVenom.PlayerAnimator.SetSpeed(_modelsPlayer[0].PlayerAnimator.CurrentSpeed);
         ModelWasChanged?.Invoke();
@@ -108,8 +103,6 @@ public class Player : MonoBehaviour
     {
         _upgradingVenom.WasGotNextLevel -= ChangeModel;
     }
-
-
 
     private void ResetModel()
     {
@@ -129,6 +122,21 @@ public class Player : MonoBehaviour
         MouseInput.enabled = false;
         MovementSystem.Init(_secondRoad);
         MovementSystem.SetOffset(Params.CenterRoad);
-        
+    }
+
+    public void Finish()
+    {
+        ArrivedOnFinish?.Invoke();
+    }
+
+    public void Win()
+    {
+        MovementSystem.MovementOptions.Stop();
+        Won?.Invoke();
+    }
+
+    public void Lose()
+    {
+        WasDefeated?.Invoke();
     }
 }

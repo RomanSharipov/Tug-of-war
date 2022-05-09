@@ -8,6 +8,10 @@ public class Game : MonoBehaviour
     [SerializeField] private EndFirstRoad _endFirstRoad;
     [SerializeField] private Player _player;
     [SerializeField] private Enemy[] _enemies;
+    [SerializeField] private Building[] _buildings;
+   
+
+    public int CountBuildings => _buildings.Length;
 
     private void Start()
     {
@@ -16,12 +20,17 @@ public class Game : MonoBehaviour
         {
             _enemy.Init(_player);
         }
-
+        
         StartGame();
     }
 
     public void StartGame()
     {
+        foreach (var building in _buildings)
+        {
+            building.BuilingCrashed += _player.AddScore;
+        }
+
         _endFirstRoad.PlayerFinishedFirstRoad += _player.OnFinishedFirstRoad;
     }
 
@@ -29,4 +38,5 @@ public class Game : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
 }

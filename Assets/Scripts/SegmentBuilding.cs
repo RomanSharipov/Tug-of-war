@@ -10,14 +10,14 @@ public class SegmentBuilding : MonoBehaviour
 {
     [SerializeField] private float _speedSettingTransparent;
     
-    [SerializeField] private float _delayBeforeSetTransparentMaterial = 1f ;
+    [SerializeField] private float _delayBeforeSetTransparentmaterial = 1f ;
 
     private Rigidbody _rigidbody;
     private MeshCollider _meshCollider;
     private MeshRenderer _meshRenderer;
     private float _valueTransparentColor;
-    
 
+    public Rigidbody Rigidbody => _rigidbody;
     public void Init()
     {
         _rigidbody = gameObject.GetComponent<Rigidbody>();
@@ -37,7 +37,7 @@ public class SegmentBuilding : MonoBehaviour
         gameObject.SetActive(true);
         _rigidbody.isKinematic = false;
         _meshCollider.enabled = true;
-        Invoke(nameof(SetTransparentMaterial), _delayBeforeSetTransparentMaterial);
+        Invoke(nameof(SetTransparentMaterial), _delayBeforeSetTransparentmaterial);
     }
 
     private IEnumerator SetTransparentSmooth()

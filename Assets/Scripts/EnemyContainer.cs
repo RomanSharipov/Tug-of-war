@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,11 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private SphereCollider _sphereCollider;
     [SerializeField] private float _targetHeight = 5f;
     [SerializeField] private float _speedStartFly = 3f;
+    
+    [SerializeField] private float _targetScaleX = 0.5f;
     [SerializeField] private Player _player;
     [SerializeField] private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
+
 
     private List<Enemy> _enemies = new List<Enemy>();
     private Coroutine _rotationJob;
@@ -21,6 +25,15 @@ public class EnemyContainer : MonoBehaviour
         _enemyContainerMoverToPlayer = new EnemyContainerMoverToPlayer();
         _enemyContainerMoverToPlayer.Init(_player,this);
         _player.SwitchedRoad += OnStartedMoving;
+        _player.Won += OnPlayerWon;
+    }
+
+    private void OnPlayerWon()
+    {
+        foreach (var enemy in _enemies.ToArray())
+        {
+            enemy.TakeOffLasso();
+        }
     }
 
     private void Update()
@@ -83,7 +96,6 @@ public class EnemyContainer : MonoBehaviour
         _player.SwitchedRoad += OnStartedMoving;
         _enemyContainerMoverToPlayer.OnDisable();
     }
-
 
     public void FlyLeft()
     {

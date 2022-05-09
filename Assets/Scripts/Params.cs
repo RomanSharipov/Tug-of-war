@@ -10,4 +10,5 @@ public class Params
     public const string Run = "Run";
     public const string PullRope = "PullRope";
     public const string Victory = "Victory";
+    public const string Win = "Win";
 }
