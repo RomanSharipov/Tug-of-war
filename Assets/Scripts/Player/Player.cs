@@ -18,7 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Venom[] _modelsPlayer;
     [SerializeField] private RoadSegment _firstRoad;
     [SerializeField] private RoadSegment _secondRoad;
-    [SerializeField] private PlayerCamera _playerCamera;
+    [SerializeField] private UpgradingVenomCamera _upgradingVenomCamera;
+    [SerializeField] private SwitcherVirtualCamera _switcherVirtualCamera;
 
     private Transform _transform;
     private MovementSystem _movementSystem;
@@ -53,7 +54,8 @@ public class Player : MonoBehaviour
     {
         _transform = GetComponent<Transform>();
         _upgradingVenom = GetComponent<UpgradingVenom>();
-        _playerCamera.Init(this);
+        _upgradingVenomCamera.Init(this);
+        _switcherVirtualCamera.Init(this);
         _movementSystem = GetComponent<MovementSystem>();
         _movementSystem.Init(_firstRoad);
         _playerMovement = GetComponent<PlayerMovement>();

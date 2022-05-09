@@ -4,13 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class UpgradingVenomCamera : MonoBehaviour
 {
     [SerializeField] private Vector3 _cameraDistanceStepOffset;
     [SerializeField] private Vector3 _cameraDistanceOnFinishedFirstRoad;
     [SerializeField] private float _speedUpdatePositionOnUpgrade;
     [SerializeField] private float _speedUpdatePositionOnFinishedFirstRoad;
-    [SerializeField] private List<CinemachineVirtualCamera> cameras = new List<CinemachineVirtualCamera>();
+
+
 
     private CinemachineVirtualCamera _camera;
     private CinemachineTransposer _cinemachineTransposer;
@@ -25,10 +26,11 @@ public class PlayerCamera : MonoBehaviour
         _camera = GetComponent<CinemachineVirtualCamera>();
         _cinemachineTransposer = _camera.GetCinemachineComponent<CinemachineTransposer>();
         _player.UpgradingVenom.PlayerWasUpgraded += OnPlayerWasUpgraded;
-        _player.SwitchedRoad += OnFinishedFirstRoad;
-        _player.ArrivedOnFinish += OnPlayerOnFisnish;
+
         _cameraDistanceStartPosition = _cinemachineTransposer.m_FollowOffset;
     }
+
+
 
     private void OnPlayerWasUpgraded()
     {
@@ -40,11 +42,6 @@ public class PlayerCamera : MonoBehaviour
         _smoothUpdatePositionJob = StartCoroutine(SmoothUpdatePosition(_targetPosition, _speedUpdatePositionOnUpgrade));
     }
 
-    public void ResetPosition()
-    {
-        _cinemachineTransposer.m_FollowOffset = _cameraDistanceStartPosition;
-    }
-
     private IEnumerator SmoothUpdatePosition(Vector3 targetPosition,float speedUpdatePosition)
     {
         while (_cinemachineTransposer.m_FollowOffset != targetPosition)
@@ -53,27 +50,4 @@ public class PlayerCamera : MonoBehaviour
             yield return null;
         }
     }
-
-    private void OnFinishedFirstRoad()
-    {
-        _camera.m_Follow = _player.EnemyContainer.transform;
-        _camera.m_LookAt = _player.EnemyContainer.transform;
-        _targetPosition = _cameraDistanceOnFinishedFirstRoad;
-    }
-
-
-    private void OnPlayerOnFisnish()
-    {
-        _camera.m_Follow = _player.transform;
-        _camera.m_LookAt = _player.transform;
-    }
-
-    private void OnDisable()
-    {
-        _player.UpgradingVenom.PlayerWasUpgraded -= OnPlayerWasUpgraded;
-        _player.SwitchedRoad -= OnFinishedFirstRoad;
-        _player.ArrivedOnFinish -= OnPlayerOnFisnish;
-    }
-
-
 }

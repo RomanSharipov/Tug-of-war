@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private Building[] _buildings;
+    
    
 
     public int CountBuildings => _buildings.Length;
@@ -22,6 +23,7 @@ public class Game : MonoBehaviour
         }
         
         StartGame();
+        
     }
 
     public void StartGame()
