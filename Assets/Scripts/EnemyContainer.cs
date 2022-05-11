@@ -7,13 +7,9 @@ using UnityEngine;
 public class EnemyContainer : MonoBehaviour
 {
     [SerializeField] private SphereCollider _sphereCollider;
-    [SerializeField] private float _targetHeight = 5f;
-    [SerializeField] private float _speedStartFly = 3f;
-    
     [SerializeField] private float _targetScaleX = 0.5f;
     [SerializeField] private Player _player;
-    [SerializeField] private EnemyContainerMoverToPlayer _enemyContainerMoverToPlayer;
-
+    [SerializeField] private EnemyContainerMover _enemyContainerMover;
 
     private List<Enemy> _enemies = new List<Enemy>();
     private Coroutine _rotationJob;
@@ -22,8 +18,8 @@ public class EnemyContainer : MonoBehaviour
     private void Start()
     {
         _transform = GetComponent<Transform>();
-        _enemyContainerMoverToPlayer = new EnemyContainerMoverToPlayer();
-        _enemyContainerMoverToPlayer.Init(_player,this);
+        _enemyContainerMover = new EnemyContainerMover();
+        _enemyContainerMover.Init(_player,this);
         _player.SwitchedRoad += OnStartedMoving;
         _player.Won += OnPlayerWon;
     }
@@ -38,7 +34,7 @@ public class EnemyContainer : MonoBehaviour
 
     private void Update()
     {
-        _enemyContainerMoverToPlayer.Move();
+        _enemyContainerMover.Move();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,7 +50,7 @@ public class EnemyContainer : MonoBehaviour
 
     private void OnStartedMoving()
     {
-        _enemyContainerMoverToPlayer.SetDistanceToPlayerOnFinish();
+        _enemyContainerMover.SetDistanceToPlayerOnFinish();
         StartFly();
 
     }
@@ -62,8 +58,7 @@ public class EnemyContainer : MonoBehaviour
     public void StartFly()
     {
         _sphereCollider.isTrigger = false;
-        StartCoroutine(SmoothStartFly());
-       
+        _enemyContainerMover.StartFly();
 
         foreach (var enemy in _enemies)
         {
@@ -71,14 +66,7 @@ public class EnemyContainer : MonoBehaviour
         }
     }
 
-    private IEnumerator SmoothStartFly()
-    {
-        while (transform.position.y < _targetHeight)
-        {
-            transform.position += Vector3.up * _speedStartFly * Time.deltaTime;
-            yield return null;
-        }
-    }
+
 
     public void AddEnemy(Enemy enemy)
     {
@@ -94,17 +82,17 @@ public class EnemyContainer : MonoBehaviour
     private void OnDisable()
     {
         _player.SwitchedRoad += OnStartedMoving;
-        _enemyContainerMoverToPlayer.OnDisable();
+        _enemyContainerMover.OnDisable();
     }
 
     public void FlyLeft()
     {
-        _enemyContainerMoverToPlayer.FlyLeft();
+        _enemyContainerMover.FlyLeft();
     }
 
     public void FlyRight()
     {
-        _enemyContainerMoverToPlayer.FlyRight();
+        _enemyContainerMover.FlyRight();
     }
 
     public void RemoveEnemy(Enemy enemy)

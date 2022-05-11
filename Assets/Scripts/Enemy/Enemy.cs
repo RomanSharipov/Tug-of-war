@@ -17,13 +17,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask _ground;
     [SerializeField] private float _speedFlowDown;
     [SerializeField] private ParticleSystem _airTrail;
-    [SerializeField] private float _minHeight = 0;
-    [SerializeField] private float _maxHeight = 3;
+    [SerializeField] private float _minHeight = 3;
+    [SerializeField] private float _maxHeight = 5;
     [SerializeField] private float _speedSettingRandomHeight = 5;
-    [SerializeField] private Vector3 _targetPosition = new Vector3();
     
-
-
+private Vector3 _targetPosition = new Vector3();
     private EnemyMovement _enemyMovement;
     private MovementSystem _movementOnWay;
     private Transform _transform;
@@ -132,11 +130,11 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator SmoothSetRandomHeight()
     {
-        _targetPosition.Set(transform.position.x, Random.Range(_minHeight,_maxHeight), transform.position.z);
+        _targetPosition.Set(transform.localPosition.x, Random.Range(_minHeight,_maxHeight), transform.localPosition.z);
 
-        while (transform.position.y < _targetPosition.y)
+        while (transform.localPosition.y < _targetPosition.y)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speedSettingRandomHeight * Time.deltaTime);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, _targetPosition, _speedSettingRandomHeight * Time.deltaTime);
             yield return null;
         }
     }
