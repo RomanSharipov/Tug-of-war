@@ -50,9 +50,8 @@ public class EnemyContainer : MonoBehaviour
 
     private void OnStartedMoving()
     {
-        _enemyContainerMover.SetDistanceToPlayerOnFinish();
+        _enemyContainerMover.ParamsDistance.SetDistanceToPlayerOnFinish();
         StartFly();
-
     }
 
     public void StartFly()
@@ -63,10 +62,9 @@ public class EnemyContainer : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             enemy.StartFly();
+            _enemyContainerMover.SetRandomHeight(enemy);
         }
     }
-
-
 
     public void AddEnemy(Enemy enemy)
     {
