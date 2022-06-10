@@ -14,9 +14,11 @@ public class EnemyContainer : MonoBehaviour
     private List<Enemy> _enemies = new List<Enemy>();
     private Coroutine _rotationJob;
     private Transform _transform;
+    private Rigidbody _rigidbody;
 
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
         _enemyContainerMover = new EnemyContainerMover();
         _enemyContainerMover.Init(_player,this);
