@@ -54,6 +54,7 @@ public class EnemyContainer : MonoBehaviour
         StartFly();
     }
 
+    
     public void StartFly()
     {
         _sphereCollider.isTrigger = false;
